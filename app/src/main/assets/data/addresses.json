@@ -1,0 +1,134 @@
+[
+  {
+    "id": "addr_001",
+    "recipientName": "John Smith",
+    "phoneNumber": "+1 (555) 123-4567",
+    "province": "California",
+    "city": "Los Angeles",
+    "district": "Downtown",
+    "detailAddress": "123 Main Street, Apt 4B",
+    "isDefault": true,
+    "createdAt": 1710777600000
+  },
+  {
+    "id": "addr_002",
+    "recipientName": "Emily Johnson",
+    "phoneNumber": "+1 (555) 234-5678",
+    "province": "New York",
+    "city": "New York City",
+    "district": "Manhattan",
+    "detailAddress": "456 Broadway Avenue, Suite 12",
+    "isDefault": false,
+    "createdAt": 1710691200000
+  },
+  {
+    "id": "addr_003",
+    "recipientName": "Michael Brown",
+    "phoneNumber": "+1 (555) 345-6789",
+    "province": "Texas",
+    "city": "Houston",
+    "district": "Midtown",
+    "detailAddress": "789 Oak Lane",
+    "isDefault": false,
+    "createdAt": 1710604800000
+  },
+  {
+    "id": "addr_004",
+    "recipientName": "Sarah Davis",
+    "phoneNumber": "+1 (555) 456-7890",
+    "province": "Florida",
+    "city": "Miami",
+    "district": "South Beach",
+    "detailAddress": "321 Ocean Drive",
+    "isDefault": false,
+    "createdAt": 1710518400000
+  },
+  {
+    "id": "addr_005",
+    "recipientName": "David Wilson",
+    "phoneNumber": "+1 (555) 567-8901",
+    "province": "Illinois",
+    "city": "Chicago",
+    "district": "Loop",
+    "detailAddress": "654 Michigan Avenue, Floor 8",
+    "isDefault": false,
+    "createdAt": 1710432000000
+  },
+  {
+    "id": "addr_006",
+    "recipientName": "Jennifer Martinez",
+    "phoneNumber": "+1 (555) 678-9012",
+    "province": "Washington",
+    "city": "Seattle",
+    "district": "Capitol Hill",
+    "detailAddress": "987 Pine Street",
+    "isDefault": false,
+    "createdAt": 1710345600000
+  },
+  {
+    "id": "addr_007",
+    "recipientName": "Robert Taylor",
+    "phoneNumber": "+1 (555) 789-0123",
+    "province": "Massachusetts",
+    "city": "Boston",
+    "district": "Back Bay",
+    "detailAddress": "147 Newbury Street, Unit 3C",
+    "isDefault": false,
+    "createdAt": 1710259200000
+  },
+  {
+    "id": "addr_008",
+    "recipientName": "Lisa Anderson",
+    "phoneNumber": "+1 (555) 890-1234",
+    "province": "Arizona",
+    "city": "Phoenix",
+    "district": "Downtown",
+    "detailAddress": "258 Central Avenue",
+    "isDefault": false,
+    "createdAt": 1710172800000
+  },
+  {
+    "id": "addr_009",
+    "recipientName": "James Thomas",
+    "phoneNumber": "+1 (555) 901-2345",
+    "province": "Colorado",
+    "city": "Denver",
+    "district": "LoDo",
+    "detailAddress": "369 Market Street, Apt 7A",
+    "isDefault": false,
+    "createdAt": 1710086400000
+  },
+  {
+    "id": "addr_010",
+    "recipientName": "Mary Jackson",
+    "phoneNumber": "+1 (555) 012-3456",
+    "province": "Georgia",
+    "city": "Atlanta",
+    "district": "Midtown",
+    "detailAddress": "741 Peachtree Street NE",
+    "isDefault": false,
+    "createdAt": 1710000000000
+  },
+  {
+    "id": "addr_011",
+    "recipientName": "William White",
+    "phoneNumber": "+1 (555) 123-7890",
+    "province": "Oregon",
+    "city": "Portland",
+    "district": "Pearl District",
+    "detailAddress": "852 NW Couch Street",
+    "isDefault": false,
+    "createdAt": 1709913600000
+  },
+  {
+    "id": "addr_012",
+    "recipientName": "Patricia Harris",
+    "phoneNumber": "+1 (555) 234-8901",
+    "province": "Nevada",
+    "city": "Las Vegas",
+    "district": "The Strip",
+    "detailAddress": "963 Las Vegas Boulevard S",
+    "isDefault": false,
+    "createdAt": 1709827200000
+  }
+]

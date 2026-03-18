@@ -1,0 +1,393 @@
+[
+  {
+    "orderId": "ORD-2024-001",
+    "items": [
+      {
+        "productId": "prod_001",
+        "productName": "Apple AirPods Pro (2nd Generation)",
+        "productImage": "https://via.placeholder.com/300/FFFFFF/000000?text=AirPods+Pro",
+        "price": 249.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Color", "specValue": "White", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 249.99,
+    "shippingAddress": {
+      "id": "addr_001",
+      "recipientName": "John Smith",
+      "phoneNumber": "+1 (555) 123-4567",
+      "province": "California",
+      "city": "Los Angeles",
+      "district": "Downtown",
+      "detailAddress": "123 Main Street, Apt 4B",
+      "isDefault": true,
+      "createdAt": 1710777600000
+    },
+    "orderStatus": "DELIVERED",
+    "createdAt": 1710777600000,
+    "updatedAt": 1710950400000
+  },
+  {
+    "orderId": "ORD-2024-002",
+    "items": [
+      {
+        "productId": "prod_003",
+        "productName": "Instant Pot Duo 7-in-1 Electric Pressure Cooker",
+        "productImage": "https://via.placeholder.com/300/FF0000/FFFFFF?text=Instant+Pot",
+        "price": 89.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Capacity", "specValue": "6 Quart", "isSelected": true}
+        ]
+      },
+      {
+        "productId": "prod_007",
+        "productName": "Keurig K-Elite Coffee Maker",
+        "productImage": "https://via.placeholder.com/300/8B4513/FFFFFF?text=Keurig",
+        "price": 139.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Color", "specValue": "Brushed Silver", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 229.98,
+    "shippingAddress": {
+      "id": "addr_002",
+      "recipientName": "Emily Johnson",
+      "phoneNumber": "+1 (555) 234-5678",
+      "province": "New York",
+      "city": "New York City",
+      "district": "Manhattan",
+      "detailAddress": "456 Broadway Avenue, Suite 12",
+      "isDefault": false,
+      "createdAt": 1710691200000
+    },
+    "orderStatus": "SHIPPED",
+    "createdAt": 1710691200000,
+    "updatedAt": 1710864000000
+  },
+  {
+    "orderId": "ORD-2024-003",
+    "items": [
+      {
+        "productId": "prod_005",
+        "productName": "Nike Air Max 270 Running Shoes",
+        "productImage": "https://via.placeholder.com/300/000000/FFFFFF?text=Nike+Shoes",
+        "price": 149.99,
+        "quantity": 2,
+        "selectedSpec": [
+          {"specType": "Size", "specValue": "10", "isSelected": true},
+          {"specType": "Color", "specValue": "Black/White", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 299.98,
+    "shippingAddress": {
+      "id": "addr_003",
+      "recipientName": "Michael Brown",
+      "phoneNumber": "+1 (555) 345-6789",
+      "province": "Texas",
+      "city": "Houston",
+      "district": "Midtown",
+      "detailAddress": "789 Oak Lane",
+      "isDefault": false,
+      "createdAt": 1710604800000
+    },
+    "orderStatus": "PROCESSING",
+    "createdAt": 1710604800000,
+    "updatedAt": 1710691200000
+  },
+  {
+    "orderId": "ORD-2024-004",
+    "items": [
+      {
+        "productId": "prod_002",
+        "productName": "Samsung 55\" 4K Smart TV",
+        "productImage": "https://via.placeholder.com/300/000000/FFFFFF?text=Samsung+TV",
+        "price": 649.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Screen Size", "specValue": "55 inches", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 649.99,
+    "shippingAddress": {
+      "id": "addr_004",
+      "recipientName": "Sarah Davis",
+      "phoneNumber": "+1 (555) 456-7890",
+      "province": "Florida",
+      "city": "Miami",
+      "district": "South Beach",
+      "detailAddress": "321 Ocean Drive",
+      "isDefault": false,
+      "createdAt": 1710518400000
+    },
+    "orderStatus": "DELIVERED",
+    "createdAt": 1710518400000,
+    "updatedAt": 1710777600000
+  },
+  {
+    "orderId": "ORD-2024-005",
+    "items": [
+      {
+        "productId": "prod_004",
+        "productName": "The Great Gatsby by F. Scott Fitzgerald",
+        "productImage": "https://via.placeholder.com/300/FFD700/000000?text=Great+Gatsby",
+        "price": 12.99,
+        "quantity": 3,
+        "selectedSpec": [
+          {"specType": "Format", "specValue": "Paperback", "isSelected": true}
+        ]
+      },
+      {
+        "productId": "prod_012",
+        "productName": "Kindle Paperwhite E-reader",
+        "productImage": "https://via.placeholder.com/300/000000/FFFFFF?text=Kindle",
+        "price": 139.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Storage", "specValue": "8GB", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 178.96,
+    "shippingAddress": {
+      "id": "addr_005",
+      "recipientName": "David Wilson",
+      "phoneNumber": "+1 (555) 567-8901",
+      "province": "Illinois",
+      "city": "Chicago",
+      "district": "Loop",
+      "detailAddress": "654 Michigan Avenue, Floor 8",
+      "isDefault": false,
+      "createdAt": 1710432000000
+    },
+    "orderStatus": "PENDING",
+    "createdAt": 1710432000000,
+    "updatedAt": 1710432000000
+  },
+  {
+    "orderId": "ORD-2024-006",
+    "items": [
+      {
+        "productId": "prod_008",
+        "productName": "Sony WH-1000XM5 Wireless Headphones",
+        "productImage": "https://via.placeholder.com/300/000000/FFFFFF?text=Sony+Headphones",
+        "price": 399.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Color", "specValue": "Black", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 399.99,
+    "shippingAddress": {
+      "id": "addr_006",
+      "recipientName": "Jennifer Martinez",
+      "phoneNumber": "+1 (555) 678-9012",
+      "province": "Washington",
+      "city": "Seattle",
+      "district": "Capitol Hill",
+      "detailAddress": "987 Pine Street",
+      "isDefault": false,
+      "createdAt": 1710345600000
+    },
+    "orderStatus": "SHIPPED",
+    "createdAt": 1710345600000,
+    "updatedAt": 1710518400000
+  },
+  {
+    "orderId": "ORD-2024-007",
+    "items": [
+      {
+        "productId": "prod_006",
+        "productName": "LEGO Star Wars Millennium Falcon",
+        "productImage": "https://via.placeholder.com/300/FFFF00/000000?text=LEGO+Falcon",
+        "price": 169.99,
+        "quantity": 1,
+        "selectedSpec": []
+      },
+      {
+        "productId": "prod_010",
+        "productName": "The North Face Backpack",
+        "productImage": "https://via.placeholder.com/300/228B22/FFFFFF?text=Backpack",
+        "price": 89.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Color", "specValue": "Black", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 259.98,
+    "shippingAddress": {
+      "id": "addr_007",
+      "recipientName": "Robert Taylor",
+      "phoneNumber": "+1 (555) 789-0123",
+      "province": "Massachusetts",
+      "city": "Boston",
+      "district": "Back Bay",
+      "detailAddress": "147 Newbury Street, Unit 3C",
+      "isDefault": false,
+      "createdAt": 1710259200000
+    },
+    "orderStatus": "DELIVERED",
+    "createdAt": 1710259200000,
+    "updatedAt": 1710518400000
+  },
+  {
+    "orderId": "ORD-2024-008",
+    "items": [
+      {
+        "productId": "prod_013",
+        "productName": "Levi's 501 Original Fit Jeans",
+        "productImage": "https://via.placeholder.com/300/4169E1/FFFFFF?text=Levis+Jeans",
+        "price": 69.99,
+        "quantity": 2,
+        "selectedSpec": [
+          {"specType": "Size", "specValue": "32x32", "isSelected": true},
+          {"specType": "Color", "specValue": "Dark Wash", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 139.98,
+    "shippingAddress": {
+      "id": "addr_008",
+      "recipientName": "Lisa Anderson",
+      "phoneNumber": "+1 (555) 890-1234",
+      "province": "Arizona",
+      "city": "Phoenix",
+      "district": "Downtown",
+      "detailAddress": "258 Central Avenue",
+      "isDefault": false,
+      "createdAt": 1710172800000
+    },
+    "orderStatus": "PROCESSING",
+    "createdAt": 1710172800000,
+    "updatedAt": 1710259200000
+  },
+  {
+    "orderId": "ORD-2024-009",
+    "items": [
+      {
+        "productId": "prod_009",
+        "productName": "Fitbit Charge 6 Fitness Tracker",
+        "productImage": "https://via.placeholder.com/300/00BFFF/FFFFFF?text=Fitbit",
+        "price": 159.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Color", "specValue": "Black", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 159.99,
+    "shippingAddress": {
+      "id": "addr_009",
+      "recipientName": "James Thomas",
+      "phoneNumber": "+1 (555) 901-2345",
+      "province": "Colorado",
+      "city": "Denver",
+      "district": "LoDo",
+      "detailAddress": "369 Market Street, Apt 7A",
+      "isDefault": false,
+      "createdAt": 1710086400000
+    },
+    "orderStatus": "CANCELLED",
+    "createdAt": 1710086400000,
+    "updatedAt": 1710172800000
+  },
+  {
+    "orderId": "ORD-2024-010",
+    "items": [
+      {
+        "productId": "prod_011",
+        "productName": "Dyson V15 Detect Cordless Vacuum",
+        "productImage": "https://via.placeholder.com/300/9370DB/FFFFFF?text=Dyson+Vacuum",
+        "price": 649.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Color", "specValue": "Nickel/Yellow", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 649.99,
+    "shippingAddress": {
+      "id": "addr_010",
+      "recipientName": "Mary Jackson",
+      "phoneNumber": "+1 (555) 012-3456",
+      "province": "Georgia",
+      "city": "Atlanta",
+      "district": "Midtown",
+      "detailAddress": "741 Peachtree Street NE",
+      "isDefault": false,
+      "createdAt": 1710000000000
+    },
+    "orderStatus": "DELIVERED",
+    "createdAt": 1710000000000,
+    "updatedAt": 1710259200000
+  },
+  {
+    "orderId": "ORD-2024-011",
+    "items": [
+      {
+        "productId": "prod_014",
+        "productName": "Ninja Professional Blender",
+        "productImage": "https://via.placeholder.com/300/FF4500/FFFFFF?text=Ninja+Blender",
+        "price": 79.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Color", "specValue": "Black", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 79.99,
+    "shippingAddress": {
+      "id": "addr_011",
+      "recipientName": "William White",
+      "phoneNumber": "+1 (555) 123-7890",
+      "province": "Oregon",
+      "city": "Portland",
+      "district": "Pearl District",
+      "detailAddress": "852 NW Couch Street",
+      "isDefault": false,
+      "createdAt": 1709913600000
+    },
+    "orderStatus": "SHIPPED",
+    "createdAt": 1709913600000,
+    "updatedAt": 1710086400000
+  },
+  {
+    "orderId": "ORD-2024-012",
+    "items": [
+      {
+        "productId": "prod_015",
+        "productName": "Apple iPad (10th Generation)",
+        "productImage": "https://via.placeholder.com/300/C0C0C0/000000?text=iPad",
+        "price": 449.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {"specType": "Storage", "specValue": "64GB", "isSelected": true},
+          {"specType": "Color", "specValue": "Silver", "isSelected": true}
+        ]
+      }
+    ],
+    "totalAmount": 449.99,
+    "shippingAddress": {
+      "id": "addr_012",
+      "recipientName": "Patricia Harris",
+      "phoneNumber": "+1 (555) 234-8901",
+      "province": "Nevada",
+      "city": "Las Vegas",
+      "district": "The Strip",
+      "detailAddress": "963 Las Vegas Boulevard S",
+      "isDefault": false,
+      "createdAt": 1709827200000
+    },
+    "orderStatus": "PROCESSING",
+    "createdAt": 1709827200000,
+    "updatedAt": 1709913600000
+  }
+]
