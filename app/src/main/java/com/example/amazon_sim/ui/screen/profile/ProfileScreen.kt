@@ -1,21 +1,35 @@
 package com.example.amazon_sim.ui.screen.profile
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.getValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun ProfileScreen(
-    viewModel: ProfileViewModel = viewModel()
+    viewModel: ProfileViewModel = viewModel(),
+    onSearchClick: () -> Unit = {},
+    onQuickActionClick: (String) -> Unit = {},
+    onSectionHeaderClick: (String) -> Unit = {},
+    onActionButtonClick: (String) -> Unit = {},
+    onBannerClick: (String) -> Unit = {},
+    onProductClick: (String) -> Unit = {},
+    onHighlightClick: (String) -> Unit = {},
+    onAccountEntryClick: (String) -> Unit = {},
+    onNeedHelpClick: () -> Unit = {}
 ) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "Development in progress...")
-    }
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+
+    ProfileTab(
+        uiState = uiState,
+        onSearchClick = onSearchClick,
+        onQuickActionClick = onQuickActionClick,
+        onSectionHeaderClick = onSectionHeaderClick,
+        onActionButtonClick = onActionButtonClick,
+        onBannerClick = onBannerClick,
+        onProductClick = onProductClick,
+        onHighlightClick = onHighlightClick,
+        onAccountEntryClick = onAccountEntryClick,
+        onNeedHelpClick = onNeedHelpClick
+    )
 }

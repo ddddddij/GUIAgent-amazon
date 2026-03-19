@@ -54,6 +54,11 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
     // ViewModel Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+    // Foundation (HorizontalPager)
+    implementation("androidx.compose.foundation:foundation")
+    // Material Icons Extended (CameraAlt, Mic, etc.)
+    implementation("androidx.compose.material:material-icons-extended")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -1,21 +1,92 @@
 package com.example.amazon_sim.ui.screen.home
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.amazon_sim.ui.screen.home.components.HomeBannerSection
+import com.example.amazon_sim.ui.screen.home.components.HomeDealsSection
+import com.example.amazon_sim.ui.screen.home.components.HomeDevicesGrid
+import com.example.amazon_sim.ui.screen.home.components.HomeFreshFindsSection
+import com.example.amazon_sim.ui.screen.home.components.HomeKeepShoppingSection
+import com.example.amazon_sim.ui.screen.home.components.HomeTopBar
+import com.example.amazon_sim.ui.screen.home.components.HomeTrendingGrid
 
 @Composable
 fun HomeScreen(
-    viewModel: HomeViewModel = viewModel()
+    viewModel: HomeViewModel = viewModel(),
+    onSearchClick: () -> Unit = {},
+    onProductClick: (String) -> Unit = {},
+    onCategoryClick: (String) -> Unit = {}
 ) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+    val deliveryAddress by viewModel.deliveryAddress.collectAsStateWithLifecycle()
+    val quickTags by viewModel.quickTags.collectAsStateWithLifecycle()
+    val banners by viewModel.banners.collectAsStateWithLifecycle()
+    val recommendedDeals by viewModel.recommendedDeals.collectAsStateWithLifecycle()
+    val amazonDevices by viewModel.amazonDevices.collectAsStateWithLifecycle()
+    val trendingCategories by viewModel.trendingCategories.collectAsStateWithLifecycle()
+    val keepShoppingProducts by viewModel.keepShoppingProducts.collectAsStateWithLifecycle()
+    val freshFindsCategories by viewModel.freshFindsCategories.collectAsStateWithLifecycle()
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
     ) {
-        Text(text = "Development in progress...")
+        HomeTopBar(
+            deliveryAddress = deliveryAddress,
+            quickTags = quickTags,
+            onSearchClick = onSearchClick
+        )
+
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        ) {
+            item { HomeBannerSection(banners = banners) }
+            item {
+                HomeDealsSection(
+                    title = "Recommended deals for you",
+                    deals = recommendedDeals,
+                    onProductClick = onProductClick
+                )
+            }
+            item {
+                HomeDevicesGrid(
+                    title = "Save on Amazon Devices",
+                    devices = amazonDevices,
+                    onProductClick = onProductClick
+                )
+            }
+            item {
+                HomeTrendingGrid(
+                    title = "Trending near you",
+                    categories = trendingCategories,
+                    onCategoryClick = onCategoryClick
+                )
+            }
+            item {
+                HomeKeepShoppingSection(
+                    title = "Keep shopping for tablet cases",
+                    products = keepShoppingProducts,
+                    onProductClick = onProductClick
+                )
+            }
+            item {
+                HomeFreshFindsSection(
+                    title = "Fresh finds just landed",
+                    categories = freshFindsCategories,
+                    onCategoryClick = onCategoryClick
+                )
+            }
+        }
     }
 }

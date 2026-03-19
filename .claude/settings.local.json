@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(cat:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(./gradlew :app:assembleDebug)",
+      "mcp__ide__getDiagnostics",
+      "Bash(./gradlew assembleDebug)",
+      "Bash(./gradlew :app:compileDebugKotlin)"
     ],
     "deny": [],
     "ask": []
