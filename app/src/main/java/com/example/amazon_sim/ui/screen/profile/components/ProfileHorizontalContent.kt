@@ -30,6 +30,7 @@ import com.example.amazon_sim.ui.screen.profile.ProfileAccountEntry
 import com.example.amazon_sim.ui.screen.profile.ProfileBannerItem
 import com.example.amazon_sim.ui.screen.profile.ProfileHighlightItem
 import com.example.amazon_sim.ui.screen.profile.ProfileProductItem
+import com.example.amazon_sim.ui.screen.home.components.HomeProductAssetImage
 import com.example.amazon_sim.ui.theme.AmazonBackground
 import com.example.amazon_sim.ui.theme.AmazonCardBackground
 import com.example.amazon_sim.ui.theme.AmazonDealYellow
@@ -122,7 +123,13 @@ fun ProfileHorizontalProducts(
                             .height(132.dp)
                             .clip(RoundedCornerShape(10.dp))
                             .background(product.placeholderColor)
-                    )
+                    ) {
+                        HomeProductAssetImage(
+                            assetPath = product.imageUrl,
+                            contentDescription = product.name,
+                            fallbackColor = product.placeholderColor
+                        )
+                    }
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
                         text = product.name,

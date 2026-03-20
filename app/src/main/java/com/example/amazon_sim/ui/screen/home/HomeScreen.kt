@@ -24,7 +24,8 @@ fun HomeScreen(
     viewModel: HomeViewModel = viewModel(),
     onSearchClick: () -> Unit = {},
     onProductClick: (String) -> Unit = {},
-    onCategoryClick: (String) -> Unit = {}
+    onCategoryClick: (String) -> Unit = {},
+    onAddressClick: () -> Unit = {}
 ) {
     val deliveryAddress by viewModel.deliveryAddress.collectAsStateWithLifecycle()
     val quickTags by viewModel.quickTags.collectAsStateWithLifecycle()
@@ -33,6 +34,7 @@ fun HomeScreen(
     val amazonDevices by viewModel.amazonDevices.collectAsStateWithLifecycle()
     val trendingCategories by viewModel.trendingCategories.collectAsStateWithLifecycle()
     val keepShoppingProducts by viewModel.keepShoppingProducts.collectAsStateWithLifecycle()
+    val keepShoppingTitle by viewModel.keepShoppingTitle.collectAsStateWithLifecycle()
     val freshFindsCategories by viewModel.freshFindsCategories.collectAsStateWithLifecycle()
 
     Column(
@@ -43,7 +45,8 @@ fun HomeScreen(
         HomeTopBar(
             deliveryAddress = deliveryAddress,
             quickTags = quickTags,
-            onSearchClick = onSearchClick
+            onSearchClick = onSearchClick,
+            onAddressClick = onAddressClick
         )
 
         LazyColumn(
@@ -75,7 +78,7 @@ fun HomeScreen(
             }
             item {
                 HomeKeepShoppingSection(
-                    title = "Keep shopping for tablet cases",
+                    title = keepShoppingTitle,
                     products = keepShoppingProducts,
                     onProductClick = onProductClick
                 )

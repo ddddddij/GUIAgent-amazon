@@ -1,191 +1,194 @@
 [
   {
     "productId": "prod_001",
-    "description": "Experience next-level sound with the Apple AirPods Pro (2nd Generation). Featuring active noise cancellation, adaptive transparency, and personalized spatial audio. Up to 6 hours of listening time on a single charge.",
+    "description": "The iPhone 17 Pro Max combines Apple's largest Pro display, advanced multi-lens camera system, flagship performance, and premium titanium design for users who want the top-end iPhone experience.",
     "specifications": [
-      {"specType": "Color", "specValue": "White", "isSelected": true},
-      {"specType": "Connectivity", "specValue": "Bluetooth 5.3", "isSelected": false},
-      {"specType": "Battery Life", "specValue": "6 hours", "isSelected": false}
+      {"specType": "Storage", "specValue": "256GB", "isSelected": true},
+      {"specType": "Storage", "specValue": "512GB", "isSelected": false},
+      {"specType": "Color", "specValue": "Natural Titanium", "isSelected": true}
     ],
-    "stock": 245,
-    "seller": "Amazon.com",
+    "stock": 128,
+    "seller": "Apple.com",
     "viewedAt": 1710777600000
   },
   {
     "productId": "prod_002",
-    "description": "Immerse yourself in stunning 4K UHD picture quality with the Samsung 55-inch Smart TV. Features HDR10+, built-in Alexa, and access to thousands of streaming apps. Perfect for movie nights and gaming.",
+    "description": "MacBook Air 13-inch delivers Apple's lightweight laptop experience with long battery life, a bright display, and fast performance for work, study, and everyday portability.",
     "specifications": [
-      {"specType": "Screen Size", "specValue": "55 inches", "isSelected": true},
-      {"specType": "Resolution", "specValue": "4K UHD", "isSelected": false},
-      {"specType": "Smart Platform", "specValue": "Tizen OS", "isSelected": false}
+      {"specType": "Memory", "specValue": "16GB", "isSelected": true},
+      {"specType": "Storage", "specValue": "512GB SSD", "isSelected": true},
+      {"specType": "Color", "specValue": "Midnight", "isSelected": false}
     ],
-    "stock": 87,
-    "seller": "Best Buy",
+    "stock": 84,
+    "seller": "Apple.com",
     "viewedAt": 1710691200000
   },
   {
     "productId": "prod_003",
-    "description": "The Instant Pot Duo combines 7 kitchen appliances in one: pressure cooker, slow cooker, rice cooker, steamer, sauté pan, yogurt maker, and warmer. 6-quart capacity perfect for families. Cook meals up to 70% faster.",
+    "description": "Marshall Stanmore III brings iconic amp styling and powerful room-filling sound, with Bluetooth connectivity and analog controls that make it feel like a classic music piece.",
     "specifications": [
-      {"specType": "Capacity", "specValue": "6 Quart", "isSelected": true},
-      {"specType": "Color", "specValue": "Stainless Steel", "isSelected": false},
-      {"specType": "Functions", "specValue": "7-in-1", "isSelected": false}
+      {"specType": "Color", "specValue": "Black", "isSelected": true},
+      {"specType": "Connectivity", "specValue": "Bluetooth 5.2", "isSelected": true},
+      {"specType": "Input", "specValue": "RCA / 3.5 mm", "isSelected": false}
     ],
-    "stock": 312,
-    "seller": "Amazon.com",
+    "stock": 74,
+    "seller": "Marshall Official Store",
     "viewedAt": 1710604800000
   },
   {
     "productId": "prod_004",
-    "description": "F. Scott Fitzgerald's timeless masterpiece about the American Dream. Set in the Jazz Age of the 1920s, follow Jay Gatsby's pursuit of love and wealth. A must-read classic of American literature.",
+    "description": "Sony WH-1000XM5 headphones are known worldwide for premium noise cancellation, refined sound, all-day comfort, and reliable battery life for commuting and travel.",
     "specifications": [
-      {"specType": "Format", "specValue": "Paperback", "isSelected": true},
-      {"specType": "Format", "specValue": "Hardcover", "isSelected": false},
-      {"specType": "Format", "specValue": "Kindle", "isSelected": false},
-      {"specType": "Pages", "specValue": "180", "isSelected": false}
+      {"specType": "Color", "specValue": "Black", "isSelected": true},
+      {"specType": "Battery Life", "specValue": "30 hours", "isSelected": true},
+      {"specType": "Connectivity", "specValue": "Multipoint Bluetooth", "isSelected": false}
     ],
-    "stock": 456,
-    "seller": "Amazon.com",
+    "stock": 143,
+    "seller": "Best Buy",
     "viewedAt": 1710518400000
   },
   {
     "productId": "prod_005",
-    "description": "Nike Air Max 270 features the brand's biggest heel Air unit yet for ultimate cushioning. Breathable mesh upper with synthetic overlays. Perfect for running, training, or casual wear.",
+    "description": "Nintendo Switch OLED offers the hybrid console experience with a vibrant screen, flexible handheld and docked play, and access to Nintendo's best-known games.",
     "specifications": [
-      {"specType": "Size", "specValue": "10", "isSelected": true},
-      {"specType": "Size", "specValue": "10.5", "isSelected": false},
-      {"specType": "Size", "specValue": "11", "isSelected": false},
-      {"specType": "Color", "specValue": "Black/White", "isSelected": true},
-      {"specType": "Color", "specValue": "Navy/Red", "isSelected": false}
+      {"specType": "Display", "specValue": "7-inch OLED", "isSelected": true},
+      {"specType": "Storage", "specValue": "64GB", "isSelected": true},
+      {"specType": "Color", "specValue": "White", "isSelected": false}
     ],
-    "stock": 178,
-    "seller": "Nike.com",
+    "stock": 167,
+    "seller": "Nintendo",
     "viewedAt": 1710432000000
   },
   {
     "productId": "prod_006",
-    "description": "Build the iconic Millennium Falcon from Star Wars with this detailed LEGO set. Features 1,351 pieces, rotating gun turrets, and minifigures of Han Solo, Chewbacca, and more. Recommended for ages 9+.",
+    "description": "Samsung Galaxy Watch7 tracks workouts, sleep, and daily wellness, while offering a modern smartwatch experience that pairs naturally with Android devices.",
     "specifications": [
-      {"specType": "Pieces", "specValue": "1351", "isSelected": false},
-      {"specType": "Age Range", "specValue": "9-14 years", "isSelected": false},
-      {"specType": "Theme", "specValue": "Star Wars", "isSelected": false}
+      {"specType": "Case Size", "specValue": "44mm", "isSelected": true},
+      {"specType": "Connectivity", "specValue": "Bluetooth", "isSelected": true},
+      {"specType": "Color", "specValue": "Graphite", "isSelected": false}
     ],
-    "stock": 134,
-    "seller": "Target",
+    "stock": 119,
+    "seller": "Samsung",
     "viewedAt": 1710345600000
   },
   {
     "productId": "prod_007",
-    "description": "Brew your perfect cup with the Keurig K-Elite. Features strong brew setting, iced coffee capability, and large 75oz water reservoir. Compatible with all K-Cup pods. Programmable auto-on feature.",
+    "description": "Dyson V15 Detect is a premium cordless vacuum with laser dust illumination, strong suction, and adaptable cleaning tools for a high-end home cleaning setup.",
     "specifications": [
-      {"specType": "Color", "specValue": "Brushed Silver", "isSelected": true},
-      {"specType": "Color", "specValue": "Brushed Slate", "isSelected": false},
-      {"specType": "Capacity", "specValue": "75 oz", "isSelected": false}
-    ],
-    "stock": 203,
-    "seller": "Amazon.com",
-    "viewedAt": 1710259200000
-  },
-  {
-    "productId": "prod_008",
-    "description": "Sony's industry-leading noise cancellation with the WH-1000XM5. Features 30-hour battery life, multipoint connection, and exceptional sound quality. Perfect for travel, work, or relaxation.",
-    "specifications": [
-      {"specType": "Color", "specValue": "Black", "isSelected": true},
-      {"specType": "Color", "specValue": "Silver", "isSelected": false},
-      {"specType": "Battery Life", "specValue": "30 hours", "isSelected": false}
-    ],
-    "stock": 156,
-    "seller": "Best Buy",
-    "viewedAt": 1710172800000
-  },
-  {
-    "productId": "prod_009",
-    "description": "Track your fitness goals with the Fitbit Charge 6. Features built-in GPS, heart rate monitoring, sleep tracking, and 7+ day battery life. Compatible with iOS and Android. Water-resistant up to 50 meters.",
-    "specifications": [
-      {"specType": "Color", "specValue": "Black", "isSelected": true},
-      {"specType": "Color", "specValue": "Coral", "isSelected": false},
-      {"specType": "Size", "specValue": "Small/Large", "isSelected": false}
-    ],
-    "stock": 267,
-    "seller": "Amazon.com",
-    "viewedAt": 1710086400000
-  },
-  {
-    "productId": "prod_010",
-    "description": "The North Face Borealis Backpack offers 28 liters of storage with a padded laptop sleeve, FlexVent suspension system, and multiple organizational pockets. Durable and comfortable for daily use.",
-    "specifications": [
-      {"specType": "Color", "specValue": "Black", "isSelected": true},
-      {"specType": "Color", "specValue": "Navy", "isSelected": false},
-      {"specType": "Color", "specValue": "Gray", "isSelected": false},
-      {"specType": "Capacity", "specValue": "28L", "isSelected": false}
-    ],
-    "stock": 189,
-    "seller": "REI",
-    "viewedAt": 1710000000000
-  },
-  {
-    "productId": "prod_011",
-    "description": "Dyson's most powerful cordless vacuum with laser detection technology. Reveals microscopic dust, features intelligent suction adjustment, and up to 60 minutes of run time. Complete with 5 cleaning tools.",
-    "specifications": [
-      {"specType": "Color", "specValue": "Nickel/Yellow", "isSelected": true},
-      {"specType": "Battery Life", "specValue": "60 minutes", "isSelected": false},
+      {"specType": "Runtime", "specValue": "60 minutes", "isSelected": true},
+      {"specType": "Color", "specValue": "Yellow/Nickel", "isSelected": true},
       {"specType": "Bin Capacity", "specValue": "0.2 gallons", "isSelected": false}
     ],
     "stock": 92,
     "seller": "Dyson.com",
+    "viewedAt": 1710259200000
+  },
+  {
+    "productId": "prod_008",
+    "description": "Nespresso Vertuo Pop+ makes familiar barista-style coffee at home with capsule convenience, compact styling, and brand recognition that resonates globally.",
+    "specifications": [
+      {"specType": "Drink Sizes", "specValue": "5", "isSelected": true},
+      {"specType": "Color", "specValue": "Coconut White", "isSelected": true},
+      {"specType": "Water Tank", "specValue": "25 oz", "isSelected": false}
+    ],
+    "stock": 151,
+    "seller": "Nespresso",
+    "viewedAt": 1710172800000
+  },
+  {
+    "productId": "prod_009",
+    "description": "KitchenAid Artisan Stand Mixer remains a benchmark kitchen appliance with strong mixing power, iconic styling, and wide accessory support for home baking.",
+    "specifications": [
+      {"specType": "Bowl Size", "specValue": "5 QT", "isSelected": true},
+      {"specType": "Color", "specValue": "Empire Red", "isSelected": true},
+      {"specType": "Speeds", "specValue": "10", "isSelected": false}
+    ],
+    "stock": 104,
+    "seller": "KitchenAid",
+    "viewedAt": 1710086400000
+  },
+  {
+    "productId": "prod_010",
+    "description": "Vitamix Explorian is a well-known high-performance blender for smoothies, soups, sauces, and frozen drinks, favored by users who want commercial-style blending power.",
+    "specifications": [
+      {"specType": "Container", "specValue": "48 oz", "isSelected": true},
+      {"specType": "Power", "specValue": "2 HP", "isSelected": false},
+      {"specType": "Color", "specValue": "Black", "isSelected": true}
+    ],
+    "stock": 133,
+    "seller": "Vitamix",
+    "viewedAt": 1710000000000
+  },
+  {
+    "productId": "prod_011",
+    "description": "Nike Air Zoom Pegasus 41 is a trusted everyday running shoe with balanced cushioning, responsive ride, and one of the most recognized running lines in the world.",
+    "specifications": [
+      {"specType": "Size", "specValue": "10", "isSelected": true},
+      {"specType": "Color", "specValue": "White/Black", "isSelected": true},
+      {"specType": "Use", "specValue": "Road running", "isSelected": false}
+    ],
+    "stock": 141,
+    "seller": "Nike.com",
     "viewedAt": 1709913600000
   },
   {
     "productId": "prod_012",
-    "description": "Read comfortably with the Kindle Paperwhite's 6.8-inch glare-free display. Features adjustable warm light, 8GB storage for thousands of books, and up to 10 weeks of battery life. Waterproof design (IPX8).",
+    "description": "Adidas Tiro League Soccer Ball offers durable construction, a familiar adidas look, and dependable feel for training and match play.",
     "specifications": [
-      {"specType": "Storage", "specValue": "8GB", "isSelected": true},
-      {"specType": "Storage", "specValue": "16GB", "isSelected": false},
-      {"specType": "Connectivity", "specValue": "Wi-Fi", "isSelected": true},
-      {"specType": "Connectivity", "specValue": "Wi-Fi + Cellular", "isSelected": false}
+      {"specType": "Size", "specValue": "5", "isSelected": true},
+      {"specType": "Surface", "specValue": "Training and match", "isSelected": false},
+      {"specType": "Color", "specValue": "White/Black", "isSelected": true}
     ],
-    "stock": 421,
-    "seller": "Amazon.com",
+    "stock": 186,
+    "seller": "adidas",
     "viewedAt": 1709827200000
   },
   {
     "productId": "prod_013",
-    "description": "The original Levi's 501 jeans with a straight leg and button fly. Made from 100% cotton denim for durability and comfort. A timeless classic that never goes out of style.",
+    "description": "Wilson Evolution is one of the most familiar indoor basketballs, known for soft feel, reliable grip, and wide use across schools and gyms.",
     "specifications": [
-      {"specType": "Size", "specValue": "32x32", "isSelected": true},
-      {"specType": "Size", "specValue": "34x32", "isSelected": false},
-      {"specType": "Size", "specValue": "36x34", "isSelected": false},
-      {"specType": "Color", "specValue": "Dark Wash", "isSelected": true},
-      {"specType": "Color", "specValue": "Light Wash", "isSelected": false}
+      {"specType": "Size", "specValue": "Official 29.5", "isSelected": true},
+      {"specType": "Use", "specValue": "Indoor", "isSelected": true},
+      {"specType": "Cover", "specValue": "Composite", "isSelected": false}
     ],
-    "stock": 298,
-    "seller": "Levi.com",
+    "stock": 117,
+    "seller": "Wilson",
     "viewedAt": 1709740800000
   },
   {
     "productId": "prod_014",
-    "description": "Ninja Professional Blender with 1000-watt motor crushes ice and blends smoothies in seconds. 72oz pitcher perfect for family-sized batches. Includes recipe guide with smoothie and frozen drink ideas.",
+    "description": "Starbucks Pike Place whole bean coffee is a globally familiar medium roast with smooth flavor and dependable everyday drinkability.",
     "specifications": [
-      {"specType": "Capacity", "specValue": "72 oz", "isSelected": false},
-      {"specType": "Power", "specValue": "1000W", "isSelected": false},
-      {"specType": "Color", "specValue": "Black", "isSelected": true}
+      {"specType": "Roast", "specValue": "Medium", "isSelected": true},
+      {"specType": "Size", "specValue": "18 oz", "isSelected": true},
+      {"specType": "Format", "specValue": "Whole Bean", "isSelected": false}
     ],
-    "stock": 234,
-    "seller": "Walmart",
+    "stock": 215,
+    "seller": "Amazon Fresh",
     "viewedAt": 1709654400000
   },
   {
     "productId": "prod_015",
-    "description": "The all-new iPad features a stunning 10.9-inch Liquid Retina display, powerful A14 Bionic chip, and all-day battery life. Perfect for work, creativity, and entertainment. Compatible with Apple Pencil (1st gen).",
+    "description": "Coca-Cola Zero Sugar 24-Pack delivers the globally recognized Coke taste with zero sugar, convenient can packaging, and easy fridge stocking.",
     "specifications": [
-      {"specType": "Storage", "specValue": "64GB", "isSelected": true},
-      {"specType": "Storage", "specValue": "256GB", "isSelected": false},
-      {"specType": "Color", "specValue": "Silver", "isSelected": true},
-      {"specType": "Color", "specValue": "Blue", "isSelected": false},
-      {"specType": "Color", "specValue": "Pink", "isSelected": false}
+      {"specType": "Pack Size", "specValue": "24 cans", "isSelected": true},
+      {"specType": "Flavor", "specValue": "Zero Sugar", "isSelected": true},
+      {"specType": "Can Size", "specValue": "12 oz", "isSelected": false}
     ],
-    "stock": 167,
-    "seller": "Apple.com",
+    "stock": 289,
+    "seller": "Coca-Cola Store",
     "viewedAt": 1709568000000
+  },
+  {
+    "productId": "prod_016",
+    "description": "OREO Original Family Size Cookies are one of the best-known packaged snacks worldwide, with the classic chocolate cookie and creme filling combination.",
+    "specifications": [
+      {"specType": "Pack Size", "specValue": "Family Size", "isSelected": true},
+      {"specType": "Flavor", "specValue": "Original", "isSelected": true},
+      {"specType": "Format", "specValue": "Resealable pack", "isSelected": false}
+    ],
+    "stock": 342,
+    "seller": "OREO Store",
+    "viewedAt": 1709481600000
   }
 ]

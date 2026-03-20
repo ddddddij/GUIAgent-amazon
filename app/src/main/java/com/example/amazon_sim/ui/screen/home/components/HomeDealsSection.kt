@@ -72,10 +72,14 @@ private fun DealCard(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(140.dp)
-                    .background(deal.placeholderColor),
+                    .height(140.dp),
                 contentAlignment = Alignment.BottomStart
             ) {
+                HomeProductAssetImage(
+                    assetPath = deal.imageUrl,
+                    contentDescription = deal.name,
+                    fallbackColor = deal.placeholderColor
+                )
                 Box(
                     modifier = Modifier
                         .background(AmazonDealRed, RoundedCornerShape(topEnd = 4.dp))
@@ -104,6 +108,15 @@ private fun DealCard(
                 fontSize = 13.sp,
                 fontWeight = FontWeight.Medium,
                 maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.padding(horizontal = 8.dp)
+            )
+            Spacer(modifier = Modifier.height(2.dp))
+            Text(
+                text = deal.store,
+                color = Color.Gray,
+                fontSize = 12.sp,
+                maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.padding(horizontal = 8.dp)
             )

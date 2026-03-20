@@ -18,9 +18,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.amazon_sim.ui.screen.home.DealProduct
+import com.example.amazon_sim.ui.theme.AmazonCardBackground
 import com.example.amazon_sim.ui.theme.AmazonDealRed
 import com.example.amazon_sim.ui.theme.AmazonLinkBlue
 import com.example.amazon_sim.ui.theme.AmazonTextBlack
@@ -83,17 +85,22 @@ private fun DeviceGridCard(
     Column(
         modifier = modifier
             .clip(RoundedCornerShape(8.dp))
+            .background(AmazonCardBackground)
             .clickable { onClick() }
-            .padding(bottom = 8.dp)
+            .padding(8.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(150.dp)
-                .clip(RoundedCornerShape(8.dp))
-                .background(device.placeholderColor),
+                .clip(RoundedCornerShape(8.dp)),
             contentAlignment = Alignment.BottomStart
         ) {
+            HomeProductAssetImage(
+                assetPath = device.imageUrl,
+                contentDescription = device.name,
+                fallbackColor = device.placeholderColor
+            )
             Box(
                 modifier = Modifier
                     .background(AmazonDealRed, RoundedCornerShape(topEnd = 4.dp))
@@ -114,5 +121,30 @@ private fun DeviceGridCard(
             fontSize = 12.sp,
             fontWeight = FontWeight.Bold
         )
+        Spacer(modifier = Modifier.height(4.dp))
+        Text(
+            text = device.name,
+            color = AmazonTextBlack,
+            fontSize = 13.sp,
+            fontWeight = FontWeight.Medium,
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis
+        )
+        Spacer(modifier = Modifier.height(2.dp))
+        Text(
+            text = device.store,
+            color = Color.Gray,
+            fontSize = 12.sp,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis
+        )
+        Spacer(modifier = Modifier.height(2.dp))
+        Text(
+            text = "$${String.format("%.2f", device.price)}",
+            color = AmazonTextBlack,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.height(4.dp))
     }
 }

@@ -62,7 +62,13 @@ fun HomeTrendingGrid(
                                     .fillMaxWidth()
                                     .height(110.dp)
                                     .background(category.placeholderColor, RoundedCornerShape(8.dp))
-                            )
+                            ) {
+                                HomeProductAssetImage(
+                                    assetPath = category.imageUrl,
+                                    contentDescription = category.name,
+                                    fallbackColor = category.placeholderColor
+                                )
+                            }
                             Spacer(modifier = Modifier.height(8.dp))
                             Text(
                                 text = category.name,

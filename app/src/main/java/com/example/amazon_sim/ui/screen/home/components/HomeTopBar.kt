@@ -39,7 +39,8 @@ import com.example.amazon_sim.ui.theme.AmazonTextDark
 fun HomeTopBar(
     deliveryAddress: String,
     quickTags: List<QuickTag>,
-    onSearchClick: () -> Unit = {}
+    onSearchClick: () -> Unit = {},
+    onAddressClick: () -> Unit = {}
 ) {
     Column(
         modifier = Modifier
@@ -93,6 +94,7 @@ fun HomeTopBar(
                     modifier = Modifier
                         .border(1.dp, AmazonSearchBarBorder, RoundedCornerShape(20.dp))
                         .clip(RoundedCornerShape(20.dp))
+                        .clickable { onAddressClick() }
                         .padding(horizontal = 10.dp, vertical = 6.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {

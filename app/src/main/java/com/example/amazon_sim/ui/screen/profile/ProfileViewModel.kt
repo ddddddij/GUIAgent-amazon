@@ -1,7 +1,10 @@
 package com.example.amazon_sim.ui.screen.profile
 
+import android.app.Application
 import androidx.compose.ui.graphics.Color
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
+import com.example.amazon_sim.data.repository.ProductRepositoryImpl
+import com.example.amazon_sim.domain.model.HomeProductSectionSelector
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -41,6 +44,7 @@ data class ProfileProductItem(
     val name: String,
     val priceLabel: String,
     val detailLabel: String,
+    val imageUrl: String,
     val placeholderColor: Color
 )
 
@@ -86,7 +90,9 @@ data class ProfileUiState(
     val needHelpState: ProfileNeedHelpState
 )
 
-class ProfileViewModel : ViewModel() {
+class ProfileViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val productRepository = ProductRepositoryImpl(application)
 
     private val _uiState = MutableStateFlow(
         ProfileUiState(
@@ -134,29 +140,7 @@ class ProfileViewModel : ViewModel() {
             keepShoppingSection = ProfileSectionState(
                 title = "Keep shopping for"
             ),
-            keepShoppingItems = listOf(
-                ProfileProductItem(
-                    id = "keep_1",
-                    name = "Tablet protective case",
-                    priceLabel = "$24.99",
-                    detailLabel = "New arrivals",
-                    placeholderColor = Color(0xFFC7D2FE)
-                ),
-                ProfileProductItem(
-                    id = "keep_2",
-                    name = "Portable laptop stand",
-                    priceLabel = "$19.99",
-                    detailLabel = "Inspired by recent views",
-                    placeholderColor = Color(0xFFBFDBFE)
-                ),
-                ProfileProductItem(
-                    id = "keep_3",
-                    name = "Bluetooth keyboard",
-                    priceLabel = "$34.99",
-                    detailLabel = "Popular picks",
-                    placeholderColor = Color(0xFFA7F3D0)
-                )
-            ),
+            keepShoppingItems = emptyList(),
             listsSection = ProfileActionSectionState(
                 title = "Lists and Registries",
                 subtitle = "Create a list for shopping ideas and future plans",
@@ -192,7 +176,7 @@ class ProfileViewModel : ViewModel() {
             accountEntries = listOf(
                 ProfileAccountEntry("payments", "Your Payments"),
                 ProfileAccountEntry("orders_entry", "Your orders"),
-                ProfileAccountEntry("memberships", "Memberships & subscriptions")
+                ProfileAccountEntry("addresses", "Your Addresses")
             ),
             giftCardState = ProfileGiftCardState(
                 title = "Gift Card Balance",
@@ -206,4 +190,40 @@ class ProfileViewModel : ViewModel() {
         )
     )
     val uiState: StateFlow<ProfileUiState> = _uiState.asStateFlow()
+
+    init {
+        loadKeepShoppingItems()
+    }
+
+    private fun loadKeepShoppingItems() {
+        val products = productRepository.getProducts()
+        if (products.isEmpty()) {
+            return
+        }
+
+        val keepShoppingItems = HomeProductSectionSelector
+            .select(products)
+            .keepShopping
+            .mapIndexed { index, product ->
+                ProfileProductItem(
+                    id = product.id,
+                    name = product.name,
+                    priceLabel = "$${String.format("%.2f", product.price)}",
+                    detailLabel = product.store,
+                    imageUrl = product.imageUrl,
+                    placeholderColor = PLACEHOLDER_COLORS[index % PLACEHOLDER_COLORS.size]
+                )
+            }
+
+        _uiState.value = _uiState.value.copy(keepShoppingItems = keepShoppingItems)
+    }
+
+    private companion object {
+        val PLACEHOLDER_COLORS = listOf(
+            Color(0xFFC7D2FE),
+            Color(0xFFBFDBFE),
+            Color(0xFFA7F3D0),
+            Color(0xFFFDE68A)
+        )
+    }
 }

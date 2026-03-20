@@ -21,9 +21,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.amazon_sim.ui.screen.home.DealProduct
+import com.example.amazon_sim.ui.theme.AmazonCardBackground
 import com.example.amazon_sim.ui.theme.AmazonDealRed
 import com.example.amazon_sim.ui.theme.AmazonTextBlack
 
@@ -49,17 +51,31 @@ fun HomeKeepShoppingSection(
                 Card(
                     modifier = Modifier.width(170.dp).clickable { onProductClick(product.id) },
                     shape = RoundedCornerShape(8.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color.White)
+                    colors = CardDefaults.cardColors(containerColor = AmazonCardBackground)
                 ) {
                     Column(modifier = Modifier.padding(8.dp)) {
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(120.dp)
-                                .background(product.placeholderColor, RoundedCornerShape(8.dp))
-                        )
+                                .background(Color.Transparent, RoundedCornerShape(8.dp))
+                        ) {
+                            HomeProductAssetImage(
+                                assetPath = product.imageUrl,
+                                contentDescription = product.name,
+                                fallbackColor = product.placeholderColor
+                            )
+                        }
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(text = product.name, fontSize = 13.sp, fontWeight = FontWeight.Medium, color = AmazonTextBlack, maxLines = 2)
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(
+                            text = product.store,
+                            fontSize = 12.sp,
+                            color = Color.Gray,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
                         Spacer(modifier = Modifier.height(4.dp))
                         if (product.isLimitedTimeDeal) {
                             Text(text = "Limited time deal", color = AmazonDealRed, fontSize = 12.sp, fontWeight = FontWeight.Bold)
