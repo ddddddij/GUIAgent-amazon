@@ -26,14 +26,14 @@ import androidx.compose.ui.unit.sp
 import com.example.amazon_sim.ui.theme.AmazonSearchBarBorder
 
 @Composable
-fun CartSearchBar(modifier: Modifier = Modifier) {
+fun CartSearchBar(onSearchClick: () -> Unit = {}, modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .fillMaxWidth()
             .height(44.dp)
             .border(1.dp, AmazonSearchBarBorder, RoundedCornerShape(8.dp))
             .clip(RoundedCornerShape(8.dp))
-            .clickable { }
+            .clickable { onSearchClick() }
             .padding(horizontal = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

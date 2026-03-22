@@ -32,7 +32,16 @@ class ProductRepositoryImpl(private val context: Context) : ProductRepository {
         category = optString("category"),
         rating = optDouble("rating", 0.0),
         reviewCount = optInt("reviewCount", 0),
-        timestamp = optLong("timestamp", 0L)
+        timestamp = optLong("timestamp", 0L),
+        brandName = optString("brandName", ""),
+        productType = optString("productType", ""),
+        isBestSeller = optBoolean("isBestSeller", false),
+        specTags = optJSONArray("specTags")?.let { arr ->
+            (0 until arr.length()).map { arr.optString(it) }
+        } ?: emptyList(),
+        colorSwatches = optJSONArray("colorSwatches")?.let { arr ->
+            (0 until arr.length()).mapNotNull { arr.optString(it).removePrefix("0x").toLongOrNull(16) }
+        } ?: emptyList()
     )
 
     private companion object {

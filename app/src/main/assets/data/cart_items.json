@@ -1,164 +1,146 @@
 [
   {
-    "id": "cart_001",
-    "productId": "prod_001",
-    "productName": "Apple AirPods Pro (2nd Generation)",
-    "productImage": "https://via.placeholder.com/300/FFFFFF/000000?text=AirPods+Pro",
-    "price": 249.99,
+    "id": "1",
+    "productName": "Apple iPhone 17 Pro Max, US Version, 256GB, eSIM, Cosmic Orange - Unlocked",
+    "price": 1369.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Color", "specValue": "White", "isSelected": true}
-    ],
-    "addedAt": 1710777600000,
-    "isSelected": true
+    "isSelected": false,
+    "stockStatus": "Only 7 left. Order now.",
+    "stockStatusType": "LOW_STOCK",
+    "placeholderColor": "0xFFFF8A65",
+    "imageAssetPath": "image/iPhone.jpg",
+    "showViewInRoom": false
   },
   {
-    "id": "cart_002",
-    "productId": "prod_003",
-    "productName": "Instant Pot Duo 7-in-1 Electric Pressure Cooker",
-    "productImage": "https://via.placeholder.com/300/FF0000/FFFFFF?text=Instant+Pot",
-    "price": 89.99,
+    "id": "2",
+    "productName": "Marshall Acton III Bluetooth Home Speaker - Loud Stereo Sound with Bass",
+    "price": 199.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Capacity", "specValue": "6 Quart", "isSelected": true},
-      {"specType": "Color", "specValue": "Stainless Steel", "isSelected": false}
-    ],
-    "addedAt": 1710691200000,
-    "isSelected": true
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFF2E3A4F",
+    "imageAssetPath": "image/Marshall.jpg",
+    "showViewInRoom": true
   },
   {
-    "id": "cart_003",
-    "productId": "prod_005",
-    "productName": "Nike Air Max 270 Running Shoes",
-    "productImage": "https://via.placeholder.com/300/000000/FFFFFF?text=Nike+Shoes",
-    "price": 149.99,
-    "quantity": 2,
-    "selectedSpec": [
-      {"specType": "Size", "specValue": "10", "isSelected": true},
-      {"specType": "Color", "specValue": "Black/White", "isSelected": true}
-    ],
-    "addedAt": 1710604800000,
-    "isSelected": false
-  },
-  {
-    "id": "cart_004",
-    "productId": "prod_007",
-    "productName": "Keurig K-Elite Coffee Maker",
-    "productImage": "https://via.placeholder.com/300/8B4513/FFFFFF?text=Keurig",
-    "price": 139.99,
+    "id": "3",
+    "productName": "Apple MacBook Air 13-inch with M4 Chip, Space Gray, 16GB/256GB",
+    "price": 1099.00,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Color", "specValue": "Brushed Silver", "isSelected": true}
-    ],
-    "addedAt": 1710518400000,
-    "isSelected": true
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFF78909C",
+    "imageAssetPath": "image/MacBook.jpg",
+    "showViewInRoom": false
   },
   {
-    "id": "cart_005",
-    "productId": "prod_008",
-    "productName": "Sony WH-1000XM5 Wireless Headphones",
-    "productImage": "https://via.placeholder.com/300/000000/FFFFFF?text=Sony+Headphones",
+    "id": "4",
+    "productName": "Sony WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones, Black",
     "price": 399.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Color", "specValue": "Black", "isSelected": true},
-      {"specType": "Battery Life", "specValue": "30 hours", "isSelected": false}
-    ],
-    "addedAt": 1710432000000,
-    "isSelected": true
+    "isSelected": true,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFF212121",
+    "imageAssetPath": "image/Sony.jpg",
+    "showViewInRoom": false
   },
   {
-    "id": "cart_006",
-    "productId": "prod_010",
-    "productName": "The North Face Backpack",
-    "productImage": "https://via.placeholder.com/300/228B22/FFFFFF?text=Backpack",
-    "price": 89.99,
+    "id": "5",
+    "productName": "Nintendo Switch OLED Model - White",
+    "price": 349.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Color", "specValue": "Black", "isSelected": true}
-    ],
-    "addedAt": 1710345600000,
-    "isSelected": false
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFFE0E0E0",
+    "imageAssetPath": "image/Nintendo.jpg",
+    "showViewInRoom": false
   },
   {
-    "id": "cart_007",
-    "productId": "prod_012",
-    "productName": "Kindle Paperwhite E-reader",
-    "productImage": "https://via.placeholder.com/300/000000/FFFFFF?text=Kindle",
-    "price": 139.99,
+    "id": "6",
+    "productName": "Samsung Galaxy Watch7 with Galaxy AI, 44mm, Bluetooth, Green",
+    "price": 299.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Storage", "specValue": "8GB", "isSelected": true},
-      {"specType": "Connectivity", "specValue": "Wi-Fi", "isSelected": true}
-    ],
-    "addedAt": 1710259200000,
-    "isSelected": true
+    "isSelected": true,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFF2E7D32",
+    "imageAssetPath": "image/Samsung.jpg",
+    "showViewInRoom": false
   },
   {
-    "id": "cart_008",
-    "productId": "prod_013",
-    "productName": "Levi's 501 Original Fit Jeans",
-    "productImage": "https://via.placeholder.com/300/4169E1/FFFFFF?text=Levis+Jeans",
-    "price": 69.99,
-    "quantity": 3,
-    "selectedSpec": [
-      {"specType": "Size", "specValue": "32x32", "isSelected": true},
-      {"specType": "Color", "specValue": "Dark Wash", "isSelected": true}
-    ],
-    "addedAt": 1710172800000,
-    "isSelected": false
-  },
-  {
-    "id": "cart_009",
-    "productId": "prod_014",
-    "productName": "Ninja Professional Blender",
-    "productImage": "https://via.placeholder.com/300/FF4500/FFFFFF?text=Ninja+Blender",
-    "price": 79.99,
+    "id": "7",
+    "productName": "Dyson V15 Detect Absolute Cordless Vacuum Cleaner",
+    "price": 649.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Color", "specValue": "Black", "isSelected": true}
-    ],
-    "addedAt": 1710086400000,
-    "isSelected": true
+    "isSelected": false,
+    "stockStatus": "Only 5 left. Order now.",
+    "stockStatusType": "LOW_STOCK",
+    "placeholderColor": "0xFFFF6F00",
+    "imageAssetPath": "image/Dyson.jpg",
+    "showViewInRoom": true
   },
   {
-    "id": "cart_010",
-    "productId": "prod_004",
-    "productName": "The Great Gatsby by F. Scott Fitzgerald",
-    "productImage": "https://via.placeholder.com/300/FFD700/000000?text=Great+Gatsby",
-    "price": 12.99,
-    "quantity": 2,
-    "selectedSpec": [
-      {"specType": "Format", "specValue": "Paperback", "isSelected": true}
-    ],
-    "addedAt": 1710000000000,
-    "isSelected": true
-  },
-  {
-    "id": "cart_011",
-    "productId": "prod_009",
-    "productName": "Fitbit Charge 6 Fitness Tracker",
-    "productImage": "https://via.placeholder.com/300/00BFFF/FFFFFF?text=Fitbit",
-    "price": 159.99,
+    "id": "8",
+    "productName": "Nespresso Vertuo Pop+ Deluxe Coffee and Espresso Machine, Black",
+    "price": 129.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Color", "specValue": "Coral", "isSelected": true}
-    ],
-    "addedAt": 1709913600000,
-    "isSelected": false
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFF5D4037",
+    "imageAssetPath": "image/Nespresso.jpg",
+    "showViewInRoom": false
   },
   {
-    "id": "cart_012",
-    "productId": "prod_015",
-    "productName": "Apple iPad (10th Generation)",
-    "productImage": "https://via.placeholder.com/300/C0C0C0/000000?text=iPad",
+    "id": "9",
+    "productName": "KitchenAid Artisan Series 5-Quart Tilt-Head Stand Mixer, Empire Red",
     "price": 449.99,
     "quantity": 1,
-    "selectedSpec": [
-      {"specType": "Storage", "specValue": "256GB", "isSelected": true},
-      {"specType": "Color", "specValue": "Blue", "isSelected": true}
-    ],
-    "addedAt": 1709827200000,
-    "isSelected": true
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFFD32F2F",
+    "imageAssetPath": "image/KitchenAid.jpg",
+    "showViewInRoom": true
+  },
+  {
+    "id": "10",
+    "productName": "Nike Air Zoom Pegasus 41 Men's Road Running Shoes, Blue/White",
+    "price": 139.99,
+    "quantity": 1,
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFF1565C0",
+    "imageAssetPath": "image/Nike.jpg",
+    "showViewInRoom": false
+  },
+  {
+    "id": "11",
+    "productName": "Vitamix Explorian Blender, Professional-Grade, 64 oz Container, Black",
+    "price": 349.95,
+    "quantity": 1,
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFF212121",
+    "imageAssetPath": "image/Vitamix.jpg",
+    "showViewInRoom": false
+  },
+  {
+    "id": "12",
+    "productName": "Coca-Cola Zero Sugar, 12 fl oz Cans, 24-Pack",
+    "price": 16.99,
+    "quantity": 2,
+    "isSelected": false,
+    "stockStatus": "In Stock",
+    "stockStatusType": "IN_STOCK",
+    "placeholderColor": "0xFFB71C1C",
+    "imageAssetPath": "image/Coca-Cola.jpg",
+    "showViewInRoom": false
   }
 ]

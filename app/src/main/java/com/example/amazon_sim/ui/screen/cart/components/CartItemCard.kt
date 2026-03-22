@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.amazon_sim.ui.screen.cart.CartItemUi
 import com.example.amazon_sim.ui.screen.cart.StockStatusType
+import com.example.amazon_sim.ui.screen.home.components.HomeProductAssetImage
 import com.example.amazon_sim.ui.theme.AmazonCartLinkBlue
 import com.example.amazon_sim.ui.theme.AmazonDealRed
 import com.example.amazon_sim.ui.theme.AmazonInStockGreen
@@ -68,15 +69,27 @@ fun CartItemCard(
                     uncheckedColor = Color.Gray
                 )
             )
-            // Product image placeholder
+            // Product image
             Box(
                 modifier = Modifier
                     .size(100.dp)
-                    .clip(RoundedCornerShape(4.dp))
-                    .background(Color(item.placeholderColor)),
+                    .clip(RoundedCornerShape(4.dp)),
                 contentAlignment = Alignment.Center
             ) {
-                Text("IMG", color = Color.White, fontSize = 12.sp)
+                if (item.imageAssetPath.isNotBlank()) {
+                    HomeProductAssetImage(
+                        assetPath = item.imageAssetPath,
+                        contentDescription = item.productName,
+                        fallbackColor = Color(item.placeholderColor)
+                    )
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .background(Color(item.placeholderColor)),
+                        contentAlignment = Alignment.Center
+                    ) {}
+                }
             }
             Spacer(modifier = Modifier.width(12.dp))
             // Product info

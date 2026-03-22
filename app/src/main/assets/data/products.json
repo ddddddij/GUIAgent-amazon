@@ -3,23 +3,50 @@
     "id": "prod_001",
     "name": "Apple iPhone 17 Pro Max",
     "store": "Apple.com",
-    "price": 1399.00,
+    "price": 1399.0,
     "imageUrl": "image/iPhone.jpg",
     "category": "Electronics",
     "rating": 4.9,
     "reviewCount": 18234,
-    "timestamp": 1710777600000
+    "timestamp": 1710777600000,
+    "productType": "smartphone",
+    "isBestSeller": true,
+    "specTags": [
+      "Unlocked",
+      "256GB",
+      "eSIM"
+    ],
+    "colorSwatches": [
+      "0xFFFF8A65",
+      "0xFF1565C0",
+      "0xFFBDBDBD"
+    ],
+    "brandName": "Apple"
   },
   {
     "id": "prod_002",
     "name": "Apple MacBook Air",
     "store": "Apple.com",
-    "price": 1199.00,
+    "price": 1199.0,
     "imageUrl": "image/MacBook.jpg",
     "category": "Electronics",
     "rating": 4.9,
     "reviewCount": 15422,
-    "timestamp": 1710691200000
+    "timestamp": 1710691200000,
+    "productType": "laptop",
+    "isBestSeller": true,
+    "specTags": [
+      "M4 Chip",
+      "16GB",
+      "256GB SSD"
+    ],
+    "colorSwatches": [
+      "0xFF78909C",
+      "0xFFCFD8DC",
+      "0xFF263238",
+      "0xFFF5E6CC"
+    ],
+    "brandName": "Apple"
   },
   {
     "id": "prod_003",
@@ -30,7 +57,19 @@
     "category": "Electronics",
     "rating": 4.8,
     "reviewCount": 6421,
-    "timestamp": 1710604800000
+    "timestamp": 1710604800000,
+    "productType": "speaker",
+    "isBestSeller": false,
+    "specTags": [
+      "Bluetooth",
+      "Home Speaker"
+    ],
+    "colorSwatches": [
+      "0xFF2E3A4F",
+      "0xFFF5F0E1",
+      "0xFF1A237E"
+    ],
+    "brandName": "Marshall"
   },
   {
     "id": "prod_004",
@@ -41,7 +80,19 @@
     "category": "Electronics",
     "rating": 4.8,
     "reviewCount": 9786,
-    "timestamp": 1710518400000
+    "timestamp": 1710518400000,
+    "productType": "headphones",
+    "isBestSeller": true,
+    "specTags": [
+      "Wireless",
+      "Noise Canceling"
+    ],
+    "colorSwatches": [
+      "0xFF212121",
+      "0xFFBDBDBD",
+      "0xFF1A237E"
+    ],
+    "brandName": "Sony"
   },
   {
     "id": "prod_005",
@@ -52,7 +103,18 @@
     "category": "Electronics",
     "rating": 4.9,
     "reviewCount": 21340,
-    "timestamp": 1710432000000
+    "timestamp": 1710432000000,
+    "productType": "gaming console",
+    "isBestSeller": true,
+    "specTags": [
+      "OLED Display",
+      "64GB"
+    ],
+    "colorSwatches": [
+      "0xFFE0E0E0",
+      "0xFF1565C0"
+    ],
+    "brandName": "Nintendo"
   },
   {
     "id": "prod_006",
@@ -63,7 +125,20 @@
     "category": "Electronics",
     "rating": 4.7,
     "reviewCount": 5231,
-    "timestamp": 1710345600000
+    "timestamp": 1710345600000,
+    "productType": "smartwatch",
+    "isBestSeller": false,
+    "specTags": [
+      "44mm",
+      "Bluetooth",
+      "Galaxy AI"
+    ],
+    "colorSwatches": [
+      "0xFF2E7D32",
+      "0xFFBDBDBD",
+      "0xFFF5F0E1"
+    ],
+    "brandName": "Samsung"
   },
   {
     "id": "prod_007",
@@ -74,7 +149,15 @@
     "category": "Lifestyle",
     "rating": 4.7,
     "reviewCount": 8876,
-    "timestamp": 1710259200000
+    "timestamp": 1710259200000,
+    "productType": "vacuum",
+    "isBestSeller": false,
+    "specTags": [
+      "Cordless",
+      "Laser Detect"
+    ],
+    "colorSwatches": [],
+    "brandName": "Dyson"
   },
   {
     "id": "prod_008",
@@ -85,7 +168,19 @@
     "category": "Lifestyle",
     "rating": 4.6,
     "reviewCount": 4382,
-    "timestamp": 1710172800000
+    "timestamp": 1710172800000,
+    "productType": "coffee maker",
+    "isBestSeller": false,
+    "specTags": [
+      "Single Serve",
+      "Vertuo"
+    ],
+    "colorSwatches": [
+      "0xFF212121",
+      "0xFFC62828",
+      "0xFF80CBC4"
+    ],
+    "brandName": "Nespresso"
   },
   {
     "id": "prod_009",
@@ -96,7 +191,20 @@
     "category": "Lifestyle",
     "rating": 4.9,
     "reviewCount": 14620,
-    "timestamp": 1710086400000
+    "timestamp": 1710086400000,
+    "productType": "mixer",
+    "isBestSeller": true,
+    "specTags": [
+      "5-Quart",
+      "Tilt-Head"
+    ],
+    "colorSwatches": [
+      "0xFFD32F2F",
+      "0xFFBDBDBD",
+      "0xFF212121",
+      "0xFF1565C0"
+    ],
+    "brandName": "KitchenAid"
   },
   {
     "id": "prod_010",
@@ -107,7 +215,19 @@
     "category": "Lifestyle",
     "rating": 4.8,
     "reviewCount": 7864,
-    "timestamp": 1710000000000
+    "timestamp": 1710000000000,
+    "productType": "blender",
+    "isBestSeller": false,
+    "specTags": [
+      "64 oz",
+      "Professional-Grade"
+    ],
+    "colorSwatches": [
+      "0xFF212121",
+      "0xFFC62828",
+      "0xFFE0E0E0"
+    ],
+    "brandName": "Vitamix"
   },
   {
     "id": "prod_011",
@@ -118,7 +238,19 @@
     "category": "Sports",
     "rating": 4.7,
     "reviewCount": 6654,
-    "timestamp": 1709913600000
+    "timestamp": 1709913600000,
+    "productType": "running shoes",
+    "isBestSeller": false,
+    "specTags": [
+      "Road Running",
+      "Men's"
+    ],
+    "colorSwatches": [
+      "0xFF1565C0",
+      "0xFF212121",
+      "0xFF9E9E9E"
+    ],
+    "brandName": "Nike"
   },
   {
     "id": "prod_012",
@@ -129,7 +261,15 @@
     "category": "Sports",
     "rating": 4.8,
     "reviewCount": 3541,
-    "timestamp": 1709827200000
+    "timestamp": 1709827200000,
+    "productType": "soccer ball",
+    "isBestSeller": false,
+    "specTags": [
+      "Size 5",
+      "Thermally Bonded"
+    ],
+    "colorSwatches": [],
+    "brandName": "adidas"
   },
   {
     "id": "prod_013",
@@ -140,7 +280,15 @@
     "category": "Sports",
     "rating": 4.9,
     "reviewCount": 5933,
-    "timestamp": 1709740800000
+    "timestamp": 1709740800000,
+    "productType": "basketball",
+    "isBestSeller": true,
+    "specTags": [
+      "Official Size 7",
+      "Indoor"
+    ],
+    "colorSwatches": [],
+    "brandName": "Wilson"
   },
   {
     "id": "prod_014",
@@ -151,7 +299,16 @@
     "category": "Food",
     "rating": 4.8,
     "reviewCount": 12455,
-    "timestamp": 1709654400000
+    "timestamp": 1709654400000,
+    "productType": "coffee",
+    "isBestSeller": false,
+    "specTags": [
+      "Whole Bean",
+      "Medium Roast",
+      "28 oz"
+    ],
+    "colorSwatches": [],
+    "brandName": "Starbucks"
   },
   {
     "id": "prod_015",
@@ -162,7 +319,16 @@
     "category": "Food",
     "rating": 4.8,
     "reviewCount": 10234,
-    "timestamp": 1709568000000
+    "timestamp": 1709568000000,
+    "productType": "beverage",
+    "isBestSeller": false,
+    "specTags": [
+      "Zero Sugar",
+      "24-Pack",
+      "12 fl oz"
+    ],
+    "colorSwatches": [],
+    "brandName": "Coca-Cola"
   },
   {
     "id": "prod_016",
@@ -173,6 +339,14 @@
     "category": "Food",
     "rating": 4.9,
     "reviewCount": 17328,
-    "timestamp": 1709481600000
+    "timestamp": 1709481600000,
+    "productType": "cookies",
+    "isBestSeller": true,
+    "specTags": [
+      "Family Size",
+      "18.12 oz"
+    ],
+    "colorSwatches": [],
+    "brandName": "OREO"
   }
 ]

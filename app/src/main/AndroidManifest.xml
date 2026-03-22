@@ -30,6 +30,18 @@
             android:name=".ui.screen.address.AddEditAddressActivity"
             android:exported="false"
             android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.productdetail.ProductDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.search.SearchActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.search.SearchResultActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
     </application>
 
 </manifest>

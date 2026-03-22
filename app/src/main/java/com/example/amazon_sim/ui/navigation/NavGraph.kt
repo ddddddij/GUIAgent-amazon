@@ -8,6 +8,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.amazon_sim.ui.screen.address.AddressActivity
+import com.example.amazon_sim.ui.screen.productdetail.ProductDetailActivity
+import com.example.amazon_sim.ui.screen.search.SearchActivity
 import com.example.amazon_sim.ui.screen.cart.CartScreen
 import com.example.amazon_sim.ui.screen.home.HomeScreen
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
@@ -26,14 +28,27 @@ fun NavGraph(
         composable("home") {
             val context = LocalContext.current
             HomeScreen(
+                onSearchClick = {
+                    context.startActivity(Intent(context, SearchActivity::class.java))
+                },
                 onAddressClick = {
                     context.startActivity(Intent(context, AddressActivity::class.java))
+                },
+                onProductClick = { productId ->
+                    context.startActivity(
+                        Intent(context, ProductDetailActivity::class.java).apply {
+                            putExtra(ProductDetailActivity.EXTRA_PRODUCT_ID, productId)
+                        }
+                    )
                 }
             )
         }
         composable("profile") {
             val context = LocalContext.current
             ProfileScreen(
+                onSearchClick = {
+                    context.startActivity(Intent(context, SearchActivity::class.java))
+                },
                 onAccountEntryClick = { id ->
                     if (id == "addresses") {
                         context.startActivity(Intent(context, AddressActivity::class.java))
@@ -42,10 +57,20 @@ fun NavGraph(
             )
         }
         composable("cart") {
-            CartScreen()
+            val context = LocalContext.current
+            CartScreen(
+                onSearchClick = {
+                    context.startActivity(Intent(context, SearchActivity::class.java))
+                }
+            )
         }
         composable("menu") {
-            MenuScreen()
+            val context = LocalContext.current
+            MenuScreen(
+                onSearchClick = {
+                    context.startActivity(Intent(context, SearchActivity::class.java))
+                }
+            )
         }
     }
 }

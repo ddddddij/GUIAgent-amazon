@@ -31,7 +31,8 @@ import com.example.amazon_sim.ui.theme.AmazonProfileTopBackground
 
 @Composable
 fun CartScreen(
-    viewModel: CartViewModel = viewModel()
+    viewModel: CartViewModel = viewModel(),
+    onSearchClick: () -> Unit = {}
 ) {
     val cartItems by viewModel.cartItems.collectAsState()
     val subtotal by viewModel.subtotal.collectAsState()
@@ -50,7 +51,7 @@ fun CartScreen(
                 .background(AmazonProfileTopBackground)
                 .padding(horizontal = 12.dp, vertical = 8.dp)
         ) {
-            CartSearchBar()
+            CartSearchBar(onSearchClick = onSearchClick)
         }
 
         // Sticky header: subtotal + checkout button
