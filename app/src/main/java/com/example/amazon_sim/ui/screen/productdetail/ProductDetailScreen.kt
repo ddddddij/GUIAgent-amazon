@@ -180,6 +180,7 @@ fun ProductDetailScreen(
             item {
                 ImagePagerSection(
                     imagePlaceholderColors = product.imagePlaceholderColors,
+                    imageAssetPath = product.imageAssetPath,
                     isFavorite = isFavorite,
                     onFavoriteClick = onFavoriteClick,
                     onShareClick = onShareClick

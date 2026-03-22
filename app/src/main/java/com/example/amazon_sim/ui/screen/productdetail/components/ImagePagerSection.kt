@@ -27,11 +27,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.amazon_sim.ui.screen.home.components.HomeProductAssetImage
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ImagePagerSection(
     imagePlaceholderColors: List<Long>,
+    imageAssetPath: String = "",
     isFavorite: Boolean,
     onFavoriteClick: () -> Unit,
     onShareClick: () -> Unit = {},
@@ -53,10 +55,24 @@ fun ImagePagerSection(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(300.dp)
-                    .padding(24.dp)
-                    .background(Color(imagePlaceholderColors.getOrElse(page) { 0xFFCCCCCC })),
+                    .padding(24.dp),
                 contentAlignment = Alignment.Center
-            ) {}
+            ) {
+                // 第一页显示真实图片，其余显示颜色占位符
+                if (page == 0 && imageAssetPath.isNotBlank()) {
+                    HomeProductAssetImage(
+                        assetPath = imageAssetPath,
+                        contentDescription = "Product Image",
+                        fallbackColor = Color(imagePlaceholderColors.getOrElse(page) { 0xFFCCCCCC })
+                    )
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .matchParentSize()
+                            .background(Color(imagePlaceholderColors.getOrElse(page) { 0xFFCCCCCC }))
+                    )
+                }
+            }
         }
 
         // Indicator dots
