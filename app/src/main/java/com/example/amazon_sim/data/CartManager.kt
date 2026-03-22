@@ -22,9 +22,16 @@ object CartManager {
     fun init(context: Context) {
         if (initialized) return
         initialized = true
-        val appContext = context.applicationContext
-        // Always load seed data from assets on app start; internal file is only for
-        // cross-Activity sharing within the same session.
+        loadFromAssets(context.applicationContext)
+    }
+
+    /** 强制从 assets 重新加载初始数据，用于 app 启动时还原 */
+    fun reset(context: Context) {
+        initialized = true
+        loadFromAssets(context.applicationContext)
+    }
+
+    private fun loadFromAssets(appContext: Context) {
         val file = File(appContext.filesDir, FILE_NAME)
         file.delete()
         val json = runCatching {

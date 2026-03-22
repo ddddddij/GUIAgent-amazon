@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.amazon_sim.ui.screen.address.AddressActivity
+import com.example.amazon_sim.ui.screen.order.OrderActivity
 import com.example.amazon_sim.ui.screen.productdetail.ProductDetailActivity
 import com.example.amazon_sim.ui.screen.search.SearchActivity
 import com.example.amazon_sim.ui.screen.cart.CartScreen
@@ -45,13 +46,23 @@ fun NavGraph(
         }
         composable("profile") {
             val context = LocalContext.current
+            val openOrders = {
+                context.startActivity(Intent(context, OrderActivity::class.java))
+            }
             ProfileScreen(
                 onSearchClick = {
                     context.startActivity(Intent(context, SearchActivity::class.java))
                 },
+                onQuickActionClick = { id ->
+                    if (id == "orders") openOrders()
+                },
+                onSectionHeaderClick = { title ->
+                    if (title == "Your Orders") openOrders()
+                },
                 onAccountEntryClick = { id ->
-                    if (id == "addresses") {
-                        context.startActivity(Intent(context, AddressActivity::class.java))
+                    when (id) {
+                        "addresses" -> context.startActivity(Intent(context, AddressActivity::class.java))
+                        "orders_entry" -> openOrders()
                     }
                 }
             )
@@ -69,6 +80,11 @@ fun NavGraph(
             MenuScreen(
                 onSearchClick = {
                     context.startActivity(Intent(context, SearchActivity::class.java))
+                },
+                onShortcutClick = { label ->
+                    if (label == "Orders") {
+                        context.startActivity(Intent(context, OrderActivity::class.java))
+                    }
                 }
             )
         }

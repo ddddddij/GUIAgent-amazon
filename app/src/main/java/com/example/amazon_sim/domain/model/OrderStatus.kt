@@ -5,9 +5,9 @@ package com.example.amazon_sim.domain.model
  * 用于支持任务：查看订单列表
  */
 enum class OrderStatus {
-    PENDING,      // 待支付
-    PROCESSING,   // 处理中
+    PENDING,      // 等待中（未付款）
+    UNSHIPPED,    // 未发货（已付款但未发货）
     SHIPPED,      // 已发货
-    DELIVERED,    // 已送达
-    CANCELLED     // 已取消
+    DELIVERED,    // 已收货
+    CANCELED      // 已取消
 }

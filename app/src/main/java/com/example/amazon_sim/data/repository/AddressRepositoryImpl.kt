@@ -5,48 +5,28 @@ import com.example.amazon_sim.domain.model.Address
 import com.example.amazon_sim.domain.repository.AddressRepository
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.File
 
 class AddressRepositoryImpl(private val context: Context) : AddressRepository {
 
-    private val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+    private val dataFile = File(context.filesDir, FILE_NAME)
 
     init {
-        seedAddressesIfNeeded()
+        resetFromAssets()
     }
 
-    private fun seedAddressesIfNeeded() {
-        val currentVersion = prefs.getInt(KEY_SEED_VERSION, 0)
-        val storedAddresses = getStoredAddresses()
-        if (currentVersion >= ADDRESS_SEED_VERSION && storedAddresses.isNotEmpty()) {
-            return
-        }
-
-        val assetAddresses = loadAssetAddresses()
-        if (assetAddresses.isEmpty()) {
-            return
-        }
-
-        val mergedAddresses = if (storedAddresses.isEmpty()) {
-            assetAddresses
-        } else {
-            mergeAddresses(storedAddresses, assetAddresses)
-        }
-
-        saveAll(mergedAddresses)
-        prefs.edit().putInt(KEY_SEED_VERSION, ADDRESS_SEED_VERSION).apply()
-    }
-
-    private fun loadAssetAddresses(): List<Address> {
-        return runCatching {
-            val json = context.assets.open(ASSET_PATH)
+    /** 每次初始化都从 assets 复制初始数据到 internal files，保证重启还原 */
+    private fun resetFromAssets() {
+        val json = runCatching {
+            context.assets.open(ASSET_PATH)
                 .bufferedReader()
                 .use { it.readText() }
-            parseAddresses(json)
-        }.getOrDefault(emptyList())
+        }.getOrDefault("[]")
+        dataFile.writeText(json)
     }
 
-    private fun getStoredAddresses(): List<Address> {
-        val json = prefs.getString(KEY_ADDRESS_LIST, null) ?: return emptyList()
+    private fun loadAddresses(): List<Address> {
+        val json = runCatching { dataFile.readText() }.getOrDefault("[]")
         return parseAddresses(json)
     }
 
@@ -59,29 +39,8 @@ class AddressRepositoryImpl(private val context: Context) : AddressRepository {
         }.getOrDefault(emptyList())
     }
 
-    private fun mergeAddresses(
-        storedAddresses: List<Address>,
-        assetAddresses: List<Address>
-    ): List<Address> {
-        val storedById = storedAddresses.associateBy(Address::id)
-        val merged = assetAddresses.map { assetAddress ->
-            val storedAddress = storedById[assetAddress.id]
-            if (storedAddress == null) {
-                assetAddress
-            } else {
-                storedAddress.fillMissingFieldsFrom(assetAddress)
-            }
-        }.toMutableList()
-
-        storedAddresses
-            .filterNot { storedById.containsKey(it.id) && assetAddresses.any { asset -> asset.id == it.id } }
-            .forEach(merged::add)
-
-        return ensureSingleDefaultAddress(merged)
-    }
-
     override fun getAddresses(): List<Address> {
-        return getStoredAddresses()
+        return loadAddresses()
     }
 
     override fun getAddressById(id: String): Address? {
@@ -126,7 +85,7 @@ class AddressRepositoryImpl(private val context: Context) : AddressRepository {
     private fun saveAll(addresses: List<Address>) {
         val array = JSONArray()
         addresses.forEach { array.put(it.toJson()) }
-        prefs.edit().putString(KEY_ADDRESS_LIST, array.toString()).apply()
+        dataFile.writeText(array.toString(2))
     }
 
     private fun ensureSingleDefaultAddress(addresses: List<Address>): List<Address> {
@@ -177,26 +136,9 @@ class AddressRepositoryImpl(private val context: Context) : AddressRepository {
         }.orEmpty()
     }
 
-    private fun Address.fillMissingFieldsFrom(fallback: Address): Address {
-        return copy(
-            fullName = fullName.ifBlank { fallback.fullName },
-            phoneNumber = phoneNumber.ifBlank { fallback.phoneNumber },
-            country = country.ifBlank { fallback.country },
-            streetAddress = streetAddress.ifBlank { fallback.streetAddress },
-            aptSuite = aptSuite.ifBlank { fallback.aptSuite },
-            city = city.ifBlank { fallback.city },
-            state = state.ifBlank { fallback.state },
-            zipCode = zipCode.ifBlank { fallback.zipCode },
-            isDefault = isDefault || fallback.isDefault
-        )
-    }
-
     private companion object {
-        const val PREFS_NAME = "addresses"
-        const val KEY_ADDRESS_LIST = "address_list"
-        const val KEY_SEED_VERSION = "address_seed_version"
         const val ASSET_PATH = "data/addresses.json"
-        const val ADDRESS_SEED_VERSION = 1
+        const val FILE_NAME = "addresses.json"
         const val DEFAULT_COUNTRY = "United States"
         const val DEFAULT_STATE = "California"
     }
