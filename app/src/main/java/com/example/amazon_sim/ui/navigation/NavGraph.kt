@@ -14,6 +14,7 @@ import com.example.amazon_sim.ui.screen.search.SearchActivity
 import com.example.amazon_sim.ui.screen.cart.CartScreen
 import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.screen.home.HomeScreen
+import com.example.amazon_sim.ui.screen.menu.CategoryProductsActivity
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
 import com.example.amazon_sim.ui.screen.profile.ProfileScreen
 import org.json.JSONArray
@@ -110,6 +111,16 @@ fun NavGraph(
                 onShortcutClick = { label ->
                     if (label == "Orders") {
                         context.startActivity(Intent(context, OrderActivity::class.java))
+                    }
+                },
+                onCategoryClick = { category ->
+                    val clickableCategories = setOf("Electronics", "Lifestyle", "Sports", "Food")
+                    if (category in clickableCategories) {
+                        context.startActivity(
+                            Intent(context, CategoryProductsActivity::class.java).apply {
+                                putExtra(CategoryProductsActivity.EXTRA_CATEGORY, category)
+                            }
+                        )
                     }
                 }
             )

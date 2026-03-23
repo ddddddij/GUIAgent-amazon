@@ -58,6 +58,10 @@
             android:name=".ui.screen.checkout.CheckoutActivity"
             android:exported="false"
             android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.menu.CategoryProductsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
     </application>
 
 </manifest>

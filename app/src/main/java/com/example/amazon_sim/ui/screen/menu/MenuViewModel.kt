@@ -19,6 +19,10 @@ class MenuViewModel : ViewModel() {
             shortcuts = listOf("Lists", "Orders", "Buy Again", "Account"),
             isDepartmentExpanded = true,
             categories = listOf(
+                "Electronics",
+                "Lifestyle",
+                "Sports",
+                "Food",
                 "Arts & Crafts",
                 "Automotive Parts & Accessories",
                 "Baby",
@@ -27,7 +31,6 @@ class MenuViewModel : ViewModel() {
                 "Computers",
                 "Books",
                 "Digital Music",
-                "Electronics",
                 "Women's Fashion",
                 "Men's Fashion",
                 "Girls' Fashion",
