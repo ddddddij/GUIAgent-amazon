@@ -65,7 +65,15 @@ class OrderRepositoryImpl private constructor(private val context: Context) : Or
     }
 
     override suspend fun addOrder(order: Order) {
-        val updatedOrders = _orders.value + order
+        val updatedOrders = listOf(order) + _orders.value
+        _orders.value = updatedOrders
+        saveOrders(updatedOrders)
+    }
+
+    override suspend fun updateOrder(order: Order) {
+        val updatedOrders = _orders.value.map {
+            if (it.orderId == order.orderId) order else it
+        }
         _orders.value = updatedOrders
         saveOrders(updatedOrders)
     }
@@ -89,6 +97,10 @@ class OrderRepositoryImpl private constructor(private val context: Context) : Or
         put("paymentMethod", paymentMethod)
         put("createdAt", createdAt)
         put("updatedAt", updatedAt)
+        put("itemsTotal", itemsTotal)
+        put("shipping", shipping)
+        put("tax", tax)
+        put("orderTotal", orderTotal)
     }
 
     private fun OrderItem.toJson(): JSONObject = JSONObject().apply {
@@ -132,7 +144,11 @@ class OrderRepositoryImpl private constructor(private val context: Context) : Or
         orderStatus = optString("orderStatus").toOrderStatus(),
         paymentMethod = optString("paymentMethod", ""),
         createdAt = optLong("createdAt", 0L),
-        updatedAt = optLong("updatedAt", 0L)
+        updatedAt = optLong("updatedAt", 0L),
+        itemsTotal = optDouble("itemsTotal", 0.0),
+        shipping = optDouble("shipping", 0.0),
+        tax = optDouble("tax", 0.0),
+        orderTotal = optDouble("orderTotal", 0.0)
     )
 
     private fun JSONObject.toOrderItem(): OrderItem = OrderItem(

@@ -31,7 +31,9 @@ import com.example.amazon_sim.ui.theme.AmazonDividerGray
 @Composable
 fun AddressScreen(
     viewModel: AddressViewModel = viewModel(),
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    selectMode: Boolean = false,
+    onAddressSelected: (String) -> Unit = {}
 ) {
     val addresses by viewModel.addresses.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -96,7 +98,10 @@ fun AddressScreen(
                     },
                     onRemoveClick = {
                         viewModel.deleteAddress(address.id)
-                    }
+                    },
+                    onCardClick = if (selectMode) {
+                        { onAddressSelected(address.id) }
+                    } else null
                 )
             }
 

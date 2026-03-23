@@ -12,5 +12,9 @@ data class Order(
     val orderStatus: OrderStatus,     // 订单状态
     val paymentMethod: String,        // 付款方式，如 "Credit Card", "Debit Card", "Amazon Pay", "Gift Card"
     val createdAt: Long,              // 创建时间戳
-    val updatedAt: Long               // 更新时间戳
+    val updatedAt: Long,              // 更新时间戳
+    val itemsTotal: Double = 0.0,     // 商品小计
+    val shipping: Double = 0.0,       // 运费
+    val tax: Double = 0.0,            // 税费
+    val orderTotal: Double = 0.0      // 订单总计
 )

@@ -48,11 +48,13 @@ object CartManager {
         price: Double,
         quantity: Int,
         placeholderColor: Long,
-        imageAssetPath: String = ""
+        imageAssetPath: String = "",
+        productId: String = ""
     ) {
         val newId = (_cartItems.value.maxOfOrNull { it.id.toIntOrNull() ?: 0 } ?: 0) + 1
         val newItem = CartItemUi(
             id = newId.toString(),
+            productId = productId,
             productName = productName,
             price = price,
             quantity = quantity,
@@ -71,11 +73,17 @@ object CartManager {
         save(context.applicationContext)
     }
 
+    fun removeItems(context: Context, itemIds: List<String>) {
+        _cartItems.value = _cartItems.value.filter { it.id !in itemIds }
+        save(context.applicationContext)
+    }
+
     private fun save(context: Context) {
         val array = JSONArray()
         _cartItems.value.forEach { item ->
             array.put(JSONObject().apply {
                 put("id", item.id)
+                put("productId", item.productId)
                 put("productName", item.productName)
                 put("price", item.price)
                 put("quantity", item.quantity)
@@ -99,6 +107,7 @@ object CartManager {
                     add(
                         CartItemUi(
                             id = obj.optString("id"),
+                            productId = obj.optString("productId", ""),
                             productName = obj.optString("productName"),
                             price = obj.optDouble("price", 0.0),
                             quantity = obj.optInt("quantity", 1),

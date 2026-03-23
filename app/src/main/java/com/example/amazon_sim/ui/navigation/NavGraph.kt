@@ -12,9 +12,12 @@ import com.example.amazon_sim.ui.screen.order.OrderActivity
 import com.example.amazon_sim.ui.screen.productdetail.ProductDetailActivity
 import com.example.amazon_sim.ui.screen.search.SearchActivity
 import com.example.amazon_sim.ui.screen.cart.CartScreen
+import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.screen.home.HomeScreen
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
 import com.example.amazon_sim.ui.screen.profile.ProfileScreen
+import org.json.JSONArray
+import org.json.JSONObject
 
 @Composable
 fun NavGraph(
@@ -72,6 +75,29 @@ fun NavGraph(
             CartScreen(
                 onSearchClick = {
                     context.startActivity(Intent(context, SearchActivity::class.java))
+                },
+                onCheckout = { selectedItems ->
+                    val itemsArray = JSONArray()
+                    val idsArray = JSONArray()
+                    selectedItems.forEach { item ->
+                        itemsArray.put(JSONObject().apply {
+                            put("productId", item.productId)
+                            put("productName", item.productName)
+                            put("imageAssetPath", item.imageAssetPath)
+                            put("variantLabel", "")
+                            put("price", item.price)
+                            put("quantity", item.quantity)
+                            put("freeDeliveryDate", "")
+                        })
+                        idsArray.put(item.id)
+                    }
+                    context.startActivity(
+                        PaymentMethodActivity.createCartCheckoutIntent(
+                            context = context,
+                            cartItemsJson = itemsArray.toString(),
+                            cartItemIdsJson = idsArray.toString()
+                        )
+                    )
                 }
             )
         }

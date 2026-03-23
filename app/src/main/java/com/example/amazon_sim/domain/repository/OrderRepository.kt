@@ -8,5 +8,6 @@ interface OrderRepository {
     val orders: StateFlow<List<Order>>
     fun getOrderById(orderId: String): Order?
     suspend fun updateOrderStatus(orderId: String, newStatus: OrderStatus)
+    suspend fun updateOrder(order: Order)
     suspend fun addOrder(order: Order)
 }

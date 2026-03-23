@@ -12,6 +12,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.amazon_sim.data.CartManager
+import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.theme.Amazon_simTheme
 
 class ProductDetailActivity : ComponentActivity() {
@@ -79,7 +80,26 @@ class ProductDetailActivity : ComponentActivity() {
                             showAddedToCart = false
                             finish()
                         },
-                        onBuyNowClick = { /* Reserved for future */ }
+                        onBuyNowClick = {
+                            val price = priceInfo?.price ?: return@ProductDetailScreen
+                            val variantLabel = currentProduct.specGroups.mapNotNull { group ->
+                                val optId = selectedOptions[group.dimensionName]
+                                group.options.find { it.id == optId }?.label
+                            }.joinToString(" / ")
+
+                            startActivity(
+                                PaymentMethodActivity.createBuyNowIntent(
+                                    context = this@ProductDetailActivity,
+                                    productId = currentProduct.id,
+                                    productName = currentProduct.name,
+                                    productImage = currentProduct.imageAssetPath,
+                                    variantLabel = variantLabel,
+                                    unitPrice = price,
+                                    quantity = quantity,
+                                    freeDeliveryDate = currentProduct.freeDeliveryDate
+                                )
+                            )
+                        }
                     )
                 }
             }

@@ -1,6 +1,7 @@
 package com.example.amazon_sim.ui.screen.address.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,7 +31,8 @@ import com.example.amazon_sim.ui.theme.AmazonSearchBarBorder
 fun AddressCard(
     address: Address,
     onEditClick: () -> Unit,
-    onRemoveClick: () -> Unit
+    onRemoveClick: () -> Unit,
+    onCardClick: (() -> Unit)? = null
 ) {
     val localityLine = listOf(
         address.city.takeIf { it.isNotBlank() },
@@ -43,7 +45,11 @@ fun AddressCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 6.dp),
+            .padding(horizontal = 16.dp, vertical = 6.dp)
+            .then(
+                if (onCardClick != null) Modifier.clickable(onClick = onCardClick)
+                else Modifier
+            ),
         shape = RoundedCornerShape(8.dp),
         border = BorderStroke(1.dp, Color(0xFFDDDDDD)),
         colors = CardDefaults.cardColors(containerColor = Color.White)
