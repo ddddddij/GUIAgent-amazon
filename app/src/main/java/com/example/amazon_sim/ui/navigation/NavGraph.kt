@@ -14,6 +14,7 @@ import com.example.amazon_sim.ui.screen.search.SearchActivity
 import com.example.amazon_sim.ui.screen.cart.CartScreen
 import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.screen.home.HomeScreen
+import com.example.amazon_sim.ui.screen.lists.ListsActivity
 import com.example.amazon_sim.ui.screen.menu.CategoryProductsActivity
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
 import com.example.amazon_sim.ui.screen.profile.ProfileScreen
@@ -53,12 +54,18 @@ fun NavGraph(
             val openOrders = {
                 context.startActivity(Intent(context, OrderActivity::class.java))
             }
+            val openLists = {
+                context.startActivity(Intent(context, ListsActivity::class.java))
+            }
             ProfileScreen(
                 onSearchClick = {
                     context.startActivity(Intent(context, SearchActivity::class.java))
                 },
                 onQuickActionClick = { id ->
-                    if (id == "orders") openOrders()
+                    when (id) {
+                        "orders" -> openOrders()
+                        "lists" -> openLists()
+                    }
                 },
                 onSectionHeaderClick = { title ->
                     if (title == "Your Orders") openOrders()
@@ -109,8 +116,9 @@ fun NavGraph(
                     context.startActivity(Intent(context, SearchActivity::class.java))
                 },
                 onShortcutClick = { label ->
-                    if (label == "Orders") {
-                        context.startActivity(Intent(context, OrderActivity::class.java))
+                    when (label) {
+                        "Orders" -> context.startActivity(Intent(context, OrderActivity::class.java))
+                        "Lists" -> context.startActivity(Intent(context, ListsActivity::class.java))
                     }
                 },
                 onCategoryClick = { category ->

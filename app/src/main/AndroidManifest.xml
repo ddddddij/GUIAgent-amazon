@@ -62,6 +62,14 @@
             android:name=".ui.screen.menu.CategoryProductsActivity"
             android:exported="false"
             android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.lists.ListsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.lists.ShoppingListDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
     </application>
 
 </manifest>
