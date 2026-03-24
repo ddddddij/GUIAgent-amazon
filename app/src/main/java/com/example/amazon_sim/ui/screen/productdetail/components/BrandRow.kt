@@ -1,6 +1,7 @@
 package com.example.amazon_sim.ui.screen.productdetail.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -61,7 +62,8 @@ fun BrandRow(
             Text(
                 text = "Visit the Store",
                 fontSize = 14.sp,
-                color = AmazonCartLinkBlue
+                color = AmazonCartLinkBlue,
+                modifier = Modifier.clickable(onClick = onVisitStoreClick)
             )
         }
 

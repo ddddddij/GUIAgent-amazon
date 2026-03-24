@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
+
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -66,7 +66,6 @@ fun ShoppingListDetailScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .statusBarsPadding()
         ) {
             // Top bar
             Row(
@@ -150,6 +149,20 @@ fun ShoppingListDetailScreen(
                             group.options.find { it.id == defaultId }
                         }
 
+                    // Build variant-aware name for cart
+                    val variantName = if (detail != null) {
+                        val base = detail.baseName.ifEmpty { detail.name }
+                        val variantLabels = detail.specGroups
+                            .filter { it.options.size > 1 }
+                            .mapNotNull { group ->
+                                val defaultId = detail.defaultSpecOptionIds[group.dimensionName]
+                                group.options.find { it.id == defaultId }?.label
+                            }
+                        if (variantLabels.isNotEmpty()) "$base, ${variantLabels.joinToString(", ")}" else base
+                    } else {
+                        product.name
+                    }
+
                     ProductDetailCard(
                         product = product,
                         detail = detail,
@@ -157,7 +170,7 @@ fun ShoppingListDetailScreen(
                             CartManager.init(context)
                             CartManager.addToCart(
                                 context = context,
-                                productName = product.name,
+                                productName = variantName,
                                 price = priceOption?.price ?: product.price,
                                 quantity = 1,
                                 placeholderColor = product.colorSwatches.firstOrNull() ?: 0xFFCCCCCC,

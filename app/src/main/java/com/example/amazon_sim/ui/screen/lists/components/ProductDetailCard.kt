@@ -47,6 +47,20 @@ fun ProductDetailCard(
     onAddToCartClick: () -> Unit,
     onMoreClick: () -> Unit
 ) {
+    // Build variant-aware display name
+    val displayName = if (detail != null) {
+        val base = detail.baseName.ifEmpty { detail.name }
+        val variantLabels = detail.specGroups
+            .filter { it.options.size > 1 }
+            .mapNotNull { group ->
+                val defaultId = detail.defaultSpecOptionIds[group.dimensionName]
+                group.options.find { it.id == defaultId }?.label
+            }
+        if (variantLabels.isNotEmpty()) "$base, ${variantLabels.joinToString(", ")}" else base
+    } else {
+        product.name
+    }
+
     // Extract spec info from detail
     val defaultSpecs = detail?.let { d ->
         d.specGroups.mapNotNull { group ->
@@ -99,7 +113,7 @@ fun ProductDetailCard(
             Column(modifier = Modifier.weight(1f)) {
                 // Name
                 Text(
-                    text = product.name,
+                    text = displayName,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.Black,

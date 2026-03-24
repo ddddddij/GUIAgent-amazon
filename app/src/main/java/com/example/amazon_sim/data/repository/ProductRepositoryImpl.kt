@@ -34,6 +34,7 @@ class ProductRepositoryImpl(private val context: Context) : ProductRepository {
         reviewCount = optInt("reviewCount", 0),
         timestamp = optLong("timestamp", 0L),
         brandName = optString("brandName", ""),
+        brandId = optString("brandId", ""),
         productType = optString("productType", ""),
         isBestSeller = optBoolean("isBestSeller", false),
         specTags = optJSONArray("specTags")?.let { arr ->

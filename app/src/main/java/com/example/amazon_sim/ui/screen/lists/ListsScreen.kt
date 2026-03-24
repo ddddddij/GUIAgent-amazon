@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
+
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -80,7 +80,6 @@ fun ListsScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .statusBarsPadding()
         ) {
             // Top bar
             Row(
@@ -256,8 +255,24 @@ fun ListsScreen(
                             val originalPrice = firstPriceOption?.originalPrice
                             val deliveryDate = detail?.freeDeliveryDate ?: "Friday, March 27"
 
+                            // Build variant-aware display name
+                            val displayName = if (detail != null) {
+                                val base = detail.baseName.ifEmpty { detail.name }
+                                val variantLabels = detail.specGroups
+                                    .filter { it.options.size > 1 }
+                                    .mapNotNull { group ->
+                                        val defaultId = detail.defaultSpecOptionIds[group.dimensionName]
+                                        group.options.find { it.id == defaultId }?.label
+                                    }
+                                if (variantLabels.isNotEmpty()) "$base, ${variantLabels.joinToString(", ")}" else base
+                            } else {
+                                product.name
+                            }
+
                             SavedProductCard(
                                 product = product,
+                                displayName = displayName,
+                                displayPrice = firstPriceOption?.price ?: product.price,
                                 originalPrice = originalPrice,
                                 deliveryDate = deliveryDate,
                                 savedInListName = listName,
@@ -265,7 +280,7 @@ fun ListsScreen(
                                     CartManager.init(context)
                                     CartManager.addToCart(
                                         context = context,
-                                        productName = product.name,
+                                        productName = displayName,
                                         price = firstPriceOption?.price ?: product.price,
                                         quantity = 1,
                                         placeholderColor = product.colorSwatches.firstOrNull() ?: 0xFFCCCCCC,

@@ -20,5 +20,6 @@ data class ProductDetailData(
     val reviewTags: List<ReviewTag> = emptyList(),
     val customerPhotoPlaceholderColors: List<Long> = emptyList(),
     val brandLogoPlaceholderColor: Long = 0xFFAAAAAA,
-    val imageAssetPath: String = ""
+    val imageAssetPath: String = "",
+    val baseName: String = ""
 )

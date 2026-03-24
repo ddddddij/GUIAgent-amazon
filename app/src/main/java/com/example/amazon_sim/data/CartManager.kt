@@ -51,20 +51,33 @@ object CartManager {
         imageAssetPath: String = "",
         productId: String = ""
     ) {
-        val newId = (_cartItems.value.maxOfOrNull { it.id.toIntOrNull() ?: 0 } ?: 0) + 1
-        val newItem = CartItemUi(
-            id = newId.toString(),
-            productId = productId,
-            productName = productName,
-            price = price,
-            quantity = quantity,
-            isSelected = false,
-            stockStatus = "In Stock",
-            stockStatusType = StockStatusType.IN_STOCK,
-            placeholderColor = placeholderColor,
-            imageAssetPath = imageAssetPath
-        )
-        _cartItems.value = listOf(newItem) + _cartItems.value
+        val existing = _cartItems.value.find { item ->
+            if (productId.isNotEmpty()) {
+                item.productId == productId && item.price == price
+            } else {
+                item.productName == productName && item.price == price
+            }
+        }
+        if (existing != null) {
+            // Merge: increase quantity and move to top
+            val updated = existing.copy(quantity = existing.quantity + quantity)
+            _cartItems.value = listOf(updated) + _cartItems.value.filter { it.id != existing.id }
+        } else {
+            val newId = (_cartItems.value.maxOfOrNull { it.id.toIntOrNull() ?: 0 } ?: 0) + 1
+            val newItem = CartItemUi(
+                id = newId.toString(),
+                productId = productId,
+                productName = productName,
+                price = price,
+                quantity = quantity,
+                isSelected = false,
+                stockStatus = "In Stock",
+                stockStatusType = StockStatusType.IN_STOCK,
+                placeholderColor = placeholderColor,
+                imageAssetPath = imageAssetPath
+            )
+            _cartItems.value = listOf(newItem) + _cartItems.value
+        }
         save(context.applicationContext)
     }
 

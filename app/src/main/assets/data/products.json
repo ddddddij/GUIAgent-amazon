@@ -21,7 +21,8 @@
       "0xFF1565C0",
       "0xFFBDBDBD"
     ],
-    "brandName": "Apple"
+    "brandName": "Apple",
+    "brandId": "brand_apple"
   },
   {
     "id": "prod_002",
@@ -46,7 +47,8 @@
       "0xFF263238",
       "0xFFF5E6CC"
     ],
-    "brandName": "Apple"
+    "brandName": "Apple",
+    "brandId": "brand_apple"
   },
   {
     "id": "prod_003",
@@ -69,7 +71,8 @@
       "0xFFF5F0E1",
       "0xFF1A237E"
     ],
-    "brandName": "Marshall"
+    "brandName": "Marshall",
+    "brandId": "brand_marshall"
   },
   {
     "id": "prod_004",
@@ -92,7 +95,8 @@
       "0xFFBDBDBD",
       "0xFF1A237E"
     ],
-    "brandName": "Sony"
+    "brandName": "Sony",
+    "brandId": "brand_sony"
   },
   {
     "id": "prod_005",
@@ -114,7 +118,8 @@
       "0xFFE0E0E0",
       "0xFF1565C0"
     ],
-    "brandName": "Nintendo"
+    "brandName": "Nintendo",
+    "brandId": "brand_nintendo"
   },
   {
     "id": "prod_006",
@@ -138,7 +143,8 @@
       "0xFFBDBDBD",
       "0xFFF5F0E1"
     ],
-    "brandName": "Samsung"
+    "brandName": "Samsung",
+    "brandId": "brand_samsung"
   },
   {
     "id": "prod_007",
@@ -157,7 +163,8 @@
       "Laser Detect"
     ],
     "colorSwatches": [],
-    "brandName": "Dyson"
+    "brandName": "Dyson",
+    "brandId": "brand_dyson"
   },
   {
     "id": "prod_008",
@@ -180,7 +187,8 @@
       "0xFFC62828",
       "0xFF80CBC4"
     ],
-    "brandName": "Nespresso"
+    "brandName": "Nespresso",
+    "brandId": "brand_nespresso"
   },
   {
     "id": "prod_009",
@@ -204,7 +212,8 @@
       "0xFF212121",
       "0xFF1565C0"
     ],
-    "brandName": "KitchenAid"
+    "brandName": "KitchenAid",
+    "brandId": "brand_kitchenaid"
   },
   {
     "id": "prod_010",
@@ -227,7 +236,8 @@
       "0xFFC62828",
       "0xFFE0E0E0"
     ],
-    "brandName": "Vitamix"
+    "brandName": "Vitamix",
+    "brandId": "brand_vitamix"
   },
   {
     "id": "prod_011",
@@ -250,7 +260,8 @@
       "0xFF212121",
       "0xFF9E9E9E"
     ],
-    "brandName": "Nike"
+    "brandName": "Nike",
+    "brandId": "brand_nike"
   },
   {
     "id": "prod_012",
@@ -269,7 +280,8 @@
       "Thermally Bonded"
     ],
     "colorSwatches": [],
-    "brandName": "adidas"
+    "brandName": "adidas",
+    "brandId": "brand_adidas"
   },
   {
     "id": "prod_013",
@@ -288,7 +300,8 @@
       "Indoor"
     ],
     "colorSwatches": [],
-    "brandName": "Wilson"
+    "brandName": "Wilson",
+    "brandId": "brand_wilson"
   },
   {
     "id": "prod_014",
@@ -308,7 +321,8 @@
       "28 oz"
     ],
     "colorSwatches": [],
-    "brandName": "Starbucks"
+    "brandName": "Starbucks",
+    "brandId": "brand_starbucks"
   },
   {
     "id": "prod_015",
@@ -328,7 +342,8 @@
       "12 fl oz"
     ],
     "colorSwatches": [],
-    "brandName": "Coca-Cola"
+    "brandName": "Coca-Cola",
+    "brandId": "brand_cocacola"
   },
   {
     "id": "prod_016",
@@ -347,6 +362,7 @@
       "18.12 oz"
     ],
     "colorSwatches": [],
-    "brandName": "OREO"
+    "brandName": "OREO",
+    "brandId": "brand_oreo"
   }
 ]

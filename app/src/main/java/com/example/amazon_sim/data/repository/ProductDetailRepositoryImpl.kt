@@ -70,7 +70,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF555555, 0xFF777777, 0xFF999999),
             brandLogoPlaceholderColor = 0xFF1A1A1A,
-            imageAssetPath = "image/Marshall.jpg"
+            imageAssetPath = "image/Marshall.jpg",
+            baseName = "Marshall Acton III Bluetooth Home Speaker"
         )
     }
 
@@ -110,7 +111,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFFFF8A65, 0xFF555555, 0xFF777777),
             brandLogoPlaceholderColor = 0xFF333333,
-            imageAssetPath = "image/iPhone.jpg"
+            imageAssetPath = "image/iPhone.jpg",
+            baseName = "Apple iPhone 17 Pro Max"
         )
     }
 
@@ -151,7 +153,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF78909C, 0xFF607D8B, 0xFF90A4AE),
             brandLogoPlaceholderColor = 0xFF333333,
-            imageAssetPath = "image/MacBook.jpg"
+            imageAssetPath = "image/MacBook.jpg",
+            baseName = "Apple MacBook Air 13-inch with M4 Chip"
         )
     }
 
@@ -186,7 +189,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF212121, 0xFF555555, 0xFF888888),
             brandLogoPlaceholderColor = 0xFF000000,
-            imageAssetPath = "image/Sony.jpg"
+            imageAssetPath = "image/Sony.jpg",
+            baseName = "Sony WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones"
         )
     }
 
@@ -220,7 +224,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFFE0E0E0, 0xFF1565C0, 0xFF888888),
             brandLogoPlaceholderColor = 0xFFE60012,
-            imageAssetPath = "image/Nintendo.jpg"
+            imageAssetPath = "image/Nintendo.jpg",
+            baseName = "Nintendo Switch OLED Model"
         )
     }
 
@@ -259,7 +264,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF2E7D32, 0xFF555555, 0xFF888888),
             brandLogoPlaceholderColor = 0xFF1428A0,
-            imageAssetPath = "image/Samsung.jpg"
+            imageAssetPath = "image/Samsung.jpg",
+            baseName = "Samsung Galaxy Watch7 with Galaxy AI"
         )
     }
 
@@ -293,7 +299,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFFFF6F00, 0xFF666666, 0xFF999999),
             brandLogoPlaceholderColor = 0xFF6C0AAB,
-            imageAssetPath = "image/Dyson.jpg"
+            imageAssetPath = "image/Dyson.jpg",
+            baseName = "Dyson V15 Detect Cordless Vacuum Cleaner"
         )
     }
 
@@ -328,7 +335,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF5D4037, 0xFF888888),
             brandLogoPlaceholderColor = 0xFF000000,
-            imageAssetPath = "image/Nespresso.jpg"
+            imageAssetPath = "image/Nespresso.jpg",
+            baseName = "Nespresso Vertuo Pop+ Deluxe Coffee and Espresso Machine"
         )
     }
 
@@ -364,7 +372,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFFD32F2F, 0xFF888888, 0xFF666666),
             brandLogoPlaceholderColor = 0xFF000000,
-            imageAssetPath = "image/KitchenAid.jpg"
+            imageAssetPath = "image/KitchenAid.jpg",
+            baseName = "KitchenAid Artisan Series 5-Quart Tilt-Head Stand Mixer"
         )
     }
 
@@ -399,7 +408,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF212121, 0xFF777777),
             brandLogoPlaceholderColor = 0xFF000000,
-            imageAssetPath = "image/Vitamix.jpg"
+            imageAssetPath = "image/Vitamix.jpg",
+            baseName = "Vitamix Explorian Blender, Professional-Grade"
         )
     }
 
@@ -439,7 +449,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF1565C0, 0xFF888888, 0xFF555555),
             brandLogoPlaceholderColor = 0xFF000000,
-            imageAssetPath = "image/Nike.jpg"
+            imageAssetPath = "image/Nike.jpg",
+            baseName = "Nike Air Zoom Pegasus 41 Men's Road Running Shoes"
         )
     }
 
@@ -473,7 +484,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFFE0E0E0, 0xFF888888),
             brandLogoPlaceholderColor = 0xFF000000,
-            imageAssetPath = "image/Adidas.jpg"
+            imageAssetPath = "image/Adidas.jpg",
+            baseName = "adidas Tiro League Thermally Bonded Soccer Ball"
         )
     }
 
@@ -507,7 +519,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFFE65100, 0xFF888888),
             brandLogoPlaceholderColor = 0xFF002B5C,
-            imageAssetPath = "image/Wilson.jpg"
+            imageAssetPath = "image/Wilson.jpg",
+            baseName = "Wilson Evolution Indoor Game Basketball"
         )
     }
 
@@ -542,7 +555,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF33691E, 0xFF888888),
             brandLogoPlaceholderColor = 0xFF00704A,
-            imageAssetPath = "image/Starbucks.jpg"
+            imageAssetPath = "image/Starbucks.jpg",
+            baseName = "Starbucks Pike Place Roast, Whole Bean Coffee"
         )
     }
 
@@ -577,7 +591,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFFB71C1C, 0xFF888888),
             brandLogoPlaceholderColor = 0xFFB71C1C,
-            imageAssetPath = "image/Coca-Cola.jpg"
+            imageAssetPath = "image/Coca-Cola.jpg",
+            baseName = "Coca-Cola Zero Sugar, 12 fl oz Cans"
         )
     }
 
@@ -613,7 +628,8 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
             ),
             customerPhotoPlaceholderColors = listOf(0xFF1A237E, 0xFF888888),
             brandLogoPlaceholderColor = 0xFF004BA0,
-            imageAssetPath = "image/OREO.jpg"
+            imageAssetPath = "image/OREO.jpg",
+            baseName = "OREO Original Chocolate Sandwich Cookies, Family Size"
         )
     }
 }

@@ -59,6 +59,7 @@ import com.example.amazon_sim.ui.screen.productdetail.components.ImagePagerSecti
 import com.example.amazon_sim.ui.screen.productdetail.components.PriceSection
 import com.example.amazon_sim.ui.screen.productdetail.components.SpecOptionCard
 import com.example.amazon_sim.ui.theme.AmazonBuyNowOrange
+import com.example.amazon_sim.ui.theme.AmazonCartLinkBlue
 import com.example.amazon_sim.ui.theme.AmazonCheckoutYellow
 import com.example.amazon_sim.ui.theme.AmazonInStockGreen
 import com.example.amazon_sim.ui.theme.AmazonProfileTopBackground
@@ -83,6 +84,7 @@ fun ProductDetailScreen(
     onDismissBottomSheet: () -> Unit,
     onGoToCart: () -> Unit,
     onBuyNowClick: () -> Unit = {},
+    onAddToListClick: () -> Unit = {},
     onShareClick: () -> Unit = {},
     onVisitStoreClick: () -> Unit = {}
 ) {
@@ -366,6 +368,20 @@ fun ProductDetailScreen(
                         color = Color.Black
                     )
                 }
+            }
+
+            // Add to List
+            item {
+                Text(
+                    text = "Add to List",
+                    fontSize = 14.sp,
+                    color = AmazonCartLinkBlue,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { onAddToListClick() }
+                        .padding(horizontal = 16.dp, vertical = 10.dp),
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                )
             }
 
             // Divider

@@ -43,6 +43,8 @@ import com.example.amazon_sim.ui.theme.AmazonRatingOrange
 @Composable
 fun SavedProductCard(
     product: Product,
+    displayName: String = product.name,
+    displayPrice: Double = product.price,
     originalPrice: Double?,
     deliveryDate: String,
     savedInListName: String,
@@ -75,7 +77,7 @@ fun SavedProductCard(
 
         // Product name
         Text(
-            text = product.name,
+            text = displayName,
             fontSize = 14.sp,
             color = Color(0xFF333333),
             maxLines = 2,
@@ -113,7 +115,7 @@ fun SavedProductCard(
             withStyle(SpanStyle(fontSize = 10.sp, fontWeight = FontWeight.Bold, baselineShift = BaselineShift.Superscript)) {
                 append("$")
             }
-            val parts = String.format("%.2f", product.price).split(".")
+            val parts = String.format("%.2f", displayPrice).split(".")
             withStyle(SpanStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold)) {
                 append(parts[0])
             }
@@ -124,7 +126,7 @@ fun SavedProductCard(
         Text(text = priceText, color = Color.Black)
 
         // Original price
-        if (originalPrice != null && originalPrice > product.price) {
+        if (originalPrice != null && originalPrice > displayPrice) {
             Text(
                 text = "List: $${String.format("%.2f", originalPrice)}",
                 fontSize = 12.sp,

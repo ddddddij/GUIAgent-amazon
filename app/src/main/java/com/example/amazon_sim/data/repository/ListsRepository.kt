@@ -7,12 +7,14 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.File
 import java.util.UUID
 
 object ListsRepository {
 
     private const val PREFS_NAME = "shopping_lists_prefs"
     private const val KEY_LISTS = "lists_data"
+    private const val FILE_NAME = "lists_data.json"
 
     private val _lists = MutableStateFlow<List<ShoppingList>>(emptyList())
     val lists: StateFlow<List<ShoppingList>> = _lists.asStateFlow()
@@ -74,6 +76,16 @@ object ListsRepository {
     }
 
     private fun save(context: Context) {
+        val array = toJsonArray()
+        context.applicationContext
+            .getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putString(KEY_LISTS, array.toString())
+            .apply()
+        File(context.applicationContext.filesDir, FILE_NAME).writeText(array.toString(2))
+    }
+
+    private fun toJsonArray(): JSONArray {
         val array = JSONArray()
         _lists.value.forEach { list ->
             array.put(JSONObject().apply {
@@ -85,11 +97,7 @@ object ListsRepository {
                 put("productIds", ids)
             })
         }
-        context.applicationContext
-            .getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-            .edit()
-            .putString(KEY_LISTS, array.toString())
-            .apply()
+        return array
     }
 
     private fun parseJson(json: String): List<ShoppingList> {

@@ -15,6 +15,7 @@ import com.example.amazon_sim.ui.screen.cart.CartScreen
 import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.screen.home.HomeScreen
 import com.example.amazon_sim.ui.screen.lists.ListsActivity
+import com.example.amazon_sim.ui.screen.customerservice.CustomerServiceActivity
 import com.example.amazon_sim.ui.screen.menu.CategoryProductsActivity
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
 import com.example.amazon_sim.ui.screen.profile.ProfileScreen
@@ -68,7 +69,10 @@ fun NavGraph(
                     }
                 },
                 onSectionHeaderClick = { title ->
-                    if (title == "Your Orders") openOrders()
+                    when (title) {
+                        "Your Orders" -> openOrders()
+                        "Lists and Registries" -> openLists()
+                    }
                 },
                 onAccountEntryClick = { id ->
                     when (id) {
@@ -128,6 +132,13 @@ fun NavGraph(
                             Intent(context, CategoryProductsActivity::class.java).apply {
                                 putExtra(CategoryProductsActivity.EXTRA_CATEGORY, category)
                             }
+                        )
+                    }
+                },
+                onActionClick = { action ->
+                    when (action) {
+                        "Customer Service" -> context.startActivity(
+                            Intent(context, CustomerServiceActivity::class.java)
                         )
                     }
                 }

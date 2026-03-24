@@ -70,6 +70,15 @@
             android:name=".ui.screen.lists.ShoppingListDetailActivity"
             android:exported="false"
             android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.customerservice.CustomerServiceActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.screen.store.StoreActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
     </application>
 
 </manifest>

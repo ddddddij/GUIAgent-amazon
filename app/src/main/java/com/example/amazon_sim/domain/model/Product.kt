@@ -15,6 +15,7 @@ data class Product(
     val reviewCount: Int,      // 评论数
     val timestamp: Long,       // 记录时间戳（用于验证）
     val brandName: String = "",     // 品牌名，用于搜索，如 "Apple", "Marshall"
+    val brandId: String = "",       // 品牌ID，对应 Brand.brandId，如 "brand_apple"
     val productType: String = "",   // 商品类型，用于搜索，如 "smartphone", "laptop", "speaker"
     val isBestSeller: Boolean = false,  // 是否展示 Best Seller 角标
     val specTags: List<String> = emptyList(), // 搜索结果卡片上展示的规格标签，如 ["Unlocked", "128GB"]

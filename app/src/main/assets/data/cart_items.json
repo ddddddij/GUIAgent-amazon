@@ -1,7 +1,8 @@
 [
   {
     "id": "1",
-    "productName": "Apple iPhone 17 Pro Max, US Version, 256GB, eSIM, Cosmic Orange - Unlocked",
+    "productId": "prod_001",
+    "productName": "Apple iPhone 17 Pro Max, Cosmic Orange, 256GB",
     "price": 1369.99,
     "quantity": 1,
     "isSelected": false,
@@ -13,7 +14,8 @@
   },
   {
     "id": "2",
-    "productName": "Marshall Acton III Bluetooth Home Speaker - Loud Stereo Sound with Bass",
+    "productId": "prod_003",
+    "productName": "Marshall Acton III Bluetooth Home Speaker, Black",
     "price": 199.99,
     "quantity": 1,
     "isSelected": false,
@@ -25,7 +27,8 @@
   },
   {
     "id": "3",
-    "productName": "Apple MacBook Air 13-inch with M4 Chip, Space Gray, 16GB/256GB",
+    "productId": "prod_002",
+    "productName": "Apple MacBook Air 13-inch with M4 Chip, Space Gray, M4 / 16GB / 256GB",
     "price": 1099.00,
     "quantity": 1,
     "isSelected": false,
@@ -37,6 +40,7 @@
   },
   {
     "id": "4",
+    "productId": "prod_004",
     "productName": "Sony WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones, Black",
     "price": 399.99,
     "quantity": 1,
@@ -49,7 +53,8 @@
   },
   {
     "id": "5",
-    "productName": "Nintendo Switch OLED Model - White",
+    "productId": "prod_005",
+    "productName": "Nintendo Switch OLED Model, White",
     "price": 349.99,
     "quantity": 1,
     "isSelected": false,
@@ -61,7 +66,8 @@
   },
   {
     "id": "6",
-    "productName": "Samsung Galaxy Watch7 with Galaxy AI, 44mm, Bluetooth, Green",
+    "productId": "prod_006",
+    "productName": "Samsung Galaxy Watch7 with Galaxy AI, 44mm, Green",
     "price": 299.99,
     "quantity": 1,
     "isSelected": true,
@@ -73,7 +79,8 @@
   },
   {
     "id": "7",
-    "productName": "Dyson V15 Detect Absolute Cordless Vacuum Cleaner",
+    "productId": "prod_007",
+    "productName": "Dyson V15 Detect Cordless Vacuum Cleaner, V15 Detect",
     "price": 649.99,
     "quantity": 1,
     "isSelected": false,
@@ -85,6 +92,7 @@
   },
   {
     "id": "8",
+    "productId": "prod_008",
     "productName": "Nespresso Vertuo Pop+ Deluxe Coffee and Espresso Machine, Black",
     "price": 129.99,
     "quantity": 1,
@@ -97,6 +105,7 @@
   },
   {
     "id": "9",
+    "productId": "prod_009",
     "productName": "KitchenAid Artisan Series 5-Quart Tilt-Head Stand Mixer, Empire Red",
     "price": 449.99,
     "quantity": 1,
@@ -109,7 +118,8 @@
   },
   {
     "id": "10",
-    "productName": "Nike Air Zoom Pegasus 41 Men's Road Running Shoes, Blue/White",
+    "productId": "prod_011",
+    "productName": "Nike Air Zoom Pegasus 41 Men's Road Running Shoes, US 10, Blue/White",
     "price": 139.99,
     "quantity": 1,
     "isSelected": false,
@@ -121,7 +131,8 @@
   },
   {
     "id": "11",
-    "productName": "Vitamix Explorian Blender, Professional-Grade, 64 oz Container, Black",
+    "productId": "prod_010",
+    "productName": "Vitamix Explorian Blender, Professional-Grade, Black",
     "price": 349.95,
     "quantity": 1,
     "isSelected": false,
@@ -133,6 +144,7 @@
   },
   {
     "id": "12",
+    "productId": "prod_015",
     "productName": "Coca-Cola Zero Sugar, 12 fl oz Cans, 24-Pack",
     "price": 16.99,
     "quantity": 2,
