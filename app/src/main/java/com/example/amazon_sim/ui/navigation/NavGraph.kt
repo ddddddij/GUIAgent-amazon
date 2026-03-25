@@ -2,6 +2,10 @@ package com.example.amazon_sim.ui.navigation
 
 import android.content.Intent
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
@@ -14,9 +18,12 @@ import com.example.amazon_sim.ui.screen.search.SearchActivity
 import com.example.amazon_sim.ui.screen.cart.CartScreen
 import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.screen.home.HomeScreen
+import com.example.amazon_sim.data.repository.ListsRepository
+import com.example.amazon_sim.ui.screen.lists.components.CreateListBottomSheet
 import com.example.amazon_sim.ui.screen.lists.ListsActivity
 import com.example.amazon_sim.ui.screen.customerservice.CustomerServiceActivity
 import com.example.amazon_sim.ui.screen.menu.CategoryProductsActivity
+import com.example.amazon_sim.ui.screen.account.AccountActivity
 import com.example.amazon_sim.ui.screen.buyagain.BuyAgainActivity
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
 import com.example.amazon_sim.ui.screen.profile.ProfileScreen
@@ -53,6 +60,7 @@ fun NavGraph(
         }
         composable("profile") {
             val context = LocalContext.current
+            var showCreateListSheet by remember { mutableStateOf(false) }
             val openOrders = {
                 context.startActivity(Intent(context, OrderActivity::class.java))
             }
@@ -62,6 +70,9 @@ fun NavGraph(
             val openBuyAgain = {
                 context.startActivity(Intent(context, BuyAgainActivity::class.java))
             }
+            val openAccount = {
+                context.startActivity(Intent(context, AccountActivity::class.java))
+            }
             ProfileScreen(
                 onSearchClick = {
                     context.startActivity(Intent(context, SearchActivity::class.java))
@@ -70,6 +81,7 @@ fun NavGraph(
                     when (id) {
                         "orders" -> openOrders()
                         "lists" -> openLists()
+                        "account" -> openAccount()
                     }
                 },
                 onSectionHeaderClick = { title ->
@@ -77,11 +89,13 @@ fun NavGraph(
                         "Your Orders" -> openOrders()
                         "Lists and Registries" -> openLists()
                         "Buy Again" -> openBuyAgain()
+                        "Your Account" -> openAccount()
                     }
                 },
                 onActionButtonClick = { label ->
                     when (label) {
                         "Visit Buy Again" -> openBuyAgain()
+                        "Create a List" -> showCreateListSheet = true
                     }
                 },
                 onAccountEntryClick = { id ->
@@ -89,8 +103,24 @@ fun NavGraph(
                         "addresses" -> context.startActivity(Intent(context, AddressActivity::class.java))
                         "orders_entry" -> openOrders()
                     }
+                },
+                onNeedHelpClick = {
+                    context.startActivity(Intent(context, CustomerServiceActivity::class.java))
                 }
             )
+
+            if (showCreateListSheet) {
+                ListsRepository.init(context)
+                CreateListBottomSheet(
+                    defaultName = ListsRepository.suggestNewListName(),
+                    onDismiss = { showCreateListSheet = false },
+                    onCreate = { name ->
+                        ListsRepository.createList(context, name)
+                        showCreateListSheet = false
+                    },
+                    onEmptyNameError = { }
+                )
+            }
         }
         composable("cart") {
             val context = LocalContext.current
@@ -134,6 +164,7 @@ fun NavGraph(
                         "Orders" -> context.startActivity(Intent(context, OrderActivity::class.java))
                         "Lists" -> context.startActivity(Intent(context, ListsActivity::class.java))
                         "Buy Again" -> context.startActivity(Intent(context, BuyAgainActivity::class.java))
+                        "Account" -> context.startActivity(Intent(context, AccountActivity::class.java))
                     }
                 },
                 onCategoryClick = { category ->
