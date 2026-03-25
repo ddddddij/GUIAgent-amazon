@@ -1,5 +1,6 @@
 package com.example.amazon_sim.ui.screen.order
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -7,6 +8,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.theme.Amazon_simTheme
 
 class OrderDetailActivity : ComponentActivity() {
@@ -36,7 +38,22 @@ class OrderDetailActivity : ComponentActivity() {
                         order = currentOrder,
                         onBackClick = { finish() },
                         onCancelOrder = { viewModel.cancelOrder() },
-                        onConfirmReceipt = { viewModel.confirmReceipt() }
+                        onConfirmReceipt = { viewModel.confirmReceipt() },
+                        onBuyAgainClick = { item ->
+                            val variantLabel = item.selectedSpec.joinToString(" / ") { "${it.specType}: ${it.specValue}" }
+                            startActivity(
+                                PaymentMethodActivity.createBuyNowIntent(
+                                    context = this@OrderDetailActivity,
+                                    productId = item.productId,
+                                    productName = item.productName,
+                                    productImage = item.productImage,
+                                    variantLabel = variantLabel,
+                                    unitPrice = item.price,
+                                    quantity = item.quantity,
+                                    freeDeliveryDate = ""
+                                )
+                            )
+                        }
                     )
                 }
             }

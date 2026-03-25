@@ -17,6 +17,7 @@ import com.example.amazon_sim.ui.screen.home.HomeScreen
 import com.example.amazon_sim.ui.screen.lists.ListsActivity
 import com.example.amazon_sim.ui.screen.customerservice.CustomerServiceActivity
 import com.example.amazon_sim.ui.screen.menu.CategoryProductsActivity
+import com.example.amazon_sim.ui.screen.buyagain.BuyAgainActivity
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
 import com.example.amazon_sim.ui.screen.profile.ProfileScreen
 import org.json.JSONArray
@@ -58,6 +59,9 @@ fun NavGraph(
             val openLists = {
                 context.startActivity(Intent(context, ListsActivity::class.java))
             }
+            val openBuyAgain = {
+                context.startActivity(Intent(context, BuyAgainActivity::class.java))
+            }
             ProfileScreen(
                 onSearchClick = {
                     context.startActivity(Intent(context, SearchActivity::class.java))
@@ -72,6 +76,12 @@ fun NavGraph(
                     when (title) {
                         "Your Orders" -> openOrders()
                         "Lists and Registries" -> openLists()
+                        "Buy Again" -> openBuyAgain()
+                    }
+                },
+                onActionButtonClick = { label ->
+                    when (label) {
+                        "Visit Buy Again" -> openBuyAgain()
                     }
                 },
                 onAccountEntryClick = { id ->
@@ -123,6 +133,7 @@ fun NavGraph(
                     when (label) {
                         "Orders" -> context.startActivity(Intent(context, OrderActivity::class.java))
                         "Lists" -> context.startActivity(Intent(context, ListsActivity::class.java))
+                        "Buy Again" -> context.startActivity(Intent(context, BuyAgainActivity::class.java))
                     }
                 },
                 onCategoryClick = { category ->

@@ -11,6 +11,7 @@
     "timestamp": 1710777600000,
     "productType": "smartphone",
     "isBestSeller": true,
+    "repurchaseRate": 32,
     "specTags": [
       "Unlocked",
       "256GB",
@@ -22,7 +23,9 @@
       "0xFFBDBDBD"
     ],
     "brandName": "Apple",
-    "brandId": "brand_apple"
+    "brandId": "brand_apple",
+    "specSubtitle": "Unlocked · 256GB",
+    "typicalPrice": 0.0
   },
   {
     "id": "prod_002",
@@ -36,6 +39,7 @@
     "timestamp": 1710691200000,
     "productType": "laptop",
     "isBestSeller": true,
+    "repurchaseRate": 28,
     "specTags": [
       "M4 Chip",
       "16GB",
@@ -48,7 +52,9 @@
       "0xFFF5E6CC"
     ],
     "brandName": "Apple",
-    "brandId": "brand_apple"
+    "brandId": "brand_apple",
+    "specSubtitle": "M4 · 16GB · 256GB SSD",
+    "typicalPrice": 0.0
   },
   {
     "id": "prod_003",
@@ -62,6 +68,7 @@
     "timestamp": 1710604800000,
     "productType": "speaker",
     "isBestSeller": false,
+    "repurchaseRate": 18,
     "specTags": [
       "Bluetooth",
       "Home Speaker"
@@ -72,7 +79,9 @@
       "0xFF1A237E"
     ],
     "brandName": "Marshall",
-    "brandId": "brand_marshall"
+    "brandId": "brand_marshall",
+    "specSubtitle": "Bluetooth · Home Speaker",
+    "typicalPrice": 0.0
   },
   {
     "id": "prod_004",
@@ -86,6 +95,7 @@
     "timestamp": 1710518400000,
     "productType": "headphones",
     "isBestSeller": true,
+    "repurchaseRate": 35,
     "specTags": [
       "Wireless",
       "Noise Canceling"
@@ -96,7 +106,9 @@
       "0xFF1A237E"
     ],
     "brandName": "Sony",
-    "brandId": "brand_sony"
+    "brandId": "brand_sony",
+    "specSubtitle": "Wireless · Noise Canceling",
+    "typicalPrice": 429.99
   },
   {
     "id": "prod_005",
@@ -110,6 +122,7 @@
     "timestamp": 1710432000000,
     "productType": "gaming console",
     "isBestSeller": true,
+    "repurchaseRate": 22,
     "specTags": [
       "OLED Display",
       "64GB"
@@ -119,7 +132,9 @@
       "0xFF1565C0"
     ],
     "brandName": "Nintendo",
-    "brandId": "brand_nintendo"
+    "brandId": "brand_nintendo",
+    "specSubtitle": "OLED · 64GB",
+    "typicalPrice": 0.0
   },
   {
     "id": "prod_006",
@@ -133,6 +148,7 @@
     "timestamp": 1710345600000,
     "productType": "smartwatch",
     "isBestSeller": false,
+    "repurchaseRate": 15,
     "specTags": [
       "44mm",
       "Bluetooth",
@@ -144,7 +160,9 @@
       "0xFFF5F0E1"
     ],
     "brandName": "Samsung",
-    "brandId": "brand_samsung"
+    "brandId": "brand_samsung",
+    "specSubtitle": "44mm · Bluetooth",
+    "typicalPrice": 329.99
   },
   {
     "id": "prod_007",
@@ -158,13 +176,16 @@
     "timestamp": 1710259200000,
     "productType": "vacuum",
     "isBestSeller": false,
+    "repurchaseRate": 12,
     "specTags": [
       "Cordless",
       "Laser Detect"
     ],
     "colorSwatches": [],
     "brandName": "Dyson",
-    "brandId": "brand_dyson"
+    "brandId": "brand_dyson",
+    "specSubtitle": "Cordless · Laser Detect",
+    "typicalPrice": 749.99
   },
   {
     "id": "prod_008",
@@ -178,6 +199,7 @@
     "timestamp": 1710172800000,
     "productType": "coffee maker",
     "isBestSeller": false,
+    "repurchaseRate": 72,
     "specTags": [
       "Single Serve",
       "Vertuo"
@@ -188,7 +210,9 @@
       "0xFF80CBC4"
     ],
     "brandName": "Nespresso",
-    "brandId": "brand_nespresso"
+    "brandId": "brand_nespresso",
+    "specSubtitle": "Single Serve · Vertuo",
+    "typicalPrice": 169.99
   },
   {
     "id": "prod_009",
@@ -202,6 +226,7 @@
     "timestamp": 1710086400000,
     "productType": "mixer",
     "isBestSeller": true,
+    "repurchaseRate": 25,
     "specTags": [
       "5-Quart",
       "Tilt-Head"
@@ -213,7 +238,9 @@
       "0xFF1565C0"
     ],
     "brandName": "KitchenAid",
-    "brandId": "brand_kitchenaid"
+    "brandId": "brand_kitchenaid",
+    "specSubtitle": "5-Quart · Tilt-Head",
+    "typicalPrice": 499.99
   },
   {
     "id": "prod_010",
@@ -227,6 +254,7 @@
     "timestamp": 1710000000000,
     "productType": "blender",
     "isBestSeller": false,
+    "repurchaseRate": 20,
     "specTags": [
       "64 oz",
       "Professional-Grade"
@@ -237,7 +265,9 @@
       "0xFFE0E0E0"
     ],
     "brandName": "Vitamix",
-    "brandId": "brand_vitamix"
+    "brandId": "brand_vitamix",
+    "specSubtitle": "64 oz · Professional-Grade",
+    "typicalPrice": 449.95
   },
   {
     "id": "prod_011",
@@ -251,6 +281,7 @@
     "timestamp": 1709913600000,
     "productType": "running shoes",
     "isBestSeller": false,
+    "repurchaseRate": 45,
     "specTags": [
       "Road Running",
       "Men's"
@@ -261,7 +292,9 @@
       "0xFF9E9E9E"
     ],
     "brandName": "Nike",
-    "brandId": "brand_nike"
+    "brandId": "brand_nike",
+    "specSubtitle": "Road Running · Men's",
+    "typicalPrice": 0.0
   },
   {
     "id": "prod_012",
@@ -275,13 +308,16 @@
     "timestamp": 1709827200000,
     "productType": "soccer ball",
     "isBestSeller": false,
+    "repurchaseRate": 38,
     "specTags": [
       "Size 5",
       "Thermally Bonded"
     ],
     "colorSwatches": [],
     "brandName": "adidas",
-    "brandId": "brand_adidas"
+    "brandId": "brand_adidas",
+    "specSubtitle": "Size 5 · Thermally Bonded",
+    "typicalPrice": 0.0
   },
   {
     "id": "prod_013",
@@ -295,13 +331,16 @@
     "timestamp": 1709740800000,
     "productType": "basketball",
     "isBestSeller": true,
+    "repurchaseRate": 42,
     "specTags": [
       "Official Size 7",
       "Indoor"
     ],
     "colorSwatches": [],
     "brandName": "Wilson",
-    "brandId": "brand_wilson"
+    "brandId": "brand_wilson",
+    "specSubtitle": "Official Size 7 · Indoor",
+    "typicalPrice": 0.0
   },
   {
     "id": "prod_014",
@@ -315,6 +354,7 @@
     "timestamp": 1709654400000,
     "productType": "coffee",
     "isBestSeller": false,
+    "repurchaseRate": 85,
     "specTags": [
       "Whole Bean",
       "Medium Roast",
@@ -322,7 +362,9 @@
     ],
     "colorSwatches": [],
     "brandName": "Starbucks",
-    "brandId": "brand_starbucks"
+    "brandId": "brand_starbucks",
+    "specSubtitle": "Whole Bean · Medium Roast · 28 oz",
+    "typicalPrice": 18.99
   },
   {
     "id": "prod_015",
@@ -336,6 +378,7 @@
     "timestamp": 1709568000000,
     "productType": "beverage",
     "isBestSeller": false,
+    "repurchaseRate": 88,
     "specTags": [
       "Zero Sugar",
       "24-Pack",
@@ -343,7 +386,9 @@
     ],
     "colorSwatches": [],
     "brandName": "Coca-Cola",
-    "brandId": "brand_cocacola"
+    "brandId": "brand_cocacola",
+    "specSubtitle": "Zero Sugar · 24-Pack · 12 fl oz",
+    "typicalPrice": 19.99
   },
   {
     "id": "prod_016",
@@ -357,6 +402,7 @@
     "timestamp": 1709481600000,
     "productType": "cookies",
     "isBestSeller": true,
+    "repurchaseRate": 92,
     "specTags": [
       "Family Size",
       "18.12 oz"

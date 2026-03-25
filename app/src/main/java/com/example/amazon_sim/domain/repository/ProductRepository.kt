@@ -4,4 +4,5 @@ import com.example.amazon_sim.domain.model.Product
 
 interface ProductRepository {
     fun getProducts(): List<Product>
+    fun getTopSellers(limit: Int = 10): List<Product>
 }

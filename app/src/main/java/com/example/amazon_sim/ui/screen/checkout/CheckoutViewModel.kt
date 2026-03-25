@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.util.UUID
 
 data class OrderSummary(
@@ -121,7 +121,7 @@ class CheckoutViewModel(application: Application) : AndroidViewModel(application
             orderTotal = summary.orderTotal
         )
 
-        viewModelScope.launch {
+        runBlocking {
             orderRepository.addOrder(order)
         }
         _pendingOrderId.value = orderId
@@ -130,8 +130,8 @@ class CheckoutViewModel(application: Application) : AndroidViewModel(application
 
     fun confirmOrder() {
         val orderId = _pendingOrderId.value ?: return
-        viewModelScope.launch {
-            val existingOrder = orderRepository.getOrderById(orderId) ?: return@launch
+        runBlocking {
+            val existingOrder = orderRepository.getOrderById(orderId) ?: return@runBlocking
             val currentAddress = _deliveryAddress.value
             val updatedOrder = if (currentAddress != null) {
                 existingOrder.copy(

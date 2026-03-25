@@ -21,5 +21,6 @@ data class ProductDetailData(
     val customerPhotoPlaceholderColors: List<Long> = emptyList(),
     val brandLogoPlaceholderColor: Long = 0xFFAAAAAA,
     val imageAssetPath: String = "",
-    val baseName: String = ""
+    val baseName: String = "",
+    val repurchaseRate: Int = 0         // 复购率，百分比值，如 85 表示 85%
 )

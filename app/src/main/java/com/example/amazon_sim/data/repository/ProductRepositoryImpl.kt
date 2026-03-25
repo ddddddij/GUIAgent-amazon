@@ -23,6 +23,10 @@ class ProductRepositoryImpl(private val context: Context) : ProductRepository {
         }.getOrDefault(emptyList())
     }
 
+    override fun getTopSellers(limit: Int): List<Product> {
+        return getProducts().sortedBy { it.repurchaseRate }.take(limit)
+    }
+
     private fun JSONObject.toProduct(): Product = Product(
         id = optString("id"),
         name = optString("name"),
@@ -37,12 +41,15 @@ class ProductRepositoryImpl(private val context: Context) : ProductRepository {
         brandId = optString("brandId", ""),
         productType = optString("productType", ""),
         isBestSeller = optBoolean("isBestSeller", false),
+        repurchaseRate = optInt("repurchaseRate", 0),
         specTags = optJSONArray("specTags")?.let { arr ->
             (0 until arr.length()).map { arr.optString(it) }
         } ?: emptyList(),
         colorSwatches = optJSONArray("colorSwatches")?.let { arr ->
             (0 until arr.length()).mapNotNull { arr.optString(it).removePrefix("0x").toLongOrNull(16) }
-        } ?: emptyList()
+        } ?: emptyList(),
+        specSubtitle = optString("specSubtitle", ""),
+        typicalPrice = optDouble("typicalPrice", 0.0)
     )
 
     private companion object {

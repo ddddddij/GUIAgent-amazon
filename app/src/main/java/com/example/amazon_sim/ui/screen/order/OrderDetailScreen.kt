@@ -63,7 +63,8 @@ fun OrderDetailScreen(
     order: Order,
     onBackClick: () -> Unit,
     onCancelOrder: () -> Unit,
-    onConfirmReceipt: () -> Unit
+    onConfirmReceipt: () -> Unit,
+    onBuyAgainClick: (OrderItem) -> Unit = {}
 ) {
     var showCancelDialog by remember { mutableStateOf(false) }
     var showConfirmDialog by remember { mutableStateOf(false) }
@@ -141,7 +142,7 @@ fun OrderDetailScreen(
             Spacer(modifier = Modifier.height(12.dp))
 
             // Order items card
-            OrderItemsCard(items = order.items)
+            OrderItemsCard(items = order.items, onBuyAgainClick = onBuyAgainClick)
 
             Spacer(modifier = Modifier.height(12.dp))
 
@@ -293,7 +294,7 @@ private fun StatusProgressBar(orderStatus: OrderStatus) {
 // ─── Order Items Card ───────────────────────────────────────────────────────────
 
 @Composable
-private fun OrderItemsCard(items: List<OrderItem>) {
+private fun OrderItemsCard(items: List<OrderItem>, onBuyAgainClick: (OrderItem) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -310,7 +311,7 @@ private fun OrderItemsCard(items: List<OrderItem>) {
         Spacer(modifier = Modifier.height(12.dp))
 
         items.forEachIndexed { index, item ->
-            OrderItemRow(item = item)
+            OrderItemRow(item = item, onBuyAgainClick = { onBuyAgainClick(item) })
             if (index < items.lastIndex) {
                 HorizontalDivider(
                     modifier = Modifier.padding(vertical = 10.dp),
@@ -322,66 +323,87 @@ private fun OrderItemsCard(items: List<OrderItem>) {
 }
 
 @Composable
-private fun OrderItemRow(item: OrderItem) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        // Product image
-        Box(
-            modifier = Modifier
-                .size(72.dp)
-                .clip(RoundedCornerShape(4.dp))
-                .background(Color(0xFFF5F5F5))
+private fun OrderItemRow(item: OrderItem, onBuyAgainClick: () -> Unit) {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            HomeProductAssetImage(
-                assetPath = item.productImage,
-                contentDescription = item.productName,
-                fallbackColor = Color(0xFFCCCCCC)
-            )
-        }
+            // Product image
+            Box(
+                modifier = Modifier
+                    .size(72.dp)
+                    .clip(RoundedCornerShape(4.dp))
+                    .background(Color(0xFFF5F5F5))
+            ) {
+                HomeProductAssetImage(
+                    assetPath = item.productImage,
+                    contentDescription = item.productName,
+                    fallbackColor = Color(0xFFCCCCCC)
+                )
+            }
 
-        Spacer(modifier = Modifier.width(12.dp))
+            Spacer(modifier = Modifier.width(12.dp))
 
-        Column(modifier = Modifier.weight(1f)) {
-            Text(
-                text = item.productName,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Medium,
-                color = Color.Black,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            // Specs if any
-            if (item.selectedSpec.isNotEmpty()) {
-                val specText = item.selectedSpec.joinToString(" | ") { "${it.specType}: ${it.specValue}" }
+            Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = specText,
-                    fontSize = 12.sp,
-                    color = Color(0xFF888888),
-                    maxLines = 1,
+                    text = item.productName,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = Color.Black,
+                    maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-                Spacer(modifier = Modifier.height(2.dp))
+                Spacer(modifier = Modifier.height(4.dp))
+                // Specs if any
+                if (item.selectedSpec.isNotEmpty()) {
+                    val specText = item.selectedSpec.joinToString(" | ") { "${it.specType}: ${it.specValue}" }
+                    Text(
+                        text = specText,
+                        fontSize = 12.sp,
+                        color = Color(0xFF888888),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Spacer(modifier = Modifier.height(2.dp))
+                }
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "$${String.format("%.2f", item.price)}",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.Black
+                    )
+                    Text(
+                        text = "Qty: ${item.quantity}",
+                        fontSize = 13.sp,
+                        color = Color(0xFF666666)
+                    )
+                }
             }
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "$${String.format("%.2f", item.price)}",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black
-                )
-                Text(
-                    text = "Qty: ${item.quantity}",
-                    fontSize = 13.sp,
-                    color = Color(0xFF666666)
-                )
-            }
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Buy Again button
+        Button(
+            onClick = onBuyAgainClick,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(36.dp),
+            shape = RoundedCornerShape(18.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = AmazonCheckoutYellow)
+        ) {
+            Text(
+                text = "Buy Again",
+                fontSize = 13.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Black
+            )
         }
     }
 }

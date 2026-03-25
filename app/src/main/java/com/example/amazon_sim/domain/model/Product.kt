@@ -18,6 +18,9 @@ data class Product(
     val brandId: String = "",       // 品牌ID，对应 Brand.brandId，如 "brand_apple"
     val productType: String = "",   // 商品类型，用于搜索，如 "smartphone", "laptop", "speaker"
     val isBestSeller: Boolean = false,  // 是否展示 Best Seller 角标
+    val repurchaseRate: Int = 0,        // 复购率，百分比值，如 85 表示 85%
     val specTags: List<String> = emptyList(), // 搜索结果卡片上展示的规格标签，如 ["Unlocked", "128GB"]
-    val colorSwatches: List<Long> = emptyList() // 搜索结果颜色色块色值列表（Color Long），如 [0xFF1A1A1A, 0xFFFFF8E7]
+    val colorSwatches: List<Long> = emptyList(), // 搜索结果颜色色块色值列表（Color Long），如 [0xFF1A1A1A, 0xFFFFF8E7]
+    val specSubtitle: String = "",            // 规格副标题，如 "Alkaline · 48 Count"
+    val typicalPrice: Double = 0.0            // 划线原价（"Typical: $X"），0.0 表示无划线价
 )
