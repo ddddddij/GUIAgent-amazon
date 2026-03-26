@@ -24,6 +24,7 @@ import com.example.amazon_sim.ui.screen.lists.ListsActivity
 import com.example.amazon_sim.ui.screen.customerservice.CustomerServiceActivity
 import com.example.amazon_sim.ui.screen.menu.CategoryProductsActivity
 import com.example.amazon_sim.ui.screen.account.AccountActivity
+import com.example.amazon_sim.ui.screen.interests.InterestsActivity
 import com.example.amazon_sim.ui.screen.buyagain.BuyAgainActivity
 import com.example.amazon_sim.ui.screen.menu.MenuScreen
 import com.example.amazon_sim.ui.screen.profile.ProfileScreen
@@ -73,6 +74,9 @@ fun NavGraph(
             val openAccount = {
                 context.startActivity(Intent(context, AccountActivity::class.java))
             }
+            val openInterests = {
+                context.startActivity(Intent(context, InterestsActivity::class.java))
+            }
             ProfileScreen(
                 onSearchClick = {
                     context.startActivity(Intent(context, SearchActivity::class.java))
@@ -82,6 +86,7 @@ fun NavGraph(
                         "orders" -> openOrders()
                         "lists" -> openLists()
                         "account" -> openAccount()
+                        "interests" -> openInterests()
                     }
                 },
                 onSectionHeaderClick = { title ->
@@ -90,12 +95,14 @@ fun NavGraph(
                         "Lists and Registries" -> openLists()
                         "Buy Again" -> openBuyAgain()
                         "Your Account" -> openAccount()
+                        "Your Interests" -> openInterests()
                     }
                 },
                 onActionButtonClick = { label ->
                     when (label) {
                         "Visit Buy Again" -> openBuyAgain()
                         "Create a List" -> showCreateListSheet = true
+                        "Create a new Interest" -> openInterests()
                     }
                 },
                 onAccountEntryClick = { id ->

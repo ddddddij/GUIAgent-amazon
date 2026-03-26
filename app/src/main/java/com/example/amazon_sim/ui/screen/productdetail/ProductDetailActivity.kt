@@ -73,7 +73,21 @@ class ProductDetailActivity : ComponentActivity() {
                         onBackClick = { finish() },
                         onOptionSelect = { dim, optId -> viewModel.selectOption(dim, optId) },
                         onQuantityChange = { viewModel.setQuantity(it) },
-                        onFavoriteClick = { viewModel.toggleFavorite() },
+                        onFavoriteClick = {
+                            viewModel.toggleFavorite()
+                            if (!isFavorite) {
+                                ListsRepository.addProductToList(
+                                    this@ProductDetailActivity,
+                                    "list_alexa",
+                                    productId
+                                )
+                                Toast.makeText(
+                                    this@ProductDetailActivity,
+                                    "Added to Alexa List",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        },
                         onAddToCartClick = {
                             val price = priceInfo?.price ?: return@ProductDetailScreen
                             val color = currentProduct.imagePlaceholderColors.firstOrNull() ?: 0xFFCCCCCC

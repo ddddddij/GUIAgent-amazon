@@ -87,6 +87,10 @@
             android:name=".ui.screen.account.AccountActivity"
             android:exported="false"
             android:theme="@style/Theme.Amazon_sim" />
+        <activity
+            android:name=".ui.screen.interests.InterestsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Amazon_sim" />
     </application>
 
 </manifest>

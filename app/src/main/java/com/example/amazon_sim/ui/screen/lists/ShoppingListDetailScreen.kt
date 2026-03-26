@@ -1,5 +1,6 @@
 package com.example.amazon_sim.ui.screen.lists
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -43,6 +44,7 @@ import com.example.amazon_sim.domain.model.Product
 import com.example.amazon_sim.domain.model.ShoppingList
 import com.example.amazon_sim.ui.screen.lists.components.DetailTitleRow
 import com.example.amazon_sim.ui.screen.lists.components.ProductDetailCard
+import com.example.amazon_sim.MainActivity
 import com.example.amazon_sim.ui.theme.AmazonProfileTopBackground
 import kotlinx.coroutines.launch
 
@@ -124,7 +126,11 @@ fun ShoppingListDetailScreen(
                     DetailTitleRow(
                         listName = shoppingList?.listName ?: "",
                         onAddItemClick = {
-                            Toast.makeText(context, "Coming soon", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(context, MainActivity::class.java).apply {
+                                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                                putExtra(MainActivity.EXTRA_NAVIGATE_HOME, true)
+                            }
+                            context.startActivity(intent)
                         },
                         onMoreClick = {
                             Toast.makeText(context, "Coming soon", Toast.LENGTH_SHORT).show()

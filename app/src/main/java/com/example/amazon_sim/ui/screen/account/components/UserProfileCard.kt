@@ -1,5 +1,7 @@
 package com.example.amazon_sim.ui.screen.account.components
 
+import android.graphics.BitmapFactory
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,10 +18,15 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -44,15 +51,34 @@ fun UserProfileCard(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // Avatar
-            Icon(
-                imageVector = Icons.Filled.AccountCircle,
-                contentDescription = "Avatar",
-                tint = Color(0xFFCCCCCC),
-                modifier = Modifier
-                    .size(100.dp)
-                    .clip(CircleShape)
-                    .background(Color(0xFFF0F0F0), CircleShape)
-            )
+            val context = LocalContext.current
+            val avatarBitmap by produceState<androidx.compose.ui.graphics.ImageBitmap?>(initialValue = null) {
+                value = runCatching {
+                    context.assets.open("image/用户头像.JPG").use { input ->
+                        BitmapFactory.decodeStream(input)?.asImageBitmap()
+                    }
+                }.getOrNull()
+            }
+            if (avatarBitmap != null) {
+                Image(
+                    bitmap = avatarBitmap!!,
+                    contentDescription = "Avatar",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .size(100.dp)
+                        .clip(CircleShape)
+                )
+            } else {
+                Icon(
+                    imageVector = Icons.Filled.AccountCircle,
+                    contentDescription = "Avatar",
+                    tint = Color(0xFFCCCCCC),
+                    modifier = Modifier
+                        .size(100.dp)
+                        .clip(CircleShape)
+                        .background(Color(0xFFF0F0F0), CircleShape)
+                )
+            }
 
             Spacer(modifier = Modifier.height(12.dp))
 

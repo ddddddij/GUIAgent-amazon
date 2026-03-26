@@ -53,7 +53,9 @@ import com.example.amazon_sim.ui.screen.lists.components.ListCard
 import com.example.amazon_sim.ui.screen.lists.components.SavedProductCard
 import com.example.amazon_sim.ui.theme.AmazonProfileTopBackground
 import kotlinx.coroutines.launch
+import android.content.Intent
 import android.widget.Toast
+import com.example.amazon_sim.MainActivity
 
 @Composable
 fun ListsScreen(
@@ -226,7 +228,11 @@ fun ListsScreen(
                             fontSize = 14.sp,
                             color = Color(0xFF0066C0),
                             modifier = Modifier.clickable {
-                                Toast.makeText(context, "Coming soon", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(context, MainActivity::class.java).apply {
+                                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                                    putExtra(MainActivity.EXTRA_NAVIGATE_HOME, true)
+                                }
+                                context.startActivity(intent)
                             }
                         )
                     }
