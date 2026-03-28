@@ -69,6 +69,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Ease of setup", 50), ReviewTag("Noise level", 42)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF555555, 0xFF777777, 0xFF999999),
+            reviewImages = listOf("image/Marshall评论1.jpg", "image/Marshall评论2.jpg", "image/Marshall评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF1A1A1A,
             imageAssetPath = "image/Marshall.jpg",
             baseName = "Marshall Acton III Bluetooth Home Speaker",
@@ -111,6 +112,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Build quality", 512), ReviewTag("Value for money", 389)
             ),
             customerPhotoPlaceholderColors = listOf(0xFFFF8A65, 0xFF555555, 0xFF777777),
+            reviewImages = listOf("image/iPhone评论1.jpg", "image/iPhone评论2.jpg", "image/iPhone评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF333333,
             imageAssetPath = "image/iPhone.jpg",
             baseName = "Apple iPhone 17 Pro Max",
@@ -154,6 +156,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Build quality", 421), ReviewTag("Value for money", 356)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF78909C, 0xFF607D8B, 0xFF90A4AE),
+            reviewImages = listOf("image/MacBook评论1.jpg", "image/MacBook评论2.jpg", "image/MacBook评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF333333,
             imageAssetPath = "image/MacBook.jpg",
             baseName = "Apple MacBook Air 13-inch with M4 Chip",
@@ -191,6 +194,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Build quality", 345), ReviewTag("Value for money", 298)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF212121, 0xFF555555, 0xFF888888),
+            reviewImages = listOf("image/Sony评论1.jpg", "image/Sony评论2.jpg", "image/Sony评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF000000,
             imageAssetPath = "image/Sony.jpg",
             baseName = "Sony WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones",
@@ -227,6 +231,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Value for money", 632), ReviewTag("Battery life", 421)
             ),
             customerPhotoPlaceholderColors = listOf(0xFFE0E0E0, 0xFF1565C0, 0xFF888888),
+            reviewImages = listOf("image/Nintendo评论1.jpg", "image/Nintendo评论2.jpg", "image/Nintendo评论3.jpg"),
             brandLogoPlaceholderColor = 0xFFE60012,
             imageAssetPath = "image/Nintendo.jpg",
             baseName = "Nintendo Switch OLED Model",
@@ -268,6 +273,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Galaxy AI features", 198), ReviewTag("Value for money", 165)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF2E7D32, 0xFF555555, 0xFF888888),
+            reviewImages = listOf("image/Samsung评论1.jpg", "image/Samsung评论2.jpg", "image/Samsung评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF1428A0,
             imageAssetPath = "image/Samsung.jpg",
             baseName = "Samsung Galaxy Watch7 with Galaxy AI",
@@ -304,6 +310,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Ease of use", 312), ReviewTag("Value for money", 245)
             ),
             customerPhotoPlaceholderColors = listOf(0xFFFF6F00, 0xFF666666, 0xFF999999),
+            reviewImages = listOf("image/Dyson评论1.jpg", "image/Dyson评论2.jpg", "image/Dyson评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF6C0AAB,
             imageAssetPath = "image/Dyson.jpg",
             baseName = "Dyson V15 Detect Cordless Vacuum Cleaner",
@@ -341,6 +348,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Value for money", 156), ReviewTag("Noise level", 98)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF5D4037, 0xFF888888),
+            reviewImages = listOf("image/Nespresso评论1.jpg", "image/Nespresso评论2.jpg"),
             brandLogoPlaceholderColor = 0xFF000000,
             imageAssetPath = "image/Nespresso.jpg",
             baseName = "Nespresso Vertuo Pop+ Deluxe Coffee and Espresso Machine",
@@ -416,6 +424,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Noise level", 234), ReviewTag("Value for money", 198)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF212121, 0xFF777777),
+            reviewImages = listOf("image/vitamix评论1.jpg", "image/vitamix评论2.jpg"),
             brandLogoPlaceholderColor = 0xFF000000,
             imageAssetPath = "image/Vitamix.jpg",
             baseName = "Vitamix Explorian Blender, Professional-Grade",
@@ -458,6 +467,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Style", 256), ReviewTag("Value for money", 198)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF1565C0, 0xFF888888, 0xFF555555),
+            reviewImages = listOf("image/Nike评论1.jpg", "image/Nike评论2.jpg", "image/Nike评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF000000,
             imageAssetPath = "image/Nike.jpg",
             baseName = "Nike Air Zoom Pegasus 41 Men's Road Running Shoes",
@@ -494,6 +504,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Value for money", 123), ReviewTag("Design", 98)
             ),
             customerPhotoPlaceholderColors = listOf(0xFFE0E0E0, 0xFF888888),
+            reviewImages = listOf("image/Adidas评论1.jpg", "image/Adidas评论2.jpg", "image/Adidas评论3.jpg"),
             brandLogoPlaceholderColor = 0xFF000000,
             imageAssetPath = "image/Adidas.jpg",
             baseName = "adidas Tiro League Thermally Bonded Soccer Ball",
@@ -530,6 +541,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Value for money", 234), ReviewTag("Indoor performance", 178)
             ),
             customerPhotoPlaceholderColors = listOf(0xFFE65100, 0xFF888888),
+            reviewImages = listOf("image/Wilson评论1.jpg", "image/Wilson评论2.jpg"),
             brandLogoPlaceholderColor = 0xFF002B5C,
             imageAssetPath = "image/Wilson.jpg",
             baseName = "Wilson Evolution Indoor Game Basketball",
@@ -567,6 +579,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Smooth taste", 345), ReviewTag("Consistency", 267)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF33691E, 0xFF888888),
+            reviewImages = listOf("image/Starbucks评论1.jpg", "image/Starbucks评论2.jpg"),
             brandLogoPlaceholderColor = 0xFF00704A,
             imageAssetPath = "image/Starbucks.jpg",
             baseName = "Starbucks Pike Place Roast, Whole Bean Coffee",
@@ -604,6 +617,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Freshness", 289), ReviewTag("Packaging", 178)
             ),
             customerPhotoPlaceholderColors = listOf(0xFFB71C1C, 0xFF888888),
+            reviewImages = listOf("image/cocacola评论1.jpg", "image/cocacola评论2.jpg"),
             brandLogoPlaceholderColor = 0xFFB71C1C,
             imageAssetPath = "image/Coca-Cola.jpg",
             baseName = "Coca-Cola Zero Sugar, 12 fl oz Cans",
@@ -642,6 +656,7 @@ class ProductDetailRepositoryImpl : ProductDetailRepository {
                 ReviewTag("Packaging", 412), ReviewTag("Portion size", 289)
             ),
             customerPhotoPlaceholderColors = listOf(0xFF1A237E, 0xFF888888),
+            reviewImages = listOf("image/oreo评论1.jpg", "image/oreo评论2.jpg"),
             brandLogoPlaceholderColor = 0xFF004BA0,
             imageAssetPath = "image/OREO.jpg",
             baseName = "OREO Original Chocolate Sandwich Cookies, Family Size",

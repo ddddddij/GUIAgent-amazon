@@ -1,5 +1,7 @@
 package com.example.amazon_sim.ui.screen.productdetail.components
 
+import android.graphics.BitmapFactory
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -22,10 +24,16 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -44,6 +52,7 @@ fun CustomerReviewsSection(
     reviewSummary: String,
     reviewTags: List<ReviewTag>,
     customerPhotoPlaceholderColors: List<Long>,
+    reviewImages: List<String> = emptyList(),
     onRatingClick: () -> Unit = {},
     onTagClick: (ReviewTag) -> Unit = {},
     modifier: Modifier = Modifier
@@ -205,19 +214,50 @@ fun CustomerReviewsSection(
 
         Spacer(modifier = Modifier.height(8.dp))
 
+        val context = LocalContext.current
+        val displayImages = if (reviewImages.isNotEmpty()) reviewImages
+                            else customerPhotoPlaceholderColors.map { "" }
+
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            customerPhotoPlaceholderColors.forEach { color ->
-                Box(
-                    modifier = Modifier
-                        .size(160.dp)
-                        .clip(RoundedCornerShape(8.dp))
-                        .background(Color(color))
-                )
+            displayImages.forEachIndexed { index, assetPath ->
+                val fallbackColor = Color(customerPhotoPlaceholderColors.getOrElse(index) { 0xFF888888 })
+                if (assetPath.isNotEmpty()) {
+                    val imageBitmap by produceState<ImageBitmap?>(initialValue = null, assetPath) {
+                        value = runCatching {
+                            context.assets.open(assetPath).use { input ->
+                                BitmapFactory.decodeStream(input)?.asImageBitmap()
+                            }
+                        }.getOrNull()
+                    }
+                    Box(
+                        modifier = Modifier
+                            .size(160.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                    ) {
+                        if (imageBitmap != null) {
+                            Image(
+                                bitmap = imageBitmap!!,
+                                contentDescription = null,
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier.matchParentSize()
+                            )
+                        } else {
+                            Box(modifier = Modifier.matchParentSize().background(fallbackColor))
+                        }
+                    }
+                } else {
+                    Box(
+                        modifier = Modifier
+                            .size(160.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(fallbackColor)
+                    )
+                }
             }
         }
     }

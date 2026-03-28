@@ -401,7 +401,8 @@ fun ProductDetailScreen(
                         globalRatingsCount = product.globalRatingsCount,
                         reviewSummary = product.reviewSummary,
                         reviewTags = product.reviewTags,
-                        customerPhotoPlaceholderColors = product.customerPhotoPlaceholderColors
+                        customerPhotoPlaceholderColors = product.customerPhotoPlaceholderColors,
+                        reviewImages = product.reviewImages
                     )
                 }
             }
