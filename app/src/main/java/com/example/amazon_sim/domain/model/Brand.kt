@@ -5,5 +5,6 @@ data class Brand(
     val brandName: String,
     val bannerBgColor: Long,
     val bannerTextColor: Long,
-    val productIds: List<String>
+    val productIds: List<String>,
+    val isFollowed: Boolean = false
 )

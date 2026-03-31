@@ -31,7 +31,7 @@ class StoreActivity : ComponentActivity() {
                 val viewModel: StoreViewModel = viewModel()
 
                 LaunchedEffect(brandId) {
-                    viewModel.loadStore(brandId)
+                    viewModel.loadStore(this@StoreActivity, brandId)
                 }
 
                 val brand by viewModel.brand.collectAsStateWithLifecycle()

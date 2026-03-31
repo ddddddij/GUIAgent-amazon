@@ -1,5 +1,6 @@
 package com.example.amazon_sim.ui.screen.store
 
+import android.content.Context
 import com.example.amazon_sim.data.repository.BrandRepository
 import com.example.amazon_sim.data.repository.ProductDetailRepositoryImpl
 import com.example.amazon_sim.domain.model.Brand
@@ -29,6 +30,8 @@ class StoreViewModel : ViewModel() {
 
     private val detailRepo = ProductDetailRepositoryImpl()
 
+    private lateinit var brandRepo: BrandRepository
+
     private val _brand = MutableStateFlow<Brand?>(null)
     val brand: StateFlow<Brand?> = _brand.asStateFlow()
 
@@ -38,9 +41,13 @@ class StoreViewModel : ViewModel() {
     private val _isFollowing = MutableStateFlow(false)
     val isFollowing: StateFlow<Boolean> = _isFollowing.asStateFlow()
 
-    fun loadStore(brandId: String) {
-        val brand = BrandRepository.getById(brandId) ?: return
+    fun loadStore(context: Context, brandId: String) {
+        if (!::brandRepo.isInitialized) {
+            brandRepo = BrandRepository(context)
+        }
+        val brand = brandRepo.getById(brandId) ?: return
         _brand.value = brand
+        _isFollowing.value = brand.isFollowed
 
         val cards = mutableListOf<StoreProductCard>()
         for (productId in brand.productIds) {
@@ -51,7 +58,12 @@ class StoreViewModel : ViewModel() {
     }
 
     fun toggleFollow() {
-        _isFollowing.value = !_isFollowing.value
+        val currentBrand = _brand.value ?: return
+        if (::brandRepo.isInitialized) {
+            val newFollowed = brandRepo.toggleFollow(currentBrand.brandId)
+            _isFollowing.value = newFollowed
+            _brand.value = currentBrand.copy(isFollowed = newFollowed)
+        }
     }
 
     private fun expandProduct(detail: ProductDetailData): List<StoreProductCard> {

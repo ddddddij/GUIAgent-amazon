@@ -143,7 +143,7 @@ class ProductDetailActivity : ComponentActivity() {
                             showAddToList = true
                         },
                         onVisitStoreClick = {
-                            val brand = BrandRepository.getByName(currentProduct.brandName)
+                            val brand = BrandRepository(this@ProductDetailActivity).getByName(currentProduct.brandName)
                             if (brand != null) {
                                 startActivity(
                                     Intent(this@ProductDetailActivity, StoreActivity::class.java).apply {

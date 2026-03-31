@@ -1,122 +1,94 @@
 package com.example.amazon_sim.data.repository
 
+import android.content.Context
 import com.example.amazon_sim.domain.model.Brand
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.File
 
-object BrandRepository {
+class BrandRepository(private val context: Context) {
 
-    private val brands = listOf(
-        Brand(
-            brandId = "brand_marshall",
-            brandName = "Marshall",
-            bannerBgColor = 0xFF1A1A1A,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_003")
-        ),
-        Brand(
-            brandId = "brand_apple",
-            brandName = "Apple",
-            bannerBgColor = 0xFF000000,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_001", "prod_002")
-        ),
-        Brand(
-            brandId = "brand_sony",
-            brandName = "Sony",
-            bannerBgColor = 0xFF000000,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_004")
-        ),
-        Brand(
-            brandId = "brand_nintendo",
-            brandName = "Nintendo",
-            bannerBgColor = 0xFFE4000F,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_005")
-        ),
-        Brand(
-            brandId = "brand_samsung",
-            brandName = "Samsung",
-            bannerBgColor = 0xFF1428A0,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_006")
-        ),
-        Brand(
-            brandId = "brand_dyson",
-            brandName = "Dyson",
-            bannerBgColor = 0xFF1A1A1A,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_007")
-        ),
-        Brand(
-            brandId = "brand_nespresso",
-            brandName = "Nespresso",
-            bannerBgColor = 0xFF1A1A1A,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_008")
-        ),
-        Brand(
-            brandId = "brand_kitchenaid",
-            brandName = "KitchenAid",
-            bannerBgColor = 0xFF1A1A1A,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_009")
-        ),
-        Brand(
-            brandId = "brand_vitamix",
-            brandName = "Vitamix",
-            bannerBgColor = 0xFF1A1A1A,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_010")
-        ),
-        Brand(
-            brandId = "brand_nike",
-            brandName = "Nike",
-            bannerBgColor = 0xFF111111,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_011")
-        ),
-        Brand(
-            brandId = "brand_adidas",
-            brandName = "adidas",
-            bannerBgColor = 0xFF000000,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_012")
-        ),
-        Brand(
-            brandId = "brand_wilson",
-            brandName = "Wilson",
-            bannerBgColor = 0xFFCC0000,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_013")
-        ),
-        Brand(
-            brandId = "brand_starbucks",
-            brandName = "Starbucks",
-            bannerBgColor = 0xFF00704A,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_014")
-        ),
-        Brand(
-            brandId = "brand_cocacola",
-            brandName = "Coca-Cola",
-            bannerBgColor = 0xFFD32F2F,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_015")
-        ),
-        Brand(
-            brandId = "brand_oreo",
-            brandName = "OREO",
-            bannerBgColor = 0xFF1565C0,
-            bannerTextColor = 0xFFFFFFFF,
-            productIds = listOf("prod_016")
-        )
-    )
+    private val dataFile = File(context.filesDir, FILE_NAME)
+
+    init {
+        resetFromAssets()
+    }
+
+    /** 每次初始化都从 assets 复制初始数据到 internal files，保证重启还原 */
+    private fun resetFromAssets() {
+        val json = runCatching {
+            context.assets.open(ASSET_PATH)
+                .bufferedReader()
+                .use { it.readText() }
+        }.getOrDefault("[]")
+        dataFile.writeText(json)
+    }
+
+    private fun loadBrands(): List<Brand> {
+        val json = runCatching { dataFile.readText() }.getOrDefault("[]")
+        return parseBrands(json)
+    }
+
+    private fun parseBrands(json: String): List<Brand> {
+        return runCatching {
+            val array = JSONArray(json)
+            List(array.length()) { index ->
+                array.getJSONObject(index).toBrand()
+            }
+        }.getOrDefault(emptyList())
+    }
 
     fun getById(brandId: String): Brand? {
-        return brands.find { it.brandId == brandId }
+        return loadBrands().find { it.brandId == brandId }
     }
 
     fun getByName(brandName: String): Brand? {
-        return brands.find { it.brandName.equals(brandName, ignoreCase = true) }
+        return loadBrands().find { it.brandName.equals(brandName, ignoreCase = true) }
+    }
+
+    fun getAll(): List<Brand> {
+        return loadBrands()
+    }
+
+    fun toggleFollow(brandId: String): Boolean {
+        val brands = loadBrands().toMutableList()
+        val index = brands.indexOfFirst { it.brandId == brandId }
+        if (index < 0) return false
+        val updated = brands[index].copy(isFollowed = !brands[index].isFollowed)
+        brands[index] = updated
+        saveAll(brands)
+        return updated.isFollowed
+    }
+
+    private fun saveAll(brands: List<Brand>) {
+        val array = JSONArray()
+        brands.forEach { array.put(it.toJson()) }
+        dataFile.writeText(array.toString(2))
+    }
+
+    private fun Brand.toJson(): JSONObject = JSONObject().apply {
+        put("brandId", brandId)
+        put("brandName", brandName)
+        put("bannerBgColor", java.lang.Long.toHexString(bannerBgColor).uppercase())
+        put("bannerTextColor", java.lang.Long.toHexString(bannerTextColor).uppercase())
+        put("productIds", JSONArray(productIds))
+        put("isFollowed", isFollowed)
+    }
+
+    private fun JSONObject.toBrand(): Brand = Brand(
+        brandId = optString("brandId"),
+        brandName = optString("brandName"),
+        bannerBgColor = optString("bannerBgColor").toLongOrNull(16) ?: 0xFF1A1A1AL,
+        bannerTextColor = optString("bannerTextColor").toLongOrNull(16) ?: 0xFFFFFFFFL,
+        productIds = run {
+            val arr = optJSONArray("productIds") ?: return@run emptyList()
+            List(arr.length()) { arr.getString(it) }
+        },
+        isFollowed = optBoolean("isFollowed", false)
+    )
+
+    private companion object {
+        const val ASSET_PATH = "data/brands.json"
+        const val FILE_NAME = "brands.json"
     }
 }

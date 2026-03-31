@@ -1,0 +1,122 @@
+[
+  {
+    "brandId": "brand_marshall",
+    "brandName": "Marshall",
+    "bannerBgColor": "FF1A1A1A",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_003"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_apple",
+    "brandName": "Apple",
+    "bannerBgColor": "FF000000",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_001", "prod_002"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_sony",
+    "brandName": "Sony",
+    "bannerBgColor": "FF000000",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_004"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_nintendo",
+    "brandName": "Nintendo",
+    "bannerBgColor": "FFE4000F",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_005"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_samsung",
+    "brandName": "Samsung",
+    "bannerBgColor": "FF1428A0",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_006"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_dyson",
+    "brandName": "Dyson",
+    "bannerBgColor": "FF1A1A1A",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_007"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_nespresso",
+    "brandName": "Nespresso",
+    "bannerBgColor": "FF1A1A1A",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_008"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_kitchenaid",
+    "brandName": "KitchenAid",
+    "bannerBgColor": "FF1A1A1A",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_009"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_vitamix",
+    "brandName": "Vitamix",
+    "bannerBgColor": "FF1A1A1A",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_010"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_nike",
+    "brandName": "Nike",
+    "bannerBgColor": "FF111111",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_011"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_adidas",
+    "brandName": "adidas",
+    "bannerBgColor": "FF000000",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_012"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_wilson",
+    "brandName": "Wilson",
+    "bannerBgColor": "FFCC0000",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_013"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_starbucks",
+    "brandName": "Starbucks",
+    "bannerBgColor": "FF00704A",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_014"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_cocacola",
+    "brandName": "Coca-Cola",
+    "bannerBgColor": "FFD32F2F",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_015"],
+    "isFollowed": false
+  },
+  {
+    "brandId": "brand_oreo",
+    "brandName": "OREO",
+    "bannerBgColor": "FF1565C0",
+    "bannerTextColor": "FFFFFFFF",
+    "productIds": ["prod_016"],
+    "isFollowed": false
+  }
+]
