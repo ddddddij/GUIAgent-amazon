@@ -15,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.amazon_sim.data.CartManager
+import com.example.amazon_sim.data.repository.BrandRepository
 import com.example.amazon_sim.data.repository.OrderRepositoryImpl
 import com.example.amazon_sim.ui.components.BottomNavigationBar
 import com.example.amazon_sim.ui.navigation.NavGraph
@@ -23,18 +24,22 @@ import com.example.amazon_sim.ui.theme.Amazon_simTheme
 class MainActivity : ComponentActivity() {
 
     private var navigateToHomeSignal by mutableIntStateOf(0)
+    private var navigateToCartSignal by mutableIntStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // 每次启动 app 时重置所有数据到初始状态
         CartManager.reset(this)
-        OrderRepositoryImpl.getInstance(this)  // 首次创建会自动 resetFromAssets
-        OrderRepositoryImpl.resetInstance()     // 若已存在单例则强制重置
+        BrandRepository.resetInstance()
+        OrderRepositoryImpl.getInstance(this)
+        OrderRepositoryImpl.resetInstance()
 
         if (intent?.getBooleanExtra(EXTRA_NAVIGATE_HOME, false) == true) {
             navigateToHomeSignal++
+        }
+        if (intent?.getBooleanExtra(EXTRA_NAVIGATE_CART, false) == true) {
+            navigateToCartSignal++
         }
 
         setContent {
@@ -44,7 +49,16 @@ class MainActivity : ComponentActivity() {
                 LaunchedEffect(navigateToHomeSignal) {
                     if (navigateToHomeSignal > 0) {
                         navController.navigate("home") {
-                            popUpTo(navController.graph.startDestinationId) { inclusive = true }
+                            popUpTo("home") { inclusive = true }
+                            launchSingleTop = true
+                        }
+                    }
+                }
+
+                LaunchedEffect(navigateToCartSignal) {
+                    if (navigateToCartSignal > 0) {
+                        navController.navigate("cart") {
+                            popUpTo("home") { inclusive = false }
                             launchSingleTop = true
                         }
                     }
@@ -56,7 +70,8 @@ class MainActivity : ComponentActivity() {
                 ) { innerPadding ->
                     NavGraph(
                         navController = navController,
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
+                        startDestination = "home"
                     )
                 }
             }
@@ -68,9 +83,13 @@ class MainActivity : ComponentActivity() {
         if (intent.getBooleanExtra(EXTRA_NAVIGATE_HOME, false)) {
             navigateToHomeSignal++
         }
+        if (intent.getBooleanExtra(EXTRA_NAVIGATE_CART, false)) {
+            navigateToCartSignal++
+        }
     }
 
     companion object {
         const val EXTRA_NAVIGATE_HOME = "extra_navigate_home"
+        const val EXTRA_NAVIGATE_CART = "extra_navigate_cart"
     }
 }

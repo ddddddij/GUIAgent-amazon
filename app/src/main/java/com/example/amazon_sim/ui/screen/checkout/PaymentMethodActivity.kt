@@ -31,6 +31,10 @@ class PaymentMethodActivity : ComponentActivity() {
 
         const val SOURCE_BUY_NOW = "BUY_NOW"
         const val SOURCE_CART = "CART"
+        const val SOURCE_PAY_NOW = "PAY_NOW"
+        const val EXTRA_ORDER_ID = "PAY_NOW_ORDER_ID"
+        const val EXTRA_ORDER_ITEMS_JSON = "PAY_NOW_ORDER_ITEMS_JSON"
+        const val EXTRA_ORDER_TOTAL = "PAY_NOW_ORDER_TOTAL"
 
         fun createBuyNowIntent(
             context: Context,
@@ -60,6 +64,18 @@ class PaymentMethodActivity : ComponentActivity() {
             putExtra(EXTRA_SOURCE, SOURCE_CART)
             putExtra(EXTRA_CART_ITEMS_JSON, cartItemsJson)
             putExtra(EXTRA_CART_ITEM_IDS_JSON, cartItemIdsJson)
+        }
+
+        fun createPayNowIntent(
+            context: Context,
+            orderId: String,
+            orderItemsJson: String,
+            orderTotal: Double
+        ): Intent = Intent(context, PaymentMethodActivity::class.java).apply {
+            putExtra(EXTRA_SOURCE, SOURCE_PAY_NOW)
+            putExtra(EXTRA_ORDER_ID, orderId)
+            putExtra(EXTRA_ORDER_ITEMS_JSON, orderItemsJson)
+            putExtra(EXTRA_ORDER_TOTAL, orderTotal)
         }
     }
 
@@ -91,6 +107,14 @@ class PaymentMethodActivity : ComponentActivity() {
                     val items = parseCartItemsJson(itemsJson)
                     val cartIds = parseStringArrayJson(idsJson)
                     viewModel.setCheckoutItems(items, fromCart = true, cartIds = cartIds)
+                }
+                SOURCE_PAY_NOW -> {
+                    val orderId = intent.getStringExtra(EXTRA_ORDER_ID) ?: ""
+                    val itemsJson = intent.getStringExtra(EXTRA_ORDER_ITEMS_JSON) ?: "[]"
+                    val orderTotal = intent.getDoubleExtra(EXTRA_ORDER_TOTAL, 0.0)
+                    val items = parseOrderItemsJson(itemsJson, orderTotal)
+                    viewModel.setCheckoutItems(items, fromCart = false, cartIds = emptyList())
+                    viewModel.bindExistingOrder(orderId)
                 }
             }
         }
@@ -141,6 +165,29 @@ class PaymentMethodActivity : ComponentActivity() {
         return runCatching {
             val array = JSONArray(json)
             (0 until array.length()).map { array.getString(it) }
+        }.getOrDefault(emptyList())
+    }
+
+    private fun parseOrderItemsJson(json: String, orderTotal: Double): List<CheckoutItem> {
+        return runCatching {
+            val array = JSONArray(json)
+            (0 until array.length()).map { i ->
+                val obj = array.getJSONObject(i)
+                CheckoutItem(
+                    productId = obj.optString("productId", ""),
+                    productName = obj.optString("productName", ""),
+                    productImageRes = obj.optString("productImage", ""),
+                    variantLabel = obj.optJSONArray("selectedSpec")?.let { specs ->
+                        (0 until specs.length()).joinToString(" / ") { j ->
+                            val s = specs.getJSONObject(j)
+                            "${s.optString("specType")}: ${s.optString("specValue")}"
+                        }
+                    } ?: "",
+                    unitPrice = obj.optDouble("price", 0.0),
+                    quantity = obj.optInt("quantity", 1),
+                    freeDeliveryDate = ""
+                )
+            }
         }.getOrDefault(emptyList())
     }
 }

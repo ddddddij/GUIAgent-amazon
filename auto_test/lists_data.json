@@ -1,0 +1,74 @@
+[
+  {
+    "listId": "list_shopping",
+    "listName": "Shopping List",
+    "createdAt": 1710777600000,
+    "productIds": [
+      "prod_003",
+      "prod_001",
+      "prod_004",
+      "prod_006"
+    ]
+  },
+  {
+    "listId": "list_alexa",
+    "listName": "Alexa List",
+    "createdAt": 1710691200000,
+    "productIds": [
+      "prod_008",
+      "prod_009",
+      "prod_010",
+      "prod_007"
+    ]
+  },
+  {
+    "listId": "list_shopping_1",
+    "listName": "Shopping List 1",
+    "createdAt": 1710604800000,
+    "productIds": [
+      "prod_002",
+      "prod_005",
+      "prod_011",
+      "prod_012"
+    ]
+  },
+  {
+    "listId": "list_shopping_2",
+    "listName": "Shopping List 2",
+    "createdAt": 1710518400000,
+    "productIds": [
+      "prod_013",
+      "prod_014",
+      "prod_015",
+      "prod_016"
+    ]
+  },
+  {
+    "listId": "list_shopping_3",
+    "listName": "Shopping List 3",
+    "createdAt": 1710432000000,
+    "productIds": [
+      "prod_001",
+      "prod_005",
+      "prod_008",
+      "prod_013"
+    ]
+  },
+  {
+    "listId": "list_38adf063",
+    "listName": "Coffee",
+    "createdAt": 1775059353320,
+    "productIds": [
+      "prod_014",
+      "prod_008"
+    ]
+  },
+  {
+    "listId": "list_f8993ba4",
+    "listName": "Electronics Wishlist",
+    "createdAt": 1775061484214,
+    "productIds": [
+      "prod_006"
+    ]
+  }
+]

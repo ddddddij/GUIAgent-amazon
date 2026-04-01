@@ -6,7 +6,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 
-class BrandRepository(private val context: Context) {
+class BrandRepository private constructor(private val context: Context) {
 
     private val dataFile = File(context.filesDir, FILE_NAME)
 
@@ -87,8 +87,21 @@ class BrandRepository(private val context: Context) {
         isFollowed = optBoolean("isFollowed", false)
     )
 
-    private companion object {
+    companion object {
         const val ASSET_PATH = "data/brands.json"
         const val FILE_NAME = "brands.json"
+
+        @Volatile
+        private var instance: BrandRepository? = null
+
+        fun getInstance(context: Context): BrandRepository {
+            return instance ?: synchronized(this) {
+                instance ?: BrandRepository(context.applicationContext).also { instance = it }
+            }
+        }
+
+        fun resetInstance() {
+            instance = null
+        }
     }
 }

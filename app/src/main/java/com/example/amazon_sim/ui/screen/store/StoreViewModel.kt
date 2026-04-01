@@ -43,7 +43,7 @@ class StoreViewModel : ViewModel() {
 
     fun loadStore(context: Context, brandId: String) {
         if (!::brandRepo.isInitialized) {
-            brandRepo = BrandRepository(context)
+            brandRepo = BrandRepository.getInstance(context)
         }
         val brand = brandRepo.getById(brandId) ?: return
         _brand.value = brand

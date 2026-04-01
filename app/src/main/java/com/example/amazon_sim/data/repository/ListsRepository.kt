@@ -15,6 +15,7 @@ object ListsRepository {
     private const val PREFS_NAME = "shopping_lists_prefs"
     private const val KEY_LISTS = "lists_data"
     private const val FILE_NAME = "lists_data.json"
+    private const val ASSET_PATH = "data/lists.json"
 
     private val _lists = MutableStateFlow<List<ShoppingList>>(emptyList())
     val lists: StateFlow<List<ShoppingList>> = _lists.asStateFlow()
@@ -24,14 +25,13 @@ object ListsRepository {
     fun init(context: Context) {
         if (initialized) return
         initialized = true
-        val prefs = context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val json = prefs.getString(KEY_LISTS, null)
-        if (json == null) {
-            _lists.value = defaultLists()
-            save(context)
-        } else {
-            _lists.value = parseJson(json)
-        }
+        val json = runCatching {
+            context.applicationContext.assets.open(ASSET_PATH)
+                .bufferedReader()
+                .use { it.readText() }
+        }.getOrNull()
+        _lists.value = if (json != null) parseJson(json) else defaultLists()
+        save(context)
     }
 
     fun getAllLists(): StateFlow<List<ShoppingList>> = lists

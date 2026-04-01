@@ -12,6 +12,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.amazon_sim.data.repository.AddressRepositoryImpl
 import com.example.amazon_sim.ui.screen.address.AddressActivity
+import com.example.amazon_sim.MainActivity
 import com.example.amazon_sim.ui.screen.order.OrderActivity
 import com.example.amazon_sim.ui.theme.Amazon_simTheme
 
@@ -83,6 +84,9 @@ class CheckoutActivity : ComponentActivity() {
                     onContinueShopping = {
                         showSuccessDialog = false
                         CheckoutViewModelHolder.clear()
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
                         finish()
                     }
                 )

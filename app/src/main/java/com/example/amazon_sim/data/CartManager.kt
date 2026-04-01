@@ -38,7 +38,7 @@ object CartManager {
             appContext.assets.open("data/cart_items.json")
                 .bufferedReader().use { it.readText() }
         }.getOrDefault("[]")
-        _cartItems.value = parseJson(json)
+        _cartItems.value = parseJson(json).map { it.copy(isSelected = false) }
         save(appContext)
     }
 

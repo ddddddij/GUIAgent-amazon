@@ -73,6 +73,12 @@ class CheckoutViewModel(application: Application) : AndroidViewModel(application
         this.cartItemIds = cartIds
     }
 
+    fun bindExistingOrder(orderId: String) {
+        _pendingOrderId.value = orderId
+        val order = orderRepository.getOrderById(orderId) ?: return
+        _deliveryAddress.value = order.shippingAddress
+    }
+
     fun selectPaymentMethod(method: PaymentMethod) {
         _selectedPaymentMethod.value = method
     }

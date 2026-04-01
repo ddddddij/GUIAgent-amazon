@@ -10,6 +10,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.theme.Amazon_simTheme
+import org.json.JSONArray
+import org.json.JSONObject
 
 class OrderDetailActivity : ComponentActivity() {
 
@@ -39,6 +41,35 @@ class OrderDetailActivity : ComponentActivity() {
                         onBackClick = { finish() },
                         onCancelOrder = { viewModel.cancelOrder() },
                         onConfirmReceipt = { viewModel.confirmReceipt() },
+                        onPayNow = {
+                            val itemsArray = JSONArray()
+                            currentOrder.items.forEach { item ->
+                                val obj = JSONObject().apply {
+                                    put("productId", item.productId)
+                                    put("productName", item.productName)
+                                    put("productImage", item.productImage)
+                                    put("price", item.price)
+                                    put("quantity", item.quantity)
+                                    val specsArray = JSONArray()
+                                    item.selectedSpec.forEach { spec ->
+                                        specsArray.put(JSONObject().apply {
+                                            put("specType", spec.specType)
+                                            put("specValue", spec.specValue)
+                                        })
+                                    }
+                                    put("selectedSpec", specsArray)
+                                }
+                                itemsArray.put(obj)
+                            }
+                            startActivity(
+                                PaymentMethodActivity.createPayNowIntent(
+                                    context = this@OrderDetailActivity,
+                                    orderId = currentOrder.orderId,
+                                    orderItemsJson = itemsArray.toString(),
+                                    orderTotal = currentOrder.orderTotal
+                                )
+                            )
+                        },
                         onBuyAgainClick = { item ->
                             val variantLabel = item.selectedSpec.joinToString(" / ") { "${it.specType}: ${it.specValue}" }
                             startActivity(

@@ -1,0 +1,626 @@
+[
+  {
+    "orderId": "ORD-A21D9BF4",
+    "items": [
+      {
+        "productId": "prod_010",
+        "productName": "Vitamix Explorian Blender, Professional-Grade, 64 oz Container",
+        "productImage": "image\/Vitamix.jpg",
+        "price": 349.95,
+        "quantity": 1,
+        "selectedSpec": []
+      }
+    ],
+    "totalAmount": 349.95,
+    "shippingAddress": {
+      "id": "addr_001",
+      "fullName": "John Smith",
+      "phoneNumber": "+1 (555) 123-4567",
+      "country": "United States",
+      "streetAddress": "123 Main Street, Apt 4B",
+      "aptSuite": "Downtown",
+      "city": "Los Angeles",
+      "state": "California",
+      "zipCode": "90012",
+      "isDefault": true
+    },
+    "orderStatus": "UNSHIPPED",
+    "paymentMethod": "Credit Card",
+    "createdAt": 1775061764772,
+    "updatedAt": 1775061766496,
+    "itemsTotal": 349.95,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 349.95
+  },
+  {
+    "orderId": "ORD-0AE57228",
+    "items": [
+      {
+        "productId": "prod_016",
+        "productName": "OREO Original Chocolate Sandwich Cookies, Family Size, 18.12 oz",
+        "productImage": "image\/OREO.jpg",
+        "price": 6.49,
+        "quantity": 1,
+        "selectedSpec": []
+      }
+    ],
+    "totalAmount": 6.49,
+    "shippingAddress": {
+      "id": "addr_001",
+      "fullName": "John Smith",
+      "phoneNumber": "+1 (555) 123-4567",
+      "country": "United States",
+      "streetAddress": "123 Main Street, Apt 4B",
+      "aptSuite": "Downtown",
+      "city": "Los Angeles",
+      "state": "California",
+      "zipCode": "90012",
+      "isDefault": true
+    },
+    "orderStatus": "UNSHIPPED",
+    "paymentMethod": "Credit Card",
+    "createdAt": 1775061729213,
+    "updatedAt": 1775061730416,
+    "itemsTotal": 6.49,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 6.49
+  },
+  {
+    "orderId": "ORD-2024-001",
+    "items": [
+      {
+        "productId": "prod_001",
+        "productName": "Apple iPhone 17 Pro Max",
+        "productImage": "image\/iPhone.jpg",
+        "price": 1369.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "Cosmic Orange",
+            "isSelected": true
+          },
+          {
+            "specType": "Storage",
+            "specValue": "256GB",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 1369.99,
+    "shippingAddress": {
+      "id": "addr_001",
+      "fullName": "John Smith",
+      "phoneNumber": "+1 (555) 123-4567",
+      "country": "United States",
+      "streetAddress": "123 Main Street, Apt 4B",
+      "aptSuite": "",
+      "city": "Los Angeles",
+      "state": "California",
+      "zipCode": "90017",
+      "isDefault": true
+    },
+    "orderStatus": "DELIVERED",
+    "paymentMethod": "Visa ending in 1234",
+    "createdAt": 1710777600000,
+    "updatedAt": 1710950400000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-002",
+    "items": [
+      {
+        "productId": "prod_003",
+        "productName": "Marshall Stanmore III Bluetooth Speaker",
+        "productImage": "image\/Marshall.jpg",
+        "price": 199.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "Black",
+            "isSelected": true
+          }
+        ]
+      },
+      {
+        "productId": "prod_008",
+        "productName": "Nespresso Vertuo Pop+ Coffee Machine",
+        "productImage": "image\/Nespresso.jpg",
+        "price": 129.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "Black",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 329.98,
+    "shippingAddress": {
+      "id": "addr_002",
+      "fullName": "Emily Johnson",
+      "phoneNumber": "+1 (555) 234-5678",
+      "country": "United States",
+      "streetAddress": "456 Broadway Avenue, Suite 12",
+      "aptSuite": "",
+      "city": "New York City",
+      "state": "New York",
+      "zipCode": "10013",
+      "isDefault": false
+    },
+    "orderStatus": "SHIPPED",
+    "paymentMethod": "Mastercard ending in 5678",
+    "createdAt": 1710691200000,
+    "updatedAt": 1710864000000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-003",
+    "items": [
+      {
+        "productId": "prod_011",
+        "productName": "Nike Air Zoom Pegasus 41",
+        "productImage": "image\/Nike.jpg",
+        "price": 139.99,
+        "quantity": 2,
+        "selectedSpec": [
+          {
+            "specType": "Size",
+            "specValue": "US 10",
+            "isSelected": true
+          },
+          {
+            "specType": "Color",
+            "specValue": "Blue\/White",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 279.98,
+    "shippingAddress": {
+      "id": "addr_003",
+      "fullName": "Michael Brown",
+      "phoneNumber": "+1 (555) 345-6789",
+      "country": "United States",
+      "streetAddress": "789 Oak Lane",
+      "aptSuite": "",
+      "city": "Houston",
+      "state": "Texas",
+      "zipCode": "77002",
+      "isDefault": false
+    },
+    "orderStatus": "UNSHIPPED",
+    "paymentMethod": "Amazon Pay",
+    "createdAt": 1710604800000,
+    "updatedAt": 1710691200000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-004",
+    "items": [
+      {
+        "productId": "prod_002",
+        "productName": "Apple MacBook Air",
+        "productImage": "image\/MacBook.jpg",
+        "price": 1099,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "Space Gray",
+            "isSelected": true
+          },
+          {
+            "specType": "Configuration",
+            "specValue": "M4 \/ 16GB \/ 256GB",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 1099,
+    "shippingAddress": {
+      "id": "addr_004",
+      "fullName": "Sarah Davis",
+      "phoneNumber": "+1 (555) 456-7890",
+      "country": "United States",
+      "streetAddress": "321 Ocean Drive",
+      "aptSuite": "",
+      "city": "Miami",
+      "state": "Florida",
+      "zipCode": "33139",
+      "isDefault": false
+    },
+    "orderStatus": "DELIVERED",
+    "paymentMethod": "Visa ending in 9012",
+    "createdAt": 1710518400000,
+    "updatedAt": 1710777600000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-005",
+    "items": [
+      {
+        "productId": "prod_004",
+        "productName": "Sony WH-1000XM5 Wireless Headphones",
+        "productImage": "image\/Sony.jpg",
+        "price": 399.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "Black",
+            "isSelected": true
+          }
+        ]
+      },
+      {
+        "productId": "prod_014",
+        "productName": "Starbucks Pike Place Whole Bean Coffee",
+        "productImage": "image\/Starbucks.jpg",
+        "price": 14.99,
+        "quantity": 2,
+        "selectedSpec": [
+          {
+            "specType": "Size",
+            "specValue": "28 oz",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 429.97,
+    "shippingAddress": {
+      "id": "addr_005",
+      "fullName": "David Wilson",
+      "phoneNumber": "+1 (555) 567-8901",
+      "country": "United States",
+      "streetAddress": "654 Michigan Avenue, Floor 8",
+      "aptSuite": "",
+      "city": "Chicago",
+      "state": "Illinois",
+      "zipCode": "60611",
+      "isDefault": false
+    },
+    "orderStatus": "PENDING",
+    "paymentMethod": "Gift Card Balance",
+    "createdAt": 1710432000000,
+    "updatedAt": 1710432000000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-006",
+    "items": [
+      {
+        "productId": "prod_007",
+        "productName": "Dyson V15 Detect Cordless Vacuum",
+        "productImage": "image\/Dyson.jpg",
+        "price": 649.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Model",
+            "specValue": "V15 Detect",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 649.99,
+    "shippingAddress": {
+      "id": "addr_006",
+      "fullName": "Jennifer Martinez",
+      "phoneNumber": "+1 (555) 678-9012",
+      "country": "United States",
+      "streetAddress": "987 Pine Street",
+      "aptSuite": "",
+      "city": "Seattle",
+      "state": "Washington",
+      "zipCode": "98101",
+      "isDefault": false
+    },
+    "orderStatus": "SHIPPED",
+    "paymentMethod": "Debit Card ending in 3456",
+    "createdAt": 1710345600000,
+    "updatedAt": 1710518400000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-007",
+    "items": [
+      {
+        "productId": "prod_006",
+        "productName": "Samsung Galaxy Watch7 with Galaxy AI",
+        "productImage": "image\/Samsung.jpg",
+        "price": 299.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Size",
+            "specValue": "44mm",
+            "isSelected": true
+          },
+          {
+            "specType": "Color",
+            "specValue": "Green",
+            "isSelected": true
+          }
+        ]
+      },
+      {
+        "productId": "prod_016",
+        "productName": "OREO Original Family Size Cookies",
+        "productImage": "image\/OREO.jpg",
+        "price": 5.99,
+        "quantity": 3,
+        "selectedSpec": [
+          {
+            "specType": "Flavor",
+            "specValue": "Original",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 317.96,
+    "shippingAddress": {
+      "id": "addr_007",
+      "fullName": "Robert Taylor",
+      "phoneNumber": "+1 (555) 789-0123",
+      "country": "United States",
+      "streetAddress": "147 Newbury Street, Unit 3C",
+      "aptSuite": "",
+      "city": "Boston",
+      "state": "Massachusetts",
+      "zipCode": "02116",
+      "isDefault": false
+    },
+    "orderStatus": "DELIVERED",
+    "paymentMethod": "American Express ending in 7890",
+    "createdAt": 1710259200000,
+    "updatedAt": 1710518400000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-008",
+    "items": [
+      {
+        "productId": "prod_013",
+        "productName": "Wilson Evolution Indoor Basketball",
+        "productImage": "image\/Wilson.jpg",
+        "price": 79.95,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Size",
+            "specValue": "Size 7 (29.5\")",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 79.95,
+    "shippingAddress": {
+      "id": "addr_008",
+      "fullName": "Lisa Anderson",
+      "phoneNumber": "+1 (555) 890-1234",
+      "country": "United States",
+      "streetAddress": "258 Central Avenue",
+      "aptSuite": "",
+      "city": "Phoenix",
+      "state": "Arizona",
+      "zipCode": "85004",
+      "isDefault": false
+    },
+    "orderStatus": "UNSHIPPED",
+    "paymentMethod": "Discover ending in 2345",
+    "createdAt": 1710172800000,
+    "updatedAt": 1710259200000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-009",
+    "items": [
+      {
+        "productId": "prod_009",
+        "productName": "KitchenAid Artisan Stand Mixer",
+        "productImage": "image\/KitchenAid.jpg",
+        "price": 449.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "Empire Red",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 449.99,
+    "shippingAddress": {
+      "id": "addr_009",
+      "fullName": "James Thomas",
+      "phoneNumber": "+1 (555) 901-2345",
+      "country": "United States",
+      "streetAddress": "369 Market Street, Apt 7A",
+      "aptSuite": "",
+      "city": "Denver",
+      "state": "Colorado",
+      "zipCode": "80202",
+      "isDefault": false
+    },
+    "orderStatus": "CANCELED",
+    "paymentMethod": "Visa ending in 1234",
+    "createdAt": 1710086400000,
+    "updatedAt": 1710172800000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-010",
+    "items": [
+      {
+        "productId": "prod_005",
+        "productName": "Nintendo Switch OLED Console",
+        "productImage": "image\/Nintendo.jpg",
+        "price": 349.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "White",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 349.99,
+    "shippingAddress": {
+      "id": "addr_010",
+      "fullName": "Mary Jackson",
+      "phoneNumber": "+1 (555) 012-3456",
+      "country": "United States",
+      "streetAddress": "741 Peachtree Street NE",
+      "aptSuite": "",
+      "city": "Atlanta",
+      "state": "Georgia",
+      "zipCode": "30308",
+      "isDefault": false
+    },
+    "orderStatus": "DELIVERED",
+    "paymentMethod": "Mastercard ending in 5678",
+    "createdAt": 1710000000000,
+    "updatedAt": 1710259200000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-011",
+    "items": [
+      {
+        "productId": "prod_010",
+        "productName": "Vitamix Explorian Blender",
+        "productImage": "image\/Vitamix.jpg",
+        "price": 349.95,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Color",
+            "specValue": "Black",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 349.95,
+    "shippingAddress": {
+      "id": "addr_011",
+      "fullName": "William White",
+      "phoneNumber": "+1 (555) 123-7890",
+      "country": "United States",
+      "streetAddress": "852 NW Couch Street",
+      "aptSuite": "",
+      "city": "Portland",
+      "state": "Oregon",
+      "zipCode": "97209",
+      "isDefault": false
+    },
+    "orderStatus": "SHIPPED",
+    "paymentMethod": "Amazon Pay",
+    "createdAt": 1709913600000,
+    "updatedAt": 1710086400000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  },
+  {
+    "orderId": "ORD-2024-012",
+    "items": [
+      {
+        "productId": "prod_015",
+        "productName": "Coca-Cola Zero Sugar 24-Pack",
+        "productImage": "image\/Coca-Cola.jpg",
+        "price": 16.99,
+        "quantity": 2,
+        "selectedSpec": [
+          {
+            "specType": "Pack Size",
+            "specValue": "24-Pack",
+            "isSelected": true
+          }
+        ]
+      },
+      {
+        "productId": "prod_012",
+        "productName": "Adidas Tiro League Soccer Ball",
+        "productImage": "image\/Adidas.jpg",
+        "price": 39.99,
+        "quantity": 1,
+        "selectedSpec": [
+          {
+            "specType": "Size",
+            "specValue": "Size 5",
+            "isSelected": true
+          }
+        ]
+      }
+    ],
+    "totalAmount": 73.97,
+    "shippingAddress": {
+      "id": "addr_012",
+      "fullName": "Patricia Harris",
+      "phoneNumber": "+1 (555) 234-8901",
+      "country": "United States",
+      "streetAddress": "963 Las Vegas Boulevard S",
+      "aptSuite": "",
+      "city": "Las Vegas",
+      "state": "Nevada",
+      "zipCode": "89109",
+      "isDefault": false
+    },
+    "orderStatus": "PENDING",
+    "paymentMethod": "Debit Card ending in 3456",
+    "createdAt": 1709827200000,
+    "updatedAt": 1709827200000,
+    "itemsTotal": 0,
+    "shipping": 0,
+    "tax": 0,
+    "orderTotal": 0
+  }
+]

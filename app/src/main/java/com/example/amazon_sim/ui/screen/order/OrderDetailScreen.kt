@@ -64,6 +64,7 @@ fun OrderDetailScreen(
     onBackClick: () -> Unit,
     onCancelOrder: () -> Unit,
     onConfirmReceipt: () -> Unit,
+    onPayNow: () -> Unit = {},
     onBuyAgainClick: (OrderItem) -> Unit = {}
 ) {
     var showCancelDialog by remember { mutableStateOf(false) }
@@ -160,7 +161,8 @@ fun OrderDetailScreen(
             ActionButtonsArea(
                 orderStatus = order.orderStatus,
                 onCancelClick = { showCancelDialog = true },
-                onConfirmReceiptClick = { showConfirmDialog = true }
+                onConfirmReceiptClick = { showConfirmDialog = true },
+                onPayNowClick = onPayNow
             )
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -499,11 +501,47 @@ private fun ShippingAddressCard(order: Order) {
 private fun ActionButtonsArea(
     orderStatus: OrderStatus,
     onCancelClick: () -> Unit,
-    onConfirmReceiptClick: () -> Unit
+    onConfirmReceiptClick: () -> Unit,
+    onPayNowClick: () -> Unit
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         when (orderStatus) {
-            OrderStatus.PENDING, OrderStatus.UNSHIPPED -> {
+            OrderStatus.PENDING -> {
+                // Pay Now button
+                Button(
+                    onClick = onPayNowClick,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(48.dp),
+                    shape = RoundedCornerShape(24.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = AmazonBuyNowOrange)
+                ) {
+                    Text(
+                        text = "Pay Now",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = Color.Black
+                    )
+                }
+                Spacer(modifier = Modifier.height(8.dp))
+                // Cancel button
+                Button(
+                    onClick = onCancelClick,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(48.dp),
+                    shape = RoundedCornerShape(24.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = AmazonCheckoutYellow)
+                ) {
+                    Text(
+                        text = "Cancel Order",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = Color.Black
+                    )
+                }
+            }
+            OrderStatus.UNSHIPPED -> {
                 // Can cancel
                 Button(
                     onClick = onCancelClick,

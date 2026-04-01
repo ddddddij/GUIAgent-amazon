@@ -7,6 +7,7 @@
     "city": "Los Angeles",
     "district": "Downtown",
     "detailAddress": "123 Main Street, Apt 4B",
+    "zipCode": "90012",
     "isDefault": true,
     "createdAt": 1710777600000
   },
@@ -18,6 +19,7 @@
     "city": "New York City",
     "district": "Manhattan",
     "detailAddress": "456 Broadway Avenue, Suite 12",
+    "zipCode": "10013",
     "isDefault": false,
     "createdAt": 1710691200000
   },
@@ -29,6 +31,7 @@
     "city": "Houston",
     "district": "Midtown",
     "detailAddress": "789 Oak Lane",
+    "zipCode": "77002",
     "isDefault": false,
     "createdAt": 1710604800000
   },
@@ -40,6 +43,7 @@
     "city": "Miami",
     "district": "South Beach",
     "detailAddress": "321 Ocean Drive",
+    "zipCode": "33139",
     "isDefault": false,
     "createdAt": 1710518400000
   },
@@ -51,6 +55,7 @@
     "city": "Chicago",
     "district": "Loop",
     "detailAddress": "654 Michigan Avenue, Floor 8",
+    "zipCode": "60601",
     "isDefault": false,
     "createdAt": 1710432000000
   },
@@ -62,6 +67,7 @@
     "city": "Seattle",
     "district": "Capitol Hill",
     "detailAddress": "987 Pine Street",
+    "zipCode": "98122",
     "isDefault": false,
     "createdAt": 1710345600000
   },
@@ -73,6 +79,7 @@
     "city": "Boston",
     "district": "Back Bay",
     "detailAddress": "147 Newbury Street, Unit 3C",
+    "zipCode": "02116",
     "isDefault": false,
     "createdAt": 1710259200000
   },
@@ -84,6 +91,7 @@
     "city": "Phoenix",
     "district": "Downtown",
     "detailAddress": "258 Central Avenue",
+    "zipCode": "85004",
     "isDefault": false,
     "createdAt": 1710172800000
   },
@@ -95,6 +103,7 @@
     "city": "Denver",
     "district": "LoDo",
     "detailAddress": "369 Market Street, Apt 7A",
+    "zipCode": "80202",
     "isDefault": false,
     "createdAt": 1710086400000
   },
@@ -106,6 +115,7 @@
     "city": "Atlanta",
     "district": "Midtown",
     "detailAddress": "741 Peachtree Street NE",
+    "zipCode": "30308",
     "isDefault": false,
     "createdAt": 1710000000000
   },
@@ -117,6 +127,7 @@
     "city": "Portland",
     "district": "Pearl District",
     "detailAddress": "852 NW Couch Street",
+    "zipCode": "97209",
     "isDefault": false,
     "createdAt": 1709913600000
   },
@@ -128,6 +139,7 @@
     "city": "Las Vegas",
     "district": "The Strip",
     "detailAddress": "963 Las Vegas Boulevard S",
+    "zipCode": "89109",
     "isDefault": false,
     "createdAt": 1709827200000
   }

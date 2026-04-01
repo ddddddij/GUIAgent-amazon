@@ -34,11 +34,12 @@ import org.json.JSONObject
 @Composable
 fun NavGraph(
     navController: NavHostController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    startDestination: String = "home"
 ) {
     NavHost(
         navController = navController,
-        startDestination = "home",
+        startDestination = startDestination,
         modifier = modifier
     ) {
         composable("home") {

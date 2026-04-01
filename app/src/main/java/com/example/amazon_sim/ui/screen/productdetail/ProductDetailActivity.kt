@@ -16,11 +16,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.amazon_sim.data.CartManager
 import com.example.amazon_sim.data.repository.BrandRepository
 import com.example.amazon_sim.data.repository.ListsRepository
-import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
+import com.example.amazon_sim.MainActivity
 import com.example.amazon_sim.ui.screen.lists.ListsActivity
 import com.example.amazon_sim.ui.screen.lists.components.CreateListBottomSheet
 import com.example.amazon_sim.ui.screen.productdetail.components.AddToListBottomSheet
+import com.example.amazon_sim.ui.screen.checkout.PaymentMethodActivity
 import com.example.amazon_sim.ui.screen.store.StoreActivity
+
 import com.example.amazon_sim.ui.theme.Amazon_simTheme
 
 class ProductDetailActivity : ComponentActivity() {
@@ -117,6 +119,11 @@ class ProductDetailActivity : ComponentActivity() {
                         onDismissBottomSheet = { showAddedToCart = false },
                         onGoToCart = {
                             showAddedToCart = false
+                            val intent = Intent(this@ProductDetailActivity, MainActivity::class.java).apply {
+                                putExtra(MainActivity.EXTRA_NAVIGATE_CART, true)
+                                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                            }
+                            startActivity(intent)
                             finish()
                         },
                         onBuyNowClick = {
@@ -143,7 +150,7 @@ class ProductDetailActivity : ComponentActivity() {
                             showAddToList = true
                         },
                         onVisitStoreClick = {
-                            val brand = BrandRepository(this@ProductDetailActivity).getByName(currentProduct.brandName)
+                            val brand = BrandRepository.getInstance(this@ProductDetailActivity).getByName(currentProduct.brandName)
                             if (brand != null) {
                                 startActivity(
                                     Intent(this@ProductDetailActivity, StoreActivity::class.java).apply {

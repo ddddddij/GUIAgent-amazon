@@ -41,7 +41,8 @@ class SearchViewModel(application: Application) : AndroidViewModel(application) 
         return allProducts.filter { product ->
             product.name.lowercase().contains(lower) ||
                 product.brandName.lowercase().contains(lower) ||
-                product.productType.lowercase().contains(lower)
+                product.productType.lowercase().contains(lower) ||
+                product.category.lowercase().contains(lower)
         }
     }
 }
